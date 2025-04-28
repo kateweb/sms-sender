@@ -14,7 +14,12 @@
   },
   "reg": {
     "title": "Sign up",
-    "reg_text": "Enter your details to create your account"
+    "reg_text": "Enter your details to create your account",
+    "username": "Username",
+    "phone": "Phone",
+    "confirm_password": "Confirm Password",
+    "submit": "Submit",
+    "have_account": "I have an account"
   },
   "errors": {
     "email": {

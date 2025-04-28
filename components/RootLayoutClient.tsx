@@ -5,6 +5,7 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { Open_Sans } from 'next/font/google';
+import Head from 'next/head';
 import { NextIntlClientProvider } from 'next-intl';
 import { AbstractIntlMessages } from 'use-intl';
 
@@ -36,7 +37,7 @@ export default function RootLayoutClient({
 }) {
   return (
     <html lang={locale} className={openSans.className}>
-    <head>
+    <Head>
       <title>SMS Sender</title>
       <link
         rel="apple-touch-icon"
@@ -65,7 +66,7 @@ export default function RootLayoutClient({
         content=""
       />
       <ColorSchemeScript defaultColorScheme="auto" />
-    </head>
+    </Head>
     <body>
       <NextIntlClientProvider messages={messages} locale={locale}>
         <LocaleProvider locale={locale}>

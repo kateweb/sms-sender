@@ -3,3 +3,9 @@
 html,
 body {
 }
+.iti {
+  display:block !important;
+}
+.iti .iti__selected-dial-code {
+  font-size: var(--mantine-font-size-sm);
+}
