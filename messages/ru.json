@@ -1,0 +1,23 @@
+{
+  "loading": "Загрузка",
+  "login": {
+    "title": "Авторизация",
+    "welcome_back": "С возвращением!",
+    "login_title": "Войдите в свою учётную запись",
+    "password": "Пароль",
+    "your_password": "Ваш пароль",
+    "remember_me": "Запомнить меня",
+    "forgot_password": "Забыли пароль?",
+    "login_now": "Войти",
+    "dont_have_account": "Нет учётной записи?",
+    "join_free_today": "Присоединяйтесь бесплатно сегодня"
+  },
+  "errors": {
+    "email": {
+      "invalid": "Недействительный email"
+    },
+    "password": {
+      "min": "Пароль должен содержать как минимум {min} символов"
+    }
+  }
+}

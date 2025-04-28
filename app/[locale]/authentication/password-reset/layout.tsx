@@ -1,0 +1,27 @@
+'use client';
+
+import { ReactNode } from 'react';
+
+import { Center, Stack } from '@mantine/core';
+import Image from 'next/image';
+
+type AuthProps = {
+  children: ReactNode;
+};
+
+function PasswordLayout({ children }: AuthProps) {
+  return (
+    <Center
+      style={{
+        height: '100vh',
+        width: '100vw',
+      }}
+    >
+      <Stack>
+        {children}
+      </Stack>
+    </Center>
+  );
+}
+
+export default PasswordLayout;

@@ -1,0 +1,27 @@
+{
+  "loading": "Loading",
+  "login": {
+    "title": "Login",
+    "welcome_back": "Welcome back!",
+    "login_title": "Login to your account",
+    "password": "Password",
+    "your_password": "Your password",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot password?",
+    "login_now": "Login now",
+    "dont_have_account": "Don't have an account?",
+    "join_free_today": "Join free today"
+  },
+  "reg": {
+    "title": "Sign up",
+    "reg_text": "Enter your details to create your account"
+  },
+  "errors": {
+    "email": {
+      "invalid": "Invalid email"
+    },
+    "password": {
+      "min": "Password must include at least {min} characters"
+    }
+  }
+}
