@@ -48,22 +48,13 @@ export default function RootLayoutClient({
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon.svg"
+        href="/favicon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon.svg"
-      />
-      <link rel="manifest" href="/site.webmanifest" />
-      <meta
-        name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width"
-      />
-      <meta
-        name="description"
-        content=""
+        href="/favicon.png"
       />
       <ColorSchemeScript defaultColorScheme="auto" />
     </Head>

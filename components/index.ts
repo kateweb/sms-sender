@@ -10,7 +10,6 @@ import KanbanCard from '@/components/KanbanCard/KanbanCard';
 import KanbanColumn from '@/components/KanbanColumn/KanbanColumn';
 import LanguagePicker from '@/components/LanguagePicker/LanguagePicker';
 import LanguageTable from '@/components/LanguageTable/LanguageTable';
-import MapChart from '@/components/MapChart/MapChart';
 import OrdersTable from '@/components/OrdersTable/OrdersTable';
 import PageHeader from '@/components/PageHeader/PageHeader';
 import PricingCard from '@/components/PricingCard/PricingCard';
@@ -39,7 +38,6 @@ export {
   StatsGrid,
   ProjectsTable,
   StatsCard,
-  MapChart,
   LanguageTable,
   TrafficTable,
   UserProfileCard,
