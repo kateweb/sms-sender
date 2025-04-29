@@ -1,0 +1,38 @@
+imageCredentials:
+  registry: ""
+  username: ""
+  password: ""
+
+gitlab:
+  build:
+  app:
+  env:
+
+ingress:
+  class:
+    _default: nginx-stage
+    prod: nginx-prod
+  clusterIssuer:
+    _default: letsencrypt
+  cloudflare:
+    proxied:
+      _default: "true"
+    authenticatedOriginPulls:
+      _default: "true"
+  host: ~
+
+app:
+  minReplicas:
+    _default: 1
+    prod: 1
+  maxReplicas:
+    _default: 1
+    prod: 1
+  resources:
+    _default:
+      requests:
+        memory: "128Mi"
+        cpu: "100m"
+      limits:
+        memory: "128Mi"
+        cpu: "300m"

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ tuple "app" . | include "app.instance" }}
+  labels: {{ tuple "app" . | include "app.labels" | nindent 4 }}
+  annotations:
+    app.gitlab.com/app: {{ .Values.gitlab.app }}
+    app.gitlab.com/env: {{ .Values.gitlab.env }}
+spec:
+  replicas: {{ tuple .Values.app.minReplicas . | include "env.value" }}
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels: {{ tuple "app" . | include "app.selectorLabels" | nindent 6 }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels: {{ tuple "app" . | include "app.labels" | nindent 8 }}
+      annotations:
+        app.gitlab.com/app: {{ .Values.gitlab.app }}
+        app.gitlab.com/env: {{ .Values.gitlab.env }}
+    spec:
+      imagePullSecrets:
+        - name: {{ tuple "pull-secret" . | include "app.instance" }}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/instance
+                    operator: In
+                    values:
+                      - {{ tuple "app" . | include "app.instance" }}
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: app
+          image: {{ .Values.werf.image.app }}
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          resources: {{ tuple .Values.app.resources . | include "env.yaml" | nindent 12 }}
+          env: {{ include "app.env" . | nindent 12 }}

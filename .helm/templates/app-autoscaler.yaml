@@ -1,0 +1,14 @@
+{{- if (gt (tuple .Values.app.maxReplicas . | include "env.value" | int ) (tuple .Values.app.minReplicas . | include "env.value" | int )) }}
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ tuple "app" . | include "app.instance" }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: {{ tuple "app" . | include "app.instance" }}
+  minReplicas: {{ tuple .Values.app.minReplicas . | include "env.value" }}
+  maxReplicas: {{ tuple .Values.app.maxReplicas . | include "env.value" }}
+  targetCPUUtilizationPercentage: 75
+{{- end }}

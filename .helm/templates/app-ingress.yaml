@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ tuple "app" . | include "app.instance" }}
+  labels: {{ tuple "app" . | include "app.labels" | nindent 4 }}
+  annotations:
+    kubernetes.io/ingress.class: {{ tuple .Values.ingress.class . | include "env.value" }}
+    cert-manager.io/cluster-issuer: {{ tuple .Values.ingress.clusterIssuer . | include "env.value" }}
+    {{- if (eq "true" (tuple .Values.ingress.cloudflare.proxied . | include "env.value")) }}
+    external-dns.alpha.kubernetes.io/ttl: "1"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    {{- else }}
+    external-dns.alpha.kubernetes.io/ttl: "300"
+    external-dns.alpha.kubernetes.io/cloudflare-proxied: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    {{- end }}
+    {{- if (eq "true" (tuple .Values.ingress.cloudflare.authenticatedOriginPulls . | include "env.value")) }}
+    nginx.ingress.kubernetes.io/auth-tls-verify-client: "on"
+    nginx.ingress.kubernetes.io/auth-tls-secret: "cloudflare/origin-pull-ca"
+    nginx.ingress.kubernetes.io/auth-tls-verify-depth: "1"
+    {{- end }}
+spec:
+  tls:
+    - hosts:
+        - {{ .Values.ingress.host }}
+      secretName: {{ tuple "app-tls" . | include "app.instance" }}
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ tuple "app" . | include "app.instance" }}
+                port:
+                  name: http
