@@ -1,0 +1,62 @@
+stages:
+ - deploy
+ - cleanup
+
+include:
+  - project: gitlab-ci/templates
+    ref: master
+    file: werf-1.2.gitlab-ci.yml
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+.base_deploy:
+  stage: deploy
+  extends: .werf_converge
+  script:
+#    - build-env -f .env.example -e $CI_ENVIRONMENT_NAME > .env ; cp .env .helm/.env
+    - werf converge
+      --namespace $KUBE_NAMESPACE
+      --set gitlab.build=$CI_JOB_ID
+      --set gitlab.app=$CI_PROJECT_PATH_SLUG
+      --set gitlab.env=$CI_ENVIRONMENT_SLUG
+      --set imageCredentials.registry=$CI_REGISTRY
+      --set imageCredentials.username=$CI_DEPLOY_USER
+      --set imageCredentials.password=$CI_DEPLOY_PASSWORD
+      --set ingress.host="$K8S_INGRESS_HOST"
+
+.base_stop:
+  stage: cleanup
+  extends: .werf_dismiss
+  script:
+    - touch .env
+    - werf dismiss --namespace $KUBE_NAMESPACE
+
+deploy:stage:
+  extends: .base_deploy
+  resource_group: stage
+  variables:
+    K8S_INGRESS_HOST: sms-sender-$CI_ENVIRONMENT_SLUG.sd-app.net
+  environment:
+    name: stage
+    action: start
+    url: https://sms-sender-$CI_ENVIRONMENT_SLUG.sd-app.net
+    on_stop: "stop:stage"
+  only:
+    refs:
+      - branches
+
+stop:stage:
+  extends: .base_stop
+  resource_group: stage
+  environment:
+    name: stage
+    action: stop
+  only:
+    refs:
+      - branches
+
+werf:cleanup:
+  script:
+    - touch .env
+    - werf cleanup

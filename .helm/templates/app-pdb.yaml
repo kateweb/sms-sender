@@ -1,0 +1,9 @@
+kind: PodDisruptionBudget
+apiVersion: policy/v1
+metadata:
+  name: {{ tuple "app" . | include "app.instance" }}
+  labels: {{ tuple "app" . | include "app.labels" | nindent 4 }}
+spec:
+  selector:
+    matchLabels: {{ tuple "app" . | include "app.selectorLabels" | nindent 6 }}
+  maxUnavailable: 1

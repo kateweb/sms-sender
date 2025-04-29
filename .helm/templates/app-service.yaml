@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ tuple "app" . | include "app.instance" }}
+  labels: {{ tuple "app" . | include "app.labels" | nindent 4 }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector: {{ tuple "app" . | include "app.selectorLabels" | nindent 4 }}
