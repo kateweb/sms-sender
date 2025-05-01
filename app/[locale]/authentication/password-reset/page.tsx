@@ -12,60 +12,83 @@ import {
   UnstyledButton,
   rem,
 } from '@mantine/core';
+import { useForm } from '@mantine/form';
 import { useMediaQuery } from '@mantine/hooks';
 import { IconChevronLeft } from '@tabler/icons-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Surface } from '@/components';
-import { PATH_AUTH, PATH_DASHBOARD } from '@/routes';
+import { PATH_AUTH } from '@/routes';
 
-import classes from './page.module.css';
+import classes from '../auth.module.css';
 
 function Page() {
   const mobile_match = useMediaQuery('(max-width: 425px)');
-
+  const t = useTranslations();
+  const form = useForm({
+    initialValues: {
+      email: '',
+    },
+    validate: {
+      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : t('errors.email.invalid')),
+    },
+  });
   return (
     <>
       <>
-        <title>Password Reset </title>
+        <title>{t('password.reset')}</title>
         <meta
           name="description"
-          content="Explore our versatile dashboard website template featuring a stunning array of themes and meticulously crafted components. Elevate your web project with seamless integration, customizable themes, and a rich variety of components for a dynamic user experience. Effortlessly bring your data to life with our intuitive dashboard template, designed to streamline development and captivate users. Discover endless possibilities in design and functionality today!"
+          content={t('password.forgot')}
         />
       </>
-      <Title ta="center">Forgot your password?</Title>
-      <Text ta="center">Enter your email to get a reset link</Text>
-
-      <Surface component={Paper} className={classes.card}>
-        <TextInput label="Your email" placeholder="me@email.com" required />
-        <Group justify="space-between" mt="lg" className={classes.controls}>
-          <UnstyledButton
-            component={Link}
-            href={PATH_AUTH.signin}
-            color="dimmed"
-            className={classes.control}
-          >
-            <Group gap={2} align="center">
-              <IconChevronLeft
-                stroke={1.5}
-                style={{ width: rem(14), height: rem(14) }}
-              />
-              <Text size="sm" ml={5}>
-                Back to the login page
-              </Text>
-            </Group>
-          </UnstyledButton>
-          <Button
-            component={Link}
-            href={PATH_DASHBOARD.default}
-            fullWidth={mobile_match}
-          >
-            Reset password
-          </Button>
-        </Group>
-      </Surface>
+      <div className={classes.wrapper}>
+        <div className={classes.leftSection} />
+        <div className={classes.rightSection}>
+          <div>
+            <Title className={classes.title}  ta="center">{t('password.forgot')}</Title>
+            <Text ta="center">{t('password.reset_text')}</Text>
+            <Surface component={Paper} className={classes.card}>
+              <form
+                onSubmit={form.onSubmit(() => {
+                })}
+              >
+                <TextInput
+                  label="Email"
+                  placeholder="example@gmail.com"
+                  required
+                  {...form.getInputProps('email')}/>
+                <Group justify="space-between" mt="lg" >
+                  <UnstyledButton
+                    component={Link}
+                    href={PATH_AUTH.signin}
+                    color="dimmed"
+                  >
+                    <Group gap={2} align="center">
+                      <IconChevronLeft
+                        stroke={1.5}
+                        style={{ width: rem(14), height: rem(14) }}
+                      />
+                      <Text size="sm" ml={5}>
+                        {t('password.back_to_login')}
+                      </Text>
+                    </Group>
+                  </UnstyledButton>
+                  <Button
+                    fullWidth={mobile_match}
+                    type="submit"
+                  >
+                    {t('password.reset')}
+                  </Button>
+                </Group>
+              </form>
+            </Surface>
+          </div>
+        </div>
+      </div>
     </>
-  );
+);
 }
 
 export default Page;

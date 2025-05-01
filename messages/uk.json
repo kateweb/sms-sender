@@ -21,6 +21,12 @@
     "submit": "Відправити",
     "have_account": "У мене є обліковий запис"
   },
+  "password": {
+    "forgot": "Забули пароль?",
+    "reset_text": "Введіть свій Email, щоб скинути пароль",
+    "back_to_login": "На сторінку логіна",
+    "reset": "Скинути пароль"
+  },
   "errors": {
     "email": {
       "invalid": "Недійсний email"

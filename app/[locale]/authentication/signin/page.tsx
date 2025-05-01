@@ -14,11 +14,10 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
 import { Surface } from '@/components';
-import { PATH_AUTH, PATH_DASHBOARD } from '@/routes';
+import { PATH_AUTH } from '@/routes';
 
 import classes from '../auth.module.css';
 
@@ -27,7 +26,6 @@ const LINK_PROPS: TextProps = {
 };
 
 function Page() {
-  const { push } = useRouter();
   const t = useTranslations();
   const form = useForm({
     validate: {
@@ -82,7 +80,7 @@ function Page() {
                   />
                   <Text
                     component={Link}
-                    href=""
+                    href={PATH_AUTH.passwordReset}
                     size="sm"
                     {...LINK_PROPS}
                   >

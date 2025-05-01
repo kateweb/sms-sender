@@ -21,6 +21,12 @@
     "submit": "Submit",
     "have_account": "I have an account"
   },
+  "password": {
+    "forgot": "Forgot Password?",
+    "reset_text": "Enter your email to reset your password",
+    "back_to_login": "Back to the login page",
+    "reset": "Reset password"
+  },
   "errors": {
     "email": {
       "invalid": "Invalid email"

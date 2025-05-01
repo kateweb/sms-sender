@@ -17,7 +17,7 @@ function PasswordLayout({ children }: AuthProps) {
         width: '100vw',
       }}
     >
-      <Stack>
+      <Stack style={{width: '100%'}}>
         {children}
       </Stack>
     </Center>

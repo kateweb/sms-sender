@@ -69,6 +69,9 @@
 .leftSection {
   width: calc(100% - 600px);
   background: linear-gradient(to right, white, var(--mantine-primary-color-filled));
+  @mixin dark {
+    background: linear-gradient(to right, #2e2e2e, var(--mantine-primary-color-filled));
+  }
 }
 .rightSection {
   width: 600px;
