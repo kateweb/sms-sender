@@ -27,6 +27,16 @@
     "back_to_login": "На страницу логина",
     "reset": "Сбросить пароль"
   },
+  "menu": {
+    "switch_language": "Переключить язык",
+    "switch_color_theme": "Изменить цветовую тему",
+    "toggle_sidebar": "Переключить сайдбар",
+    "uah": "грн",
+    "balance": "Баланс",
+    "light": "Светлая",
+    "dark": "Темная",
+    "logout": "Выход"
+  },
   "errors": {
     "email": {
       "invalid": "Недействительный email"

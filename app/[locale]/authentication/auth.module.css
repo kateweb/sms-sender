@@ -62,35 +62,6 @@
     color: var(--mantine-color-white);
   }
 }
-.wrapper {
-  display: flex;
-  height: 100vh;
-}
-.leftSection {
-  width: calc(100% - 600px);
-  background: linear-gradient(to right, white, var(--mantine-primary-color-filled));
-  @mixin dark {
-    background: linear-gradient(to right, #2e2e2e, var(--mantine-primary-color-filled));
-  }
-}
-.rightSection {
-  width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-@media (max-width: $mantine-breakpoint-md) {
-  .rightSection {
-    width: 100%;
-  }
-  .leftSection {
-    width: 0;
-  }
-  .title {
-    font-size: rem(25);
-  }
-}
 .input {
   border: 1px solid var(--mantine-color-gray-4);
   border-radius: var(--mantine-radius-default);

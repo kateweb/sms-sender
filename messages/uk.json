@@ -27,6 +27,16 @@
     "back_to_login": "На сторінку логіна",
     "reset": "Скинути пароль"
   },
+  "menu": {
+    "switch_language": "Змінити мову",
+    "switch_color_theme": "Змінити кольорову тему",
+    "toggle_sidebar": "Переключити сайдбар",
+    "uah": "грн",
+    "balance": "Баланс",
+    "light": "Світла",
+    "dark": "Темна",
+    "logout": "Вихід"
+  },
   "errors": {
     "email": {
       "invalid": "Недійсний email"

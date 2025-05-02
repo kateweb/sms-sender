@@ -5,18 +5,16 @@ import {
   Center,
   Checkbox,
   Group,
-  Paper,
   PasswordInput,
   Text,
   TextInput,
   TextProps,
-  Title,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-import { Surface } from '@/components';
+import AuthLayout from '@/components/AuthLayout/AuthLayout';
 import { PATH_AUTH } from '@/routes';
 
 import classes from '../auth.module.css';
@@ -38,84 +36,64 @@ function Page() {
   });
 
   return (
-    <>
-      <>
-        <title>{t('login.title')}</title>
-        <meta
-          name="description"
-          content={t('login.login_title')}
+    <AuthLayout heading={t('login.welcome_back')} subheading={t('login.login_title')}>
+      <form
+        onSubmit={form.onSubmit(() => {
+        })}
+      >
+        <TextInput
+          label="Email"
+          placeholder="example@gmail.com"
+          required
+          classNames={{ label: classes.label }}
+          {...form.getInputProps('email')}
         />
-      </>
-      <div className={classes.wrapper}>
-        <div className={classes.leftSection} />
-        <div className={classes.rightSection}>
-          <div>
-            <Title className={classes.title} ta="center">{t('login.welcome_back')} </Title>
-            <Text ta="center">{t('login.login_title')} </Text>
-
-            <Surface component={Paper} className={classes.card}>
-              <form
-                onSubmit={form.onSubmit(() => {
-                })}
-              >
-                <TextInput
-                  label="Email"
-                  placeholder="example@gmail.com"
-                  required
-                  classNames={{ label: classes.label }}
-                  {...form.getInputProps('email')}
-                />
-                <PasswordInput
-                  label={t('login.password')}
-                  placeholder={t('login.your_password')}
-                  required
-                  mt="md"
-                  classNames={{ label: classes.label }}
-                  {...form.getInputProps('password')}
-                />
-                <Group justify="space-between" mt="lg">
-                  <Checkbox
-                    label={t('login.remember_me')}
-                    classNames={{ label: classes.label }}
-                  />
-                  <Text
-                    component={Link}
-                    href={PATH_AUTH.passwordReset}
-                    size="sm"
-                    {...LINK_PROPS}
-                  >
-                    {t('login.forgot_password')}
-                  </Text>
-                </Group>
-                <Button fullWidth mt="xl" type="submit">
-                  {t('login.login_now')}
-                </Button>
-              </form>
-              <Center mt="md">
-                <Text
-                  fz="sm"
-                  ta="center"
-                >
-                  {t('login.dont_have_account')}
-                </Text>
-              </Center>
-              <Center>
-                <Text
-                  fz="sm"
-                  ta="center"
-                  component={Link}
-                  href={PATH_AUTH.signup}
-                  {...LINK_PROPS}
-                >
-                  {t('login.join_free_today')}
-                </Text>
-              </Center>
-            </Surface>
-          </div>
-        </div>
-      </div>
-    </>
-    );
-    }
-
-    export default Page;
+        <PasswordInput
+          label={t('login.password')}
+          placeholder={t('login.your_password')}
+          required
+          mt="md"
+          classNames={{ label: classes.label }}
+          {...form.getInputProps('password')}
+        />
+        <Group justify="space-between" mt="lg">
+          <Checkbox
+            label={t('login.remember_me')}
+            classNames={{ label: classes.label }}
+          />
+          <Text
+            component={Link}
+            href={PATH_AUTH.passwordReset}
+            size="sm"
+            {...LINK_PROPS}
+          >
+            {t('login.forgot_password')}
+          </Text>
+        </Group>
+        <Button fullWidth mt="xl" type="submit">
+          {t('login.login_now')}
+        </Button>
+      </form>
+      <Center mt="md">
+        <Text
+          fz="sm"
+          ta="center"
+        >
+          {t('login.dont_have_account')}
+        </Text>
+      </Center>
+      <Center>
+        <Text
+          fz="sm"
+          ta="center"
+          component={Link}
+          href={PATH_AUTH.signup}
+          {...LINK_PROPS}
+        >
+          {t('login.join_free_today')}
+        </Text>
+      </Center>
+    </AuthLayout>
+  );
+}
+export default Page;

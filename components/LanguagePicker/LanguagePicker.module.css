@@ -28,3 +28,12 @@
     transform: rotate(180deg);
   }
 }
+.lang_button {
+  width: 56px;
+}
+.lang_icon {
+  margin-right: 5px;
+}
+.balance_button {
+  width: auto;
+}

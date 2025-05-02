@@ -27,6 +27,16 @@
     "back_to_login": "Back to the login page",
     "reset": "Reset password"
   },
+  "menu": {
+    "switch_language": "Switch language",
+    "switch_color_theme": "Switch color theme",
+    "toggle_sidebar": "Toggle sidebar",
+    "uah": "uah",
+    "balance": "Balance",
+    "light": "Light",
+    "dark": "Dark",
+    "logout": "Logout"
+  },
   "errors": {
     "email": {
       "invalid": "Invalid email"
