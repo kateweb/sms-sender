@@ -10,15 +10,24 @@ import {
   IconMoonStars,
   IconSunHigh,
 } from '@tabler/icons-react';
+import { useState, useEffect } from 'react';
 import { useMantineColorScheme } from '@mantine/core';
 import { useTranslations } from 'next-intl';
 
 const ICON_SIZE = 20;
 
 const ThemeSwitcher = () => {
+  const [mounted, setMounted] = useState(false);
   const { setColorScheme, colorScheme } = useMantineColorScheme();
   const t = useTranslations();
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
   const icon =
     colorScheme === 'auto' ? (
       <IconCircleHalf2 size={ICON_SIZE} />

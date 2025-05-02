@@ -25,8 +25,8 @@ const LINK_PROPS: TextProps = {
 };
 
 function Page() {
-  const { locale } = useLocale();
   const t = useTranslations();
+  const { locale } = useLocale();
   const form = useForm({
     validate: {
       email: (value: string) => (/^\S+@\S+$/.test(value) ? null : t('errors.email.invalid')),
@@ -65,7 +65,7 @@ function Page() {
           />
           <Text
             component={Link}
-            href={PATH_AUTH(locale).passwordReset}
+            href={`/${locale}${PATH_AUTH.passwordReset}`}
             size="sm"
             {...LINK_PROPS}
           >
@@ -89,7 +89,7 @@ function Page() {
           fz="sm"
           ta="center"
           component={Link}
-          href={PATH_AUTH(locale).signup}
+          href={`/${locale}${PATH_AUTH.signup}`}
           {...LINK_PROPS}
         >
           {t('login.join_free_today')}

@@ -7,7 +7,7 @@ type AuthProps = {
   children: ReactNode;
 };
 
-function AuthLayout({ children }: AuthProps) {
+function AuthWrapper({ children }: AuthProps) {
   return (
     <Center
       style={{
@@ -22,4 +22,4 @@ function AuthLayout({ children }: AuthProps) {
   );
 }
 
-export default AuthLayout;
+export default AuthWrapper;

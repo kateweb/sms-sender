@@ -45,7 +45,7 @@ function Page() {
         <Group justify="space-between" mt="lg" >
           <UnstyledButton
             component={Link}
-            href={PATH_AUTH(locale).signin}
+            href={`/${locale}${PATH_AUTH.signin}`}
             color="dimmed"
           >
             <Group gap={2} align="center">
