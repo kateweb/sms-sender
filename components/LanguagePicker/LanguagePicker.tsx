@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+
 import { ActionIcon, Group, Menu, Tooltip } from '@mantine/core';
 import { IconChevronDown, IconWorld } from '@tabler/icons-react';
 
 import { usePathname } from '@/i18n/routing';
+import { useLocale } from '@/contexts/LocaleContext';
 import classes from './LanguagePicker.module.css';
 
 const data = [
@@ -23,32 +25,31 @@ type LanguagePickerProps = {
 
 const LanguagePicker = ({ type }: LanguagePickerProps) => {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname(); // Custom hook to get current path
   const searchParams = useSearchParams();
+  const { locale } = useLocale();
   const t = useTranslations();
-
-  const [hydrated, setHydrated] = useState(false);
-  const [selected, setSelected] = useState(data[0]);
-
-  useEffect(() => {
-    setHydrated(true);
-
-    const currentLocale = pathname.split('/')[1]?.toLowerCase() || 'uk';
-    const matched = data.find((lang) => lang.label.toLowerCase() === currentLocale);
-    setSelected(matched || data[0]);
-  }, [pathname]);
 
   const queryString = searchParams.toString();
   const fullPath = queryString ? `${pathname}?${queryString}` : pathname;
 
+  const currentLocale = pathname.split('/')[1] || 'uk';
+
+  const [selected, setSelected] = useState(
+    data.find((lang) => lang.label.toLowerCase() === currentLocale.toLowerCase()) || data[0]
+  );
+
+  useEffect(() => {
+    setSelected(
+      data.find((lang) => lang.label.toLowerCase() === locale.toLowerCase()) || data[0]
+    );
+  }, [locale]);
+
   const handleLocaleChange = async (newLocale: string) => {
     const found = data.find((item) => item.label.toLowerCase() === newLocale);
     setSelected(found ?? { label: newLocale.toUpperCase() });
-    router.push(`/${newLocale}${fullPath}`);
+    router.push(`/${newLocale.toLowerCase()}${fullPath}`);
   };
-
-  if (!hydrated) return null;
-
   const items = data.map((item) => (
     <Menu.Item
       key={item.label}
@@ -59,11 +60,15 @@ const LanguagePicker = ({ type }: LanguagePickerProps) => {
   ));
 
   return (
-    <Menu radius="sm" withinPortal width={200}>
+    <Menu
+      radius="sm"
+      withinPortal
+      width={200}
+    >
       <Menu.Target>
         <Tooltip label={t('menu.switch_language')}>
           <ActionIcon size="lg" className={classes.lang_button}>
-            <IconWorld size={ICON_SIZE} className={classes.lang_icon} />
+            <IconWorld size={ICON_SIZE}  className={classes.lang_icon} />
             <Group gap="xs">
               {selected.label}
               {type === 'expanded' && (
@@ -71,7 +76,11 @@ const LanguagePicker = ({ type }: LanguagePickerProps) => {
               )}
             </Group>
             {type === 'expanded' && (
-              <IconChevronDown size="1rem" className={classes.icon} stroke={1.5} />
+              <IconChevronDown
+                size="1rem"
+                className={classes.icon}
+                stroke={1.5}
+              />
             )}
           </ActionIcon>
         </Tooltip>

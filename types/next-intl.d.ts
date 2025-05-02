@@ -1,5 +1,5 @@
 declare module 'next-intl' {
-  import { ReactNode } from 'react';
+  import React, { ReactNode } from 'react';
 
   interface IntlProviderProps {
     messages: Record<string, any>;
@@ -12,5 +12,10 @@ declare module 'next-intl' {
 
   export function IntlProvider(props: IntlProviderProps): JSX.Element;
 
-  export const NextIntlClientProvider: React.ComponentType<{ messages: any, children: React.ReactNode, locale?: string }>;
+  export const NextIntlClientProvider: React.ComponentType<{
+    messages: any,
+    children: React.ReactNode,
+    locale?: string,
+    timeZone?: string
+  }>;
 }

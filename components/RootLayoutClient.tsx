@@ -34,8 +34,9 @@ export default function RootLayoutClient({
   messages: AbstractIntlMessages;
   locale: string;
 }) {
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
+    <NextIntlClientProvider timeZone={timeZone} messages={messages} locale={locale}>
       <LocaleProvider locale={locale}>
         <MantineProvider theme={myTheme} defaultColorScheme="light">
           <Notifications position="bottom-right" zIndex={1000} />
