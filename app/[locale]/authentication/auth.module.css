@@ -69,6 +69,10 @@
   font-size: var(--mantine-font-size-sm);
   width: 100%;
   height: 36px;
+  @mixin dark {
+    border: 1px solid var(--mantine-color-dark-4);
+    background: var(--mantine-color-dark-6);
+  }
 }
 .input:focus {
   outline: none;
