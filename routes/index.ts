@@ -1,112 +1,71 @@
-function path(root: string, sublink: string) {
-  return `${root}${sublink}`;
+function path(locale: string, root: string, sublink: string) {
+  const localePrefix = `/${locale}`;
+  if (root.startsWith(localePrefix)) {
+    return `${root}${sublink}`;
+  }
+  return `/${locale}${root}${sublink}`;
 }
 
 const ROOTS_DASHBOARD = '/dashboard';
 const ROOT_APPS = '/apps';
 const ROOTS_PAGES = '/pages';
-const ROOTS_PROJECTS = '/projects';
-const ROOTS_ORDERS = '/orders';
 const ROOTS_INVOICES = '/invoices';
 const ROOTS_TASKS = '/tasks';
-const ROOTS_CALENDAR = '/calendar';
 const ROOTS_AUTH = '/authentication';
-const ROOTS_ERRORS = '/error';
-const ROOTS_CHANGELOG = '/changelog';
-const ROOTS_AUTH_PROVIDERS = '/authProviders';
 const ROOTS_ABOUT = '/pages/about';
 
-export const PATH_DASHBOARD = {
-  root: ROOTS_DASHBOARD,
-  default: path(ROOTS_DASHBOARD, '/default'),
-  analytics: path(ROOTS_DASHBOARD, '/analytics'),
-  saas: path(ROOTS_DASHBOARD, '/saas'),
-};
+export const PATH_DASHBOARD = (locale: string) => ({
+  root: path(locale, ROOTS_DASHBOARD, ''),
+  default: path(locale, ROOTS_DASHBOARD, '/default'),
+  analytics: path(locale, ROOTS_DASHBOARD, '/analytics'),
+});
 
-export const PATH_APPS = {
-  root: ROOT_APPS,
-  calendar: path(ROOT_APPS, '/calendar'),
-  chat: path(ROOT_APPS, '/chat'),
+export const PATH_APPS = (locale: string) => ({
+  root: path(locale, ROOT_APPS, ''),
+  calendar: path(locale, ROOT_APPS, '/calendar'),
+  chat: path(locale, ROOT_APPS, '/chat'),
   invoices: {
-    all: path(ROOT_APPS, ROOTS_INVOICES + '/list'),
-    sample: path(ROOT_APPS, ROOTS_INVOICES + `/details/`),
+    all: path(locale, ROOT_APPS, ROOTS_INVOICES + '/list'),
+    sample: path(locale, ROOT_APPS, ROOTS_INVOICES + `/details/`),
     invoice_details: (id: string): string =>
-      path(ROOT_APPS, ROOTS_INVOICES + `/details/${id}`),
+      path(locale, ROOT_APPS, ROOTS_INVOICES + `/details/${id}`),
   },
-  orders: path(ROOT_APPS, '/orders'),
-  profile: path(ROOT_APPS, '/profile'),
-  projects: path(ROOT_APPS, '/projects'),
-  settings: path(ROOT_APPS, '/settings'),
-  tasks: path(ROOT_APPS, '/tasks'),
-  fileManager: {
-    root: path(ROOT_APPS, '/file-manager'),
-  },
-};
+  orders: path(locale, ROOT_APPS, '/orders'),
+  profile: path(locale, ROOT_APPS, '/profile'),
+  projects: path(locale, ROOT_APPS, '/projects'),
+  settings: path(locale, ROOT_APPS, '/settings'),
+  tasks: path(locale, ROOT_APPS, '/tasks'),
+});
 
-export const PATH_PAGES = {
-  root: ROOTS_PAGES,
-  pricing: path(ROOTS_PAGES, '/pricing'),
-  blank: path(ROOTS_PAGES, '/blank'),
-};
+export const PATH_PAGES = (locale: string) => ({
+  root: path(locale, ROOTS_PAGES, ''),
+  pricing: path(locale, ROOTS_PAGES, '/pricing'),
+  blank: path(locale, ROOTS_PAGES, '/blank'),
+});
 
-export const PATH_PROJECTS = {
-  root: ROOTS_PROJECTS,
-};
-
-export const PATH_ORDERS = {
-  root: ROOTS_ORDERS,
-};
-
-export const PATH_INVOICES = {
-  root: ROOTS_INVOICES,
+export const PATH_INVOICES = (locale: string) => ({
+  root: path(locale, ROOTS_INVOICES, ''),
   invoices: {
-    all: path(ROOTS_INVOICES, '/list'),
-    sample: path(ROOTS_INVOICES, `/details/`),
+    all: path(locale, ROOTS_INVOICES, '/list'),
+    sample: path(locale, ROOTS_INVOICES, `/details/`),
     invoice_details: (id: string): string =>
-      path(ROOTS_INVOICES, `/details/${id}`),
+      path(locale, ROOTS_INVOICES, `/details/${id}`),
   },
-};
+});
 
-export const PATH_TASKS = {
-  root: ROOTS_TASKS,
-};
+export const PATH_TASKS = (locale: string) => ({
+  root: path(locale, ROOTS_TASKS, ''),
+});
 
-export const PATH_CALENDAR = {
-  root: ROOTS_CALENDAR,
-};
+export const PATH_AUTH = (locale: string) => ({
+  root: path(locale, ROOTS_AUTH, ''),
+  signin: path(locale, ROOTS_AUTH, '/signin'),
+  signup: path(locale, ROOTS_AUTH, '/signup'),
+  passwordReset: path(locale, ROOTS_AUTH, '/password-reset'),
+  clerk: path(locale, ROOTS_AUTH, '/clerk'),
+  auth0: path(locale, ROOTS_AUTH, '/auth0'),
+});
 
-export const PATH_AUTH = {
-  root: ROOTS_AUTH,
-  signin: path(ROOTS_AUTH, '/signin'),
-  signup: path(ROOTS_AUTH, '/signup'),
-  passwordReset: path(ROOTS_AUTH, '/password-reset'),
-  clerk: path(ROOTS_AUTH, '/clerk'),
-  auth0: path(ROOTS_AUTH, '/auth0'),
-};
-
-export const PATH_START = {
-  root: 'https://mantine-analytics-dashboard-docs.netlify.app/getting-started',
-};
-
-export const PATH_DOCS = {
-  root: 'https://mantine-analytics-dashboard-docs.netlify.app/',
-};
-
-export const PATH_CHANGELOG = {
-  root: ROOTS_CHANGELOG,
-};
-
-export const PATH_GITHUB = {
-  org: 'https://github.com/design-sparx',
-  repo: 'https://github.com/design-sparx/mantine-analytics-dashboard',
-};
-
-export const PATH_AUTH_PROVIDERS = {
-  root: ROOTS_AUTH_PROVIDERS,
-  clerk: path(ROOTS_AUTH_PROVIDERS, '/clerk'),
-  auth0: path(ROOTS_AUTH_PROVIDERS, '/auth0'),
-};
-
-export const PATH_ABOUT = {
-  root: ROOTS_ABOUT,
-};
+export const PATH_ABOUT = (locale: string) => ({
+  root: path(locale, ROOTS_ABOUT, ''),
+});

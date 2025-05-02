@@ -15,6 +15,7 @@ import { useTranslations } from 'next-intl';
 import { SidebarState } from '@/app/[locale]/apps/layout';
 import { LanguagePicker } from '@/components';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
+import { useLocale } from '@/contexts/LocaleContext';
 import classes from '@/components/LanguagePicker/LanguagePicker.module.css';
 
 const ICON_SIZE = 20;
@@ -27,6 +28,7 @@ type HeaderNavProps = {
 
 const HeaderNav = (props: HeaderNavProps) => {
   const { toggleMobile, mobileOpened, onSidebarStateChange } = props;
+  const { locale } = useLocale();
   const t = useTranslations();
   return (
     <Group justify="space-between">
@@ -48,7 +50,7 @@ const HeaderNav = (props: HeaderNavProps) => {
             41560,11 {t('menu.uah')}
           </ActionIcon>
         </Tooltip>
-        <LanguagePicker type="collapsed" />
+        <LanguagePicker type="collapsed" locale={locale} />
         <ThemeSwitcher />
         <Tooltip label={t('menu.logout')}>
           <ActionIcon>

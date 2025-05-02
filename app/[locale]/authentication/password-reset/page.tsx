@@ -17,9 +17,11 @@ import { useTranslations } from 'next-intl';
 import { PATH_AUTH } from '@/routes';
 
 import AuthLayout from '@/components/AuthLayout/AuthLayout';
+import { useLocale } from '@/contexts/LocaleContext';
 
 function Page() {
   const mobile_match = useMediaQuery('(max-width: 425px)');
+  const { locale } = useLocale();
   const t = useTranslations();
   const form = useForm({
     initialValues: {
@@ -43,7 +45,7 @@ function Page() {
         <Group justify="space-between" mt="lg" >
           <UnstyledButton
             component={Link}
-            href={PATH_AUTH.signin}
+            href={PATH_AUTH(locale).signin}
             color="dimmed"
           >
             <Group gap={2} align="center">

@@ -18,12 +18,14 @@ import AuthLayout from '@/components/AuthLayout/AuthLayout';
 import { PATH_AUTH } from '@/routes';
 
 import classes from '../auth.module.css';
+import { useLocale } from '@/contexts/LocaleContext';
 
 const LINK_PROPS: TextProps = {
   className: classes.link,
 };
 
 function Page() {
+  const { locale } = useLocale();
   const t = useTranslations();
   const form = useForm({
     validate: {
@@ -63,7 +65,7 @@ function Page() {
           />
           <Text
             component={Link}
-            href={PATH_AUTH.passwordReset}
+            href={PATH_AUTH(locale).passwordReset}
             size="sm"
             {...LINK_PROPS}
           >
@@ -87,7 +89,7 @@ function Page() {
           fz="sm"
           ta="center"
           component={Link}
-          href={PATH_AUTH.signup}
+          href={PATH_AUTH(locale).signup}
           {...LINK_PROPS}
         >
           {t('login.join_free_today')}

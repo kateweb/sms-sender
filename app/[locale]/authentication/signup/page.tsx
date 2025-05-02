@@ -102,7 +102,7 @@ function Page() {
         variant="outline"
         mt="sm"
         component={Link}
-        href={PATH_AUTH.signin}
+        href={PATH_AUTH(locale).signin}
       >
         {t('reg.have_account')}
       </Button>
