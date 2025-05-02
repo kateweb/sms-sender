@@ -19,6 +19,7 @@ const nextConfig = {
       },
     ],
   },
+  reactStrictMode: true
 };
 
 module.exports = withNextIntl(nextConfig);

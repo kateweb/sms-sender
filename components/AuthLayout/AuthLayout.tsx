@@ -1,10 +1,9 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { ActionIcon, Group, Paper, Text, Title, Tooltip } from '@mantine/core';
+import { Group, Paper, Text, Title } from '@mantine/core';
 import { LanguagePicker, Surface } from '@/components';
 import classes from './auth_layout.module.css';
-import { IconCash, IconPower } from '@tabler/icons-react';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 
 interface AuthLayoutProps {
