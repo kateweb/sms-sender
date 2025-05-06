@@ -1,31 +1,18 @@
 import { useEffect } from 'react';
 
-import { ActionIcon, Box, Flex, Group, ScrollArea, Text } from '@mantine/core';
+import { ActionIcon, Box, Flex, Group, ScrollArea } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import {
-  IconBook2,
-  IconBrandAuth0,
-  IconBriefcase,
-  IconCalendar,
-  IconChartArcs3,
+  IconAddressBook,
   IconChartBar,
-  IconChartInfographic,
-  IconExclamationCircle,
-  IconFileInvoice,
-  IconFiles,
-  IconLayersSubtract,
-  IconLifebuoy,
-  IconList,
+  IconFileAnalytics,
+  IconForbid,
+  IconLayoutDashboard,
   IconListDetails,
-  IconLogin2,
   IconMessages,
-  IconReceipt2,
-  IconRotateRectangle,
-  IconUserCircle,
-  IconUserCode,
-  IconUserPlus,
-  IconUserShield,
-  IconX,
+  IconReportAnalytics,
+  IconSend2, IconTemplate,
+  IconX
 } from '@tabler/icons-react';
 
 import { SidebarState } from '@/app/[locale]/apps/layout';
@@ -33,63 +20,11 @@ import { Logo, UserProfileButton } from '@/components';
 import { LinksGroup } from '@/components/Navigation/Links/Links';
 import UserProfileData from '@/public/mocks/UserProfile.json';
 import {
-  PATH_APPS,
-  PATH_AUTH,
   PATH_DASHBOARD,
-  PATH_PAGES,
 } from '@/routes';
 
 import classes from './Navigation.module.css';
-
-const mockdata = [
-  {
-    title: 'Dashboard',
-    links: [
-      { label: 'Default', icon: IconChartBar, link: PATH_DASHBOARD.default },
-    ],
-  },
-  {
-    title: 'Apps',
-    links: [
-      { label: 'Profile', icon: IconUserCircle, link: PATH_APPS.profile },
-      { label: 'Settings', icon: IconUserCode, link: PATH_APPS.settings },
-      { label: 'Orders', icon: IconListDetails, link: PATH_APPS.orders },
-      {
-        label: 'Invoices',
-        icon: IconFileInvoice,
-        links: [
-          {
-            label: 'List',
-            link: PATH_APPS.invoices.all,
-          },
-          {
-            label: 'Details',
-            link: PATH_APPS.invoices.sample,
-          },
-        ],
-      },
-      { label: 'Calendar', icon: IconCalendar, link: PATH_APPS.calendar },
-    ],
-  },
-  {
-    title: 'Auth',
-    links: [
-      { label: 'Sign In', icon: IconLogin2, link: PATH_AUTH.signin },
-      { label: 'Sign Up', icon: IconUserPlus, link: PATH_AUTH.signup },
-      {
-        label: 'Reset Password',
-        icon: IconRotateRectangle,
-        link: PATH_AUTH.passwordReset,
-      },
-    ],
-  },
-  {
-    title: 'Pages',
-    links: [
-      { label: 'Blank Page', icon: IconLayersSubtract, link: PATH_PAGES.blank },
-    ],
-  },
-];
+import { useTranslations } from 'next-intl';
 
 type NavigationProps = {
   onClose: () => void;
@@ -103,21 +38,26 @@ const Navigation = ({
   sidebarState,
 }: NavigationProps) => {
   const tablet_match = useMediaQuery('(max-width: 768px)');
+  const t = useTranslations();
 
-  const links = mockdata.map((m) => (
-    <Box key={m.title} pl={0} mb={sidebarState === 'mini' ? 0 : 'md'}>
-      {sidebarState !== 'mini' && (
-        <Text
-          tt="uppercase"
-          size="xs"
-          pl="md"
-          fw={500}
-          mb="sm"
-          className={classes.linkHeader}
-        >
-          {m.title}
-        </Text>
-      )}
+  const mockdata = [
+    {
+      links: [
+        { label: t('nav.dashboard'), icon: IconLayoutDashboard, link: PATH_DASHBOARD.default },
+        { label: "SMS", icon: IconMessages, link: "" },
+        { label: t('nav.stat_filtering'), icon: IconChartBar, link: "" },
+        { label: t('nav.stat_files'), icon: IconFileAnalytics, link: "" },
+        { label: t('nav.phonebooks'), icon: IconAddressBook, link: "" },
+        { label: t('nav.alphasenders'), icon: IconSend2, link: "" },
+        { label: t('nav.alphasenders_list'), icon: IconListDetails, link: "" },
+        { label: t('nav.templates'), icon: IconTemplate, link: "" },
+        { label: t('nav.stats'), icon: IconReportAnalytics, link: "" },
+        { label: t('nav.blacklists'), icon: IconForbid, link: "" },
+      ],
+    },
+  ];
+  const links = mockdata.map((m, index) => (
+    <Box key={index} pl={0} mb={sidebarState === 'mini' ? 0 : 'md'}>
       {m.links.map((item) => (
         <LinksGroup
           key={item.label}

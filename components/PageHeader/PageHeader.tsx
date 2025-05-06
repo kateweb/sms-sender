@@ -1,7 +1,6 @@
 'use client';
 
 import {
-  ActionIcon,
   Breadcrumbs,
   BreadcrumbsProps,
   Button,
@@ -16,9 +15,10 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
-import { IconPlus, IconRefresh } from '@tabler/icons-react';
+import { IconPlus } from '@tabler/icons-react';
 
-import { FilterDateMenu, Surface } from '@/components';
+import { Surface } from '@/components';
+import { useTranslations } from 'next-intl';
 
 type PageHeaderProps = {
   title: string;
@@ -32,6 +32,7 @@ const PageHeader = (props: PageHeaderProps) => {
     props;
   const theme = useMantineTheme();
   const colorScheme = useColorScheme();
+  const t = useTranslations();
 
   const BREADCRUMBS_PROPS: Omit<BreadcrumbsProps, 'children'> = {
     style: {
@@ -68,14 +69,8 @@ const PageHeader = (props: PageHeaderProps) => {
           >
             <Stack gap={4}>
               <Title order={3}>{title}</Title>
-              <Text>Welcome back, Kate!</Text>
+              <Text>{t('login.welcome_back')}, Kate!</Text>
             </Stack>
-            <Flex align="center" gap="sm">
-              <ActionIcon variant="subtle">
-                <IconRefresh size={16} />
-              </ActionIcon>
-              <FilterDateMenu />
-            </Flex>
           </Flex>
         ) : invoiceAction ? (
           <Flex

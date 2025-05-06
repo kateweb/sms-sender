@@ -13,9 +13,10 @@ import {
 import { useForm } from '@mantine/form';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
 
 import AuthLayout from '@/components/AuthLayout/AuthLayout';
-import { PATH_AUTH } from '@/routes';
+import { PATH_AUTH, PATH_DASHBOARD } from '@/routes';
 
 import classes from '../auth.module.css';
 import { useLocale } from '@/contexts/LocaleContext';
@@ -27,6 +28,7 @@ const LINK_PROPS: TextProps = {
 function Page() {
   const t = useTranslations();
   const { locale } = useLocale();
+  const { push } = useRouter();
   const form = useForm({
     validate: {
       email: (value: string) => (/^\S+@\S+$/.test(value) ? null : t('errors.email.invalid')),
@@ -38,9 +40,10 @@ function Page() {
   });
 
   return (
-    <AuthLayout heading={t('login.welcome_back')} subheading={t('login.login_title')}>
+    <AuthLayout heading={`${t('login.welcome_back')}!`} subheading={t('login.login_title')}>
       <form
         onSubmit={form.onSubmit(() => {
+          push(PATH_DASHBOARD.default);
         })}
       >
         <TextInput

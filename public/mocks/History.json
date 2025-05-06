@@ -1,0 +1,62 @@
+[
+  {
+    "id": "94385948",
+    "recipient": "380936688240",
+    "created_at": "05.05.2025, 09:14:00",
+    "type": "SMS",
+    "status": "Finished",
+    "delivered": "100.0%",
+    "sum": "0.905",
+    "text": "Позика під 0.01% без зайвих труднощів тут! https://sd-pl.net/yS1c",
+    "delivery_status": "delivered",
+    "delivery_amount": "1"
+  },
+  {
+    "id": "94385949",
+    "recipient": "380936521731",
+    "created_at": "05.05.2025, 09:14:00",
+    "type": "SMS",
+    "status": "Pending",
+    "delivered": "50.0%",
+    "sum": "0.905",
+    "text": "Позика під 0.01% без зайвих труднощів тут! https://sd-pl.net/yS1c",
+    "delivery_status": "sent",
+    "delivery_amount": "1"
+  },
+  {
+    "id": "94385950",
+    "recipient": "380974011533",
+    "created_at": "05.05.2025, 09:14:01",
+    "type": "SMS",
+    "status": "In Progress",
+    "delivered": "75.0%",
+    "sum": "0.850",
+    "text": "Позика під 0.01% без зайвих труднощів тут! https://sd-pl.net/yS1c",
+    "delivery_status": "delivered",
+    "delivery_amount": "1"
+  },
+  {
+    "id": "94385951",
+    "recipient": "380500394158",
+    "created_at": "05.05.2025, 09:14:01",
+    "type": "SMS",
+    "status": "Cancelled",
+    "delivered": "0.0%",
+    "sum": "0.905",
+    "text": "Позика під 0.01% без зайвих труднощів тут! https://sd-pl.net/yS1c",
+    "delivery_status": "delivered",
+    "delivery_amount": "1"
+  },
+  {
+    "id": "94385952",
+    "recipient": "380982789570",
+    "created_at": "05.05.2025, 09:14:02",
+    "type": "SMS",
+    "status": "Finished",
+    "delivered": "100.0%",
+    "sum": "0.850",
+    "text": "Позика під 0.01% без зайвих труднощів тут! https://sd-pl.net/yS1c",
+    "delivery_status": "delivered",
+    "delivery_amount": "1"
+  }
+]

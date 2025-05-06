@@ -2,9 +2,9 @@
 
 import {
   ActionIcon,
-  Burger,
+  Burger, Flex,
   Group,
-  Tooltip,
+  Tooltip
 } from '@mantine/core';
 import {
   IconCash,
@@ -31,7 +31,7 @@ const HeaderNav = (props: HeaderNavProps) => {
   const { locale } = useLocale();
   const t = useTranslations();
   return (
-    <Group justify="space-between">
+    <Group justify="space-between" wrap="nowrap">
       <Group gap={0}>
         <Tooltip label={t('menu.toggle_sidebar')}>
           <Burger visibleFrom="md" size="sm" onClick={onSidebarStateChange} />
@@ -43,7 +43,7 @@ const HeaderNav = (props: HeaderNavProps) => {
           size="sm"
         />
       </Group>
-      <Group>
+      <Flex gap={{ base: "xs", sm: "sm" }} align="center">
         <Tooltip label={t('menu.balance')}>
           <ActionIcon size="lg" title={t('menu.balance')} className={classes.balance_button}>
             <IconCash size={ICON_SIZE} className={classes.lang_icon}/>
@@ -57,7 +57,7 @@ const HeaderNav = (props: HeaderNavProps) => {
             <IconPower size={ICON_SIZE} />
           </ActionIcon>
         </Tooltip>
-      </Group>
+      </Flex>
     </Group>
   );
 };

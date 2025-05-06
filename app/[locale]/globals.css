@@ -9,3 +9,6 @@ body {
 .iti .iti__selected-dial-code {
   font-size: var(--mantine-font-size-sm);
 }
+tr:not(:last-of-type) .mantine-datatable-row-expansion-cell-content {
+  border-bottom: none;
+}

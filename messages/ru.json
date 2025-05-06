@@ -1,8 +1,11 @@
 {
   "loading": "Загрузка",
+  "more": "Подробнее",
+  "download": "Загрузить",
+  "repeat": "Повторить",
   "login": {
     "title": "Авторизация",
-    "welcome_back": "С возвращением!",
+    "welcome_back": "С возвращением",
     "login_title": "Войдите в свою учётную запись",
     "password": "Пароль",
     "your_password": "Ваш пароль",
@@ -37,6 +40,45 @@
     "dark": "Темная",
     "logout": "Выход"
   },
+  "nav": {
+    "dashboard": "Панель",
+    "stat_filtering": "Отчет",
+    "stat_files": "Файлы отчетов",
+    "phonebooks": "Телефонные книги",
+    "alphasenders": "Альфа-имена",
+    "alphasenders_list": "Список заявок на Альфа-имена",
+    "templates": "Шаблоны",
+    "stats": "Статистика",
+    "blacklists": "Черные списки"
+  },
+  "history": {
+    "title": "История",
+    "error": "Ошибка загрузки истории",
+    "recipient": "Получатель/Список",
+    "created_at": "Создано",
+    "type": "Тип",
+    "status": "Статус",
+    "sum": "Сумма",
+    "actions": "Действия",
+    "statuses": {
+      "In Progress": "В процессе",
+      "Cancelled": "Отменено",
+      "Finished": "Завершено",
+      "Pending": "В ожидании",
+      "sent": "Отправлено",
+      "delivered": "Доставлено"
+    },
+    "template": "Шаблон",
+    "text": "Текст",
+    "delivery_status": "Статусы доставки",
+    "custom_text": "Текст пользователя"
+  },
+  "messages": {
+    "title": "Динамика рассылок"
+  },
+  "balance": {
+    "title": "Оценка баланса"
+  },
   "errors": {
     "email": {
       "invalid": "Недействительный email"
@@ -44,5 +86,11 @@
     "password": {
       "min": "Пароль должен содержать как минимум {min} символов"
     }
+  },
+  "period": {
+    "day": "День",
+    "week": "Неделя",
+    "month": "Месяц",
+    "year": "Год"
   }
 }
