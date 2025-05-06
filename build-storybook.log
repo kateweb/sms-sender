@@ -10,7 +10,7 @@ info Addon-docs: using MDX2
 info => Using implicit CSS loaders
 info => [@storybook/addon-styling] Applying custom Storybook webpack configuration styling.
 info => Using default Webpack5 setup
-<s> [webpack.Progress] 0% 
+<s> [webpack.Progress] 0%
 
 <s> [webpack.Progress] 1% setup before run
 <s> [webpack.Progress] 1% setup before run NodeEnvironmentPlugin
@@ -372,8 +372,8 @@ WARN No story files found for the specified pattern: components\**\*.stories.mdx
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin ProjectsCard-ProjectsCard-stories.c99c09b6.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin ProjectsTable-ProjectsTable-stories.733d0610.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin ProjectsTable-ProjectsTable-stories.733d0610.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin RevenueChart-RevenueChart-stories.51a975d7.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin RevenueChart-RevenueChart-stories.51a975d7.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin MessagesChart-MessagesChart-stories.51a975d7.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin MessagesChart-MessagesChart-stories.51a975d7.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin SalesChart-SalesChart-stories.0a42e94d.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin SalesChart-SalesChart-stories.0a42e94d.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing SourceMapDevToolPlugin StatsCard-StatsCard-stories.36e8b0e8.iframe.bundle.js generate SourceMap
@@ -501,8 +501,8 @@ WARN No story files found for the specified pattern: components\**\*.stories.mdx
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin ProjectsCard-ProjectsCard-stories.51d88b72.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin ProjectsTable-ProjectsTable-stories.ab41add4.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin ProjectsTable-ProjectsTable-stories.ab41add4.iframe.bundle.js generated SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin RevenueChart-RevenueChart-stories.7f0214da.iframe.bundle.js generate SourceMap
-<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin RevenueChart-RevenueChart-stories.7f0214da.iframe.bundle.js generated SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin MessagesChart-MessagesChart-stories.7f0214da.iframe.bundle.js generate SourceMap
+<s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin MessagesChart-MessagesChart-stories.7f0214da.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin SalesChart-SalesChart-stories.791f0e48.iframe.bundle.js generate SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin SalesChart-SalesChart-stories.791f0e48.iframe.bundle.js generated SourceMap
 <s> [webpack.Progress] 92% sealing asset processing RealContentHashPlugin StatsCard-StatsCard-stories.1ff541f4.iframe.bundle.js generate SourceMap
@@ -570,19 +570,19 @@ WARN No story files found for the specified pattern: components\**\*.stories.mdx
 <s> [webpack.Progress] 99% done plugins
 <s> [webpack.Progress] 99% done plugins CaseSensitivePathsPlugin
 <s> [webpack.Progress] 99% done plugins
-<s> [webpack.Progress] 99% 
+<s> [webpack.Progress] 99%
 
 <s> [webpack.Progress] 99% cache store build dependencies
 <s> [webpack.Progress] 99% cache store build dependencies
 <s> [webpack.Progress] 99% cache begin idle
 <s> [webpack.Progress] 99% cache begin idle
-<s> [webpack.Progress] 100% 
+<s> [webpack.Progress] 100%
 
 WARN Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
 WARN Critical dependency: require function is used in a way in which dependencies cannot be statically extracted
 WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
 WARN This can impact web performance.
-WARN Assets: 
+WARN Assets:
 WARN   static/media/thumbnail-img.33a9fb29.png (7.1 MiB)
 WARN   8128.8d4114d9.iframe.bundle.js (522 KiB)
 WARN   7562.7e3846bb.iframe.bundle.js (307 KiB)
@@ -598,10 +598,10 @@ WARN   main (1.7 MiB)
 WARN       runtime~main.0c4dbfe6.iframe.bundle.js
 WARN       4210.25672915.iframe.bundle.js
 WARN       main.c7b28d92.iframe.bundle.js
-WARN 
+WARN
 <s> [webpack.Progress] 99% cache shutdown
 <s> [webpack.Progress] 99% cache shutdown
-<s> [webpack.Progress] 100% 
+<s> [webpack.Progress] 100%
 
 info => Preview built (3.22 min)
 info => Output directory: C:\Users\Kelvin\AppData\Local\Temp\chromatic--14152-nhk6vEBmjTCq

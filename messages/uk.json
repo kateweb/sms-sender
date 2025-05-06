@@ -1,8 +1,11 @@
 {
   "loading": "Завантаження",
+  "more": "Детальніше",
+  "download": "Завантажити",
+  "repeat": "Повторити",
   "login": {
     "title": "Авторизація",
-    "welcome_back": "З поверненням!",
+    "welcome_back": "З поверненням",
     "login_title": "Увійдіть до свого облікового запису",
     "password": "Пароль",
     "your_password": "Ваш пароль",
@@ -21,6 +24,61 @@
     "submit": "Відправити",
     "have_account": "У мене є обліковий запис"
   },
+  "password": {
+    "forgot": "Забули пароль?",
+    "reset_text": "Введіть свій Email, щоб скинути пароль",
+    "back_to_login": "На сторінку логіна",
+    "reset": "Скинути пароль"
+  },
+  "menu": {
+    "switch_language": "Змінити мову",
+    "switch_color_theme": "Змінити кольорову тему",
+    "toggle_sidebar": "Переключити сайдбар",
+    "uah": "грн",
+    "balance": "Баланс",
+    "light": "Світла",
+    "dark": "Темна",
+    "logout": "Вихід"
+  },
+  "nav": {
+    "dashboard": "Панель",
+    "stat_filtering": "Звіт",
+    "stat_files": "Файли звітів",
+    "phonebooks": "Телефонні книги",
+    "alphasenders": "Альфа-імена",
+    "alphasenders_list": "Список заявок на Альфа-імена",
+    "templates": "Шаблони",
+    "stats": "Статистика",
+    "blacklists": "Чорні списки"
+  },
+  "history": {
+    "title": "Історія",
+    "error": "Помилка завантаження історії",
+    "recipient": "Одержувач/Список",
+    "created_at": "Створено",
+    "type": "Тип",
+    "status": "Статус",
+    "sum": "Сума",
+    "actions": "Дії",
+    "statuses": {
+      "In Progress": "В процесі",
+      "Cancelled": "Скасовано",
+      "Finished": "Завершено",
+      "Pending": "В очікуванні",
+      "sent": "Відправлено",
+      "delivered": "Доставлено"
+    },
+    "template": "Шаблон",
+    "text": "Текст",
+    "delivery_status": "Статуси доставки",
+    "custom_text": "Текст користувача"
+  },
+  "messages": {
+    "title": "Динаміка розсилок"
+  },
+  "balance": {
+    "title": "Оцінка балансу"
+  },
   "errors": {
     "email": {
       "invalid": "Недійсний email"
@@ -28,5 +86,11 @@
     "password": {
       "min": "Пароль повинен містити щонайменше {min} символів"
     }
+  },
+  "period": {
+    "day": "День",
+    "week": "Тиждень",
+    "month": "Місяць",
+    "year": "Рік"
   }
 }

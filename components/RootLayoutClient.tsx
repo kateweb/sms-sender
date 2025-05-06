@@ -1,11 +1,10 @@
 // app/components/RootLayoutClient.tsx
 'use client';
 
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { Open_Sans } from 'next/font/google';
-import Head from 'next/head';
 import { NextIntlClientProvider } from 'next-intl';
 import { AbstractIntlMessages } from 'use-intl';
 
@@ -35,39 +34,15 @@ export default function RootLayoutClient({
   messages: AbstractIntlMessages;
   locale: string;
 }) {
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   return (
-    <html lang={locale} className={openSans.className}>
-    <Head>
-      <title>SMS Sender</title>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/logo.svg"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon.png"
-      />
-      <ColorSchemeScript defaultColorScheme="auto" />
-    </Head>
-    <body>
-      <NextIntlClientProvider messages={messages} locale={locale}>
-        <LocaleProvider locale={locale}>
-          <MantineProvider theme={myTheme} defaultColorScheme="light">
-            <Notifications position="bottom-right" zIndex={1000} />
-            <ModalsProvider>{children}</ModalsProvider>
-          </MantineProvider>
-        </LocaleProvider>
-      </NextIntlClientProvider>
-    </body>
-    </html>
+    <NextIntlClientProvider timeZone={timeZone} messages={messages} locale={locale}>
+      <LocaleProvider locale={locale}>
+        <MantineProvider theme={myTheme} defaultColorScheme="light">
+          <Notifications position="bottom-right" zIndex={1000} />
+          <ModalsProvider>{children}</ModalsProvider>
+        </MantineProvider>
+      </LocaleProvider>
+    </NextIntlClientProvider>
   );
 }

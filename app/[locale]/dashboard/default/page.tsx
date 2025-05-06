@@ -9,17 +9,20 @@ import {
   PaperProps,
   Stack,
   Text,
+  Collapse
 } from '@mantine/core';
-import { IconChevronRight } from '@tabler/icons-react';
+import { IconChevronDown, IconChevronRight, IconChevronUp } from '@tabler/icons-react';
 import Link from 'next/link';
 
 import {
   PageHeader,
-  ProjectsTable,
-  StatsGrid,
+  HistoryTable,
+  MessagesChart,
+  BalanceCard
 } from '@/components';
 import { useFetchData } from '@/hooks';
-import { PATH_TASKS } from '@/routes';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 const PAPER_PROPS: PaperProps = {
   p: 'md',
@@ -30,61 +33,51 @@ const PAPER_PROPS: PaperProps = {
 
 function Page() {
   const {
-    data: projectsData,
-    error: projectsError,
-    loading: projectsLoading,
-  } = useFetchData('/mocks/Projects.json');
-  const {
-    data: statsData,
-    error: statsError,
-    loading: statsLoading,
-  } = useFetchData('/mocks/StatsGrid.json');
-
+    data: historyData,
+    error: historyError,
+    loading: historyLoading,
+  } = useFetchData('/mocks/History.json');
+  const [opened, setOpened] = useState(true);
+  const t = useTranslations();
   return (
-    <>
-      <>
-        <title>Default Dashboard </title>
-        <meta
-          name="description"
-          content="Explore our versatile dashboard website template featuring a stunning array of themes and meticulously crafted components. Elevate your web project with seamless integration, customizable themes, and a rich variety of components for a dynamic user experience. Effortlessly bring your data to life with our intuitive dashboard template, designed to streamline development and captivate users. Discover endless possibilities in design and functionality today!"
-        />
-      </>
-      <Container fluid>
-        <Stack gap="lg">
-          <PageHeader title="Default dashboard" withActions={true} />
-          <StatsGrid
-            data={statsData.data}
-            loading={statsLoading}
-            error={statsError}
-            paperProps={PAPER_PROPS}
-          />
-          <Grid gutter={{ base: 5, xs: 'md', md: 'xl', xl: 50 }}>
-            <Grid.Col span={12}>
-              <Paper {...PAPER_PROPS}>
-                <Group justify="space-between" mb="md">
-                  <Text size="lg" fw={600}>
-                    Tasks
-                  </Text>
-                  <Button
-                    variant="subtle"
-                    component={Link}
-                    href={PATH_TASKS.root}
-                    rightSection={<IconChevronRight size={18} />}
-                  >
-                    View all
-                  </Button>
+    <Container fluid>
+      <Stack gap="lg">
+        <PageHeader title={t('nav.dashboard')} withActions={true} />
+        <Grid gutter={{ base: 5, xs: 'md', md: 'xl', xl: 50 }}>
+          <Grid.Col span={{ base: 12, lg: 8 }}>
+            <BalanceCard/>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, lg: 4 }}>
+            <MessagesChart {...PAPER_PROPS} />
+          </Grid.Col>
+          <Grid.Col span={12}>
+            <Paper {...PAPER_PROPS}>
+              <Group justify="space-between" mb="md" >
+                <Group justify="space-between" style={{ flex: 1, cursor: 'pointer' }} onClick={() => setOpened((o) => !o)}>
+                  <Text size="lg" fw={600}>{t('history.title')}</Text>
+                  {opened ? <IconChevronUp size={20} /> : <IconChevronDown size={20} />}
                 </Group>
-                <ProjectsTable
-                  data={projectsData.slice(0, 6)}
-                  error={projectsError}
-                  loading={projectsLoading}
+                <Button
+                  variant="subtle"
+                  component={Link}
+                  href=""
+                  rightSection={<IconChevronRight size={18} />}
+                >
+                  {t('more')}
+                </Button>
+              </Group>
+              <Collapse in={opened}>
+                <HistoryTable
+                  data={historyData.slice(0, 6)}
+                  error={historyError}
+                  loading={historyLoading}
                 />
-              </Paper>
-            </Grid.Col>
-          </Grid>
-        </Stack>
-      </Container>
-    </>
+              </Collapse>
+            </Paper>
+          </Grid.Col>
+        </Grid>
+      </Stack>
+    </Container>
   );
 }
 

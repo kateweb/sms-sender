@@ -1,0 +1,56 @@
+.card {
+  width: rem(420px);
+  margin-top: rem(15px);
+  padding: var(--mantine-spacing-lg);
+  border-radius: var(--mantine-radius-default);
+  box-shadow: var(--mantine-shadow-xl);
+  border: rem(1px) solid var(--mantine-color-gray-3);
+
+  @mixin light {
+    background-color: var(--mantine-color-gray-0);
+    color: var(--mantine-color-black);
+  }
+
+  @mixin dark {
+    background-color: var(--mantine-color-dark-7);
+    color: var(--mantine-color-white);
+  }
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100%;
+  }
+}
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+.leftSection {
+  width: calc(100% - 600px);
+  background: linear-gradient(to right, white, var(--mantine-primary-color-filled));
+  @mixin dark {
+    background: linear-gradient(to right, #2e2e2e, var(--mantine-primary-color-filled));
+  }
+}
+.rightSection {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+@media (max-width: $mantine-breakpoint-md) {
+  .rightSection {
+    width: 100%;
+  }
+  .leftSection {
+    width: 0;
+  }
+  .title {
+    font-size: rem(25);
+  }
+}
+.menu {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}

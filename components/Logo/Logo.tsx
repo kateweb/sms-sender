@@ -23,7 +23,7 @@ const Logo = ({ href, showText = true, ...others }: LogoProps) => {
       {...others}
     >
       <Group gap="xs">
-        {showText && <Text fw={700}>SMS Sender admin</Text>}
+        {showText && <Text fw={700}>SMS Sender</Text>}
       </Group>
     </UnstyledButton>
   );

@@ -1,8 +1,11 @@
 {
   "loading": "Loading",
+  "more": "More",
+  "download": "Download",
+  "repeat": "Repeat",
   "login": {
     "title": "Login",
-    "welcome_back": "Welcome back!",
+    "welcome_back": "Welcome back",
     "login_title": "Login to your account",
     "password": "Password",
     "your_password": "Your password",
@@ -21,6 +24,61 @@
     "submit": "Submit",
     "have_account": "I have an account"
   },
+  "password": {
+    "forgot": "Forgot Password?",
+    "reset_text": "Enter your email to reset your password",
+    "back_to_login": "Back to the login page",
+    "reset": "Reset password"
+  },
+  "menu": {
+    "switch_language": "Switch language",
+    "switch_color_theme": "Switch color theme",
+    "toggle_sidebar": "Toggle sidebar",
+    "uah": "uah",
+    "balance": "Balance",
+    "light": "Light",
+    "dark": "Dark",
+    "logout": "Logout"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "stat_filtering": "Statistics filtering",
+    "stat_files": "Statistics files",
+    "phonebooks": "Phonebooks",
+    "alphasenders": "Alphasenders",
+    "alphasenders_list": "Alphasenders applications list",
+    "templates": "Templates",
+    "stats": "Statistics",
+    "blacklists": "Blacklists"
+  },
+  "history": {
+    "title": "History",
+    "error": "Error loading history",
+    "recipient": "Recipient/List",
+    "created_at": "Created",
+    "type": "Type",
+    "status": "Status",
+    "sum": "Sum",
+    "actions": "Actions",
+    "statuses": {
+      "In Progress": "In Progress",
+      "Cancelled": "Cancelled",
+      "Finished": "Finished",
+      "Pending": "Pending",
+      "sent": "Sent",
+      "delivered": "Delivered"
+    },
+    "template": "Template",
+    "text": "Text",
+    "delivery_status": "Delivery status",
+    "custom_text": "Custom text"
+  },
+  "messages": {
+    "title": "Messages dynamics"
+  },
+  "balance": {
+    "title": "Balance estimation"
+  },
   "errors": {
     "email": {
       "invalid": "Invalid email"
@@ -28,5 +86,11 @@
     "password": {
       "min": "Password must include at least {min} characters"
     }
+  },
+  "period": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year"
   }
 }
