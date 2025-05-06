@@ -114,6 +114,7 @@ const MessagesChart = ({ ...others }: RevenueChartProps) => {
           w={100}
           variant="filled"
           radius="md"
+          allowDeselect={false}
           styles={{
             input: {
               fontWeight: 500,
