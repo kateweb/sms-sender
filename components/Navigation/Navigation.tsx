@@ -20,7 +20,8 @@ import { Logo, UserProfileButton } from '@/components';
 import { LinksGroup } from '@/components/Navigation/Links/Links';
 import UserProfileData from '@/public/mocks/UserProfile.json';
 import {
-  PATH_DASHBOARD,
+  PATH_APPS,
+  PATH_DASHBOARD
 } from '@/routes';
 
 import classes from './Navigation.module.css';
@@ -44,7 +45,7 @@ const Navigation = ({
     {
       links: [
         { label: t('nav.dashboard'), icon: IconLayoutDashboard, link: PATH_DASHBOARD.default },
-        { label: "SMS", icon: IconMessages, link: "" },
+        { label: "SMS", icon: IconMessages, link:  PATH_APPS.sms },
         { label: t('nav.stat_filtering'), icon: IconChartBar, link: "" },
         { label: t('nav.stat_files'), icon: IconFileAnalytics, link: "" },
         { label: t('nav.phonebooks'), icon: IconAddressBook, link: "" },

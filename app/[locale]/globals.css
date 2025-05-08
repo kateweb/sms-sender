@@ -25,6 +25,3 @@ main[data-device="mobile"][data-sidebar-state="full"] {
     padding-inline: 0 !important;
   }
 }
-.mantine-Menu-dropdown {
-  display: none;
-}

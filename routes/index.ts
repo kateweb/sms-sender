@@ -16,6 +16,7 @@ export const PATH_DASHBOARD = {
 
 export const PATH_APPS = {
   root: ROOT_APPS,
+  sms: path(ROOT_APPS, '/sms'),
   calendar: path(ROOT_APPS, '/calendar'),
   chat: path(ROOT_APPS, '/chat'),
   orders: path(ROOT_APPS, '/orders'),
@@ -23,9 +24,8 @@ export const PATH_APPS = {
   projects: path(ROOT_APPS, '/projects'),
   settings: path(ROOT_APPS, '/settings'),
   tasks: path(ROOT_APPS, '/tasks'),
-  fileManager: {
-    root: path(ROOT_APPS, '/file-manager'),
-  },
+
+
 };
 
 export const PATH_PAGES = {
