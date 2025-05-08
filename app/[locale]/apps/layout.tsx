@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { MainLayout } from '@/layout/Main';
 
-export type SidebarState = 'hidden' | 'mini' | 'full';
+export type SidebarState = 'mini' | 'full';
 
 type Props = {
   children: ReactNode;

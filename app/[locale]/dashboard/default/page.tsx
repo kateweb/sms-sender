@@ -43,7 +43,7 @@ function Page() {
     <Container fluid>
       <Stack gap="lg">
         <PageHeader title={t('nav.dashboard')} withActions={true} />
-        <Grid gutter={{ base: 5, xs: 'md', md: 'xl', xl: 50 }}>
+        <Grid gutter={{ base: 'md', md: 'xl', xl: 50 }}>
           <Grid.Col span={{ base: 12, lg: 8 }}>
             <BalanceCard/>
           </Grid.Col>

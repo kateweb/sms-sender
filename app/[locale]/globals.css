@@ -12,3 +12,19 @@ body {
 tr:not(:last-of-type) .mantine-datatable-row-expansion-cell-content {
   border-bottom: none;
 }
+main[data-device="mobile"][data-sidebar-state="full"] {
+  --app-shell-navbar-offset: 60px;
+}
+@media (max-width: $mantine-breakpoint-md) {
+  :where([data-layout='alt']) .m_3b16f56b, :where([data-layout='alt']) .m_3840c879 {
+    --app-shell-navbar-offset: 60px;
+  }
+}
+@media (max-width: $mantine-breakpoint-sm) {
+  main[data-device="mobile"] > * {
+    padding-inline: 0 !important;
+  }
+}
+.mantine-Menu-dropdown {
+  display: none;
+}

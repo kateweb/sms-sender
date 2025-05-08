@@ -12,7 +12,6 @@ import {
 } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
 
-import { SidebarState } from '@/app/[locale]/apps/layout';
 import { LanguagePicker } from '@/components';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 import { useLocale } from '@/contexts/LocaleContext';
@@ -22,7 +21,6 @@ const ICON_SIZE = 20;
 type HeaderNavProps = {
   mobileOpened?: boolean;
   toggleMobile?: () => void;
-  sidebarState: SidebarState;
   onSidebarStateChange: () => void;
 };
 
@@ -32,18 +30,19 @@ const HeaderNav = (props: HeaderNavProps) => {
   const t = useTranslations();
   return (
     <Group justify="space-between" wrap="nowrap">
-      <Group gap={0}>
+      <Group gap={0} visibleFrom="md">
+        {/* Desktop burger */}
         <Tooltip label={t('menu.toggle_sidebar')}>
-          <Burger visibleFrom="md" size="sm" onClick={onSidebarStateChange} />
+          <Burger
+            visibleFrom="md"
+            size="sm"
+            onClick={() => {
+              onSidebarStateChange();
+            }}
+          />
         </Tooltip>
-        <Burger
-          opened={mobileOpened}
-          onClick={toggleMobile}
-          hiddenFrom="md"
-          size="sm"
-        />
       </Group>
-      <Flex gap={{ base: "xs", sm: "sm" }} align="center">
+      <Flex gap={{ base: "xs", sm: "sm" }} align="center" ml="auto">
         <Tooltip label={t('menu.balance')}>
           <ActionIcon size="lg" title={t('menu.balance')} className={classes.balance_button}>
             <IconCash size={ICON_SIZE} className={classes.lang_icon}/>
