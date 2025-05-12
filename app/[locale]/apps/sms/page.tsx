@@ -196,8 +196,8 @@ export default function SendSmsPage() {
                               size="sm"
                               c="green"
                               component="a"
-                              href="files/xlsx-example.xlsx"
-                              target="_blank"
+                              href="/files/xlsx-example.xlsx"
+                              download
                             >
                               Excel - {t('sms.download_example')}
                             </Text>
@@ -208,8 +208,8 @@ export default function SendSmsPage() {
                               size="sm"
                               c="green"
                               component="a"
-                              href="files/csv-example.csv"
-                              target="_blank"
+                              href="/files/csv-example.csv"
+                              download
                             >
                               CSV - {t('sms.download_example')}
                             </Text>
