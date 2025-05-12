@@ -25,3 +25,6 @@ main[data-device="mobile"][data-sidebar-state="full"] {
     padding-inline: 0 !important;
   }
 }
+.mantine-Radio-icon {
+  transition: opacity 100ms ease !important;
+}
