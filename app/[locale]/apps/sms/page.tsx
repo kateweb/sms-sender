@@ -25,7 +25,7 @@ import "intl-tel-input/styles";
 import classes from './sms.module.css';
 import { useLocale } from '@/contexts/LocaleContext';
 import {
-  IconCalendarWeek, IconChevronDown, IconChevronRight, IconChevronUp,
+  IconCalendarWeek, IconChevronDown, IconChevronUp,
   IconFile,
   IconFileTypeCsv,
   IconFileTypeXls

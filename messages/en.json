@@ -8,6 +8,9 @@
   "send": "Send",
   "save": "Save",
   "per_page": "Records per page",
+  "search": "Search",
+  "from": "From",
+  "to": "To",
   "login": {
     "title": "Login",
     "welcome_back": "Welcome back",
@@ -77,6 +80,25 @@
     "text": "Text",
     "delivery_status": "Delivery status",
     "custom_text": "Custom text"
+  },
+  "report": {
+    "error": "Error loading report",
+    "operator": "Operator",
+    "created_date": "Create date",
+    "send_date": "Sending date",
+    "scheduled_date": "Scheduled date",
+    "delivery_date": "Received date",
+    "title": "Statistics filtering",
+    "total": "Total records",
+    "date_range": "Date range",
+    "select_date_range": "Select date range",
+    "enter_alpha_names": "Enter alpha names via coma",
+    "enter_phone_numbers": "Enter phone numbers via coma",
+    "choose_operator": "Choose operator",
+    "choose_status": "Choose status",
+    "country": "Country",
+    "choose_country": "Choose country",
+    "download_report": "Download report"
   },
   "messages": {
     "title": "Messages dynamics"

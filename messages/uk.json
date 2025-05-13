@@ -8,6 +8,9 @@
   "send": "Відправити",
   "save": "Зберегти",
   "per_page": "Записів на сторінці",
+  "search": "Пошук",
+  "from": "Від",
+  "to": "До",
   "login": {
     "title": "Авторизація",
     "welcome_back": "З поверненням",
@@ -77,6 +80,25 @@
     "text": "Текст",
     "delivery_status": "Статуси доставки",
     "custom_text": "Текст користувача"
+  },
+  "report": {
+    "error": "Помилка завантаження звіту",
+    "operator": "Оператор",
+    "created_date": "Дата створення",
+    "send_date": "Дата відправки",
+    "scheduled_date": "Дата запланованого відправлення",
+    "delivery_date": "Дата отримання",
+    "title": "Звіт",
+    "total": "Всього записів",
+    "date_range": "Діапазон дат",
+    "select_date_range": "Оберіть діапазон дат",
+    "enter_alpha_names": "Введіть альфа-імена через кому",
+    "enter_phone_numbers": "Введіть номери телефонів через кому",
+    "choose_operator": "Оберіть оператора",
+    "choose_status": "Оберіть статус",
+    "country": "Країна",
+    "choose_country": "Оберіть країну",
+    "download_report": "Завантажити звіт"
   },
   "messages": {
     "title": "Динаміка розсилок"

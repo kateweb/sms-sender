@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import { IconDotsVertical } from '@tabler/icons-react';
 
-import { OrdersTable, PageHeader } from '@/components';
+import { ReportsTable, PageHeader } from '@/components';
 import { useFetchData } from '@/hooks';
 import { PATH_DASHBOARD } from '@/routes';
 
@@ -60,7 +60,7 @@ function Page() {
                 <IconDotsVertical size={18} />
               </ActionIcon>
             </Group>
-            <OrdersTable
+            <ReportsTable
               data={ordersData}
               error={ordersError}
               loading={ordersLoading}
