@@ -13,11 +13,11 @@ import KanbanColumn from '@/components/KanbanColumn/KanbanColumn';
 import LanguagePicker from '@/components/LanguagePicker/LanguagePicker';
 import LanguageTable from '@/components/LanguageTable/LanguageTable';
 import MessagesChart from '@/components/MessagesChart/MessagesChart';
-import OrdersTable from '@/components/OrdersTable/OrdersTable';
 import PageHeader from '@/components/PageHeader/PageHeader';
 import PricingCard from '@/components/PricingCard/PricingCard';
 import ProfileStatsCard from '@/components/ProfileStatsCard/ProfileStatsCard';
 import ProjectsCard from '@/components/ProjectsCard/ProjectsCard';
+import ReportsTable from '@/components/ReportsTable/ReportsTable';
 import RouterTransition from '@/components/RouterTransition/RouterTransition';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import StatsGrid from '@/components/StatsGrid/StatsGrid';
@@ -52,7 +52,7 @@ export {
   KanbanCard,
   KanbanBoard,
   MessagesChart,
-  OrdersTable,
+  ReportsTable,
   InvoicesTable,
   InvoiceDetailsCard,
   UserProfileButton,

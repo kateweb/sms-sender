@@ -26,6 +26,19 @@ export type Orders = {
   payment_method: string;
 };
 
+export type Reports = {
+  id: string;
+  phone: string;
+  operator: string;
+  alpha: string;
+  createDate: string;
+  sendDate: string;
+  scheduledDate: string;
+  deliveryDate: string;
+  status: OrderStatus;
+  text: string;
+};
+
 export type InvoiceStatus =
   | 'pending'
   | 'sent'

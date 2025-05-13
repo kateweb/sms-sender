@@ -8,6 +8,9 @@
   "send": "Отправить",
   "save": "Сохранить",
   "per_page": "Записей на странице",
+  "search": "Поиск",
+  "from": "От",
+  "to": "До",
   "login": {
     "title": "Авторизация",
     "welcome_back": "С возвращением",
@@ -77,6 +80,25 @@
     "text": "Текст",
     "delivery_status": "Статусы доставки",
     "custom_text": "Текст пользователя"
+  },
+  "report": {
+    "error": "Ошибка загрузки отчета",
+    "operator": "Оператор",
+    "created_date": "Дата создания",
+    "send_date": "Дата отправки",
+    "scheduled_date": "Дата запланированной отправки",
+    "delivery_date": "Дата получения",
+    "title": "Отчет",
+    "total": "Всего записей",
+    "date_range": "Диапазон дат",
+    "select_date_range": "Выберите диапазон дат",
+    "enter_alpha_names": "Введите альфа-имена через запятую",
+    "enter_phone_numbers": "Введите номера телефонов через запятую",
+    "choose_operator": "Выберите оператора",
+    "choose_status": "Выберите статус",
+    "country": "Страна",
+    "choose_country": "Выберите страну",
+    "download_report": "Загрузить отчет"
   },
   "messages": {
     "title": "Динамика рассылок"
