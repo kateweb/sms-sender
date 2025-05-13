@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import {
   ActionIcon,
   Badge,
@@ -71,9 +71,12 @@ type HistoryTableProps = {
   data?: HistoryItem[];
   error: ReactNode;
   loading: boolean;
+  withPagination?: boolean;
 };
 
-const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
+const PAGE_SIZES = [5, 10, 20];
+
+const HistoryTable = ({ data, error, loading, withPagination = false }: HistoryTableProps) => {
   const t = useTranslations();
   const [expandedRow, setExpandedRow] = useState<string | null>(null);
   const [sortStatus, setSortStatus] = useState<DataTableSortStatus<HistoryItem>>({
@@ -81,33 +84,48 @@ const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
     direction: 'asc',
   });
 
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
+
   const handleExpansionToggle = (id: string) => {
     setExpandedRow((prev) => (prev === id ? null : id));
   };
 
-  const sortedData = data
-    ? sortBy(data, (item) =>
+  const sortedData = useMemo(() => {
+    const sorted = sortBy(data, (item) =>
       sortStatus.columnAccessor === 'created_at'
         ? new Date(item.created_at)
         : // @ts-ignore
         item[sortStatus.columnAccessor]
-    )
-    : [];
+    );
 
-  if (sortStatus.direction === 'desc') {
-    sortedData.reverse();
-  }
+    return sortStatus.direction === 'desc' ? sorted.reverse() : sorted;
+  }, [data, sortStatus]);
+
+  const paginatedData = withPagination
+    ? sortedData.slice((page - 1) * pageSize, page * pageSize)
+    : sortedData;
 
   return error ? (
     <ErrorAlert title={t('history.error')} message={error.toString()} />
   ) : (
+    // @ts-ignore
     <DataTable<HistoryItem>
       verticalSpacing="sm"
-      highlightOnHover={false} // Optional: disable row hover highlight
+      highlightOnHover={false}
       height="auto"
       minHeight="150px"
-      records={sortedData}
+      records={paginatedData}
       fetching={loading}
+      totalRecords={withPagination ? sortedData.length : undefined}
+      recordsPerPage={withPagination ? pageSize : undefined}
+      recordsPerPageLabel={t('per_page')}
+      page={withPagination ? page : undefined}
+      onPageChange={withPagination ? setPage : undefined}
+      recordsPerPageOptions={withPagination ? PAGE_SIZES : undefined}
+      onRecordsPerPageChange={withPagination ? setPageSize : undefined}
+      sortStatus={sortStatus}
+      onSortStatusChange={setSortStatus}
       columns={[
         {
           accessor: 'expand',
@@ -199,8 +217,6 @@ const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
           </Stack>
         ),
       }}
-      sortStatus={sortStatus}
-      onSortStatusChange={setSortStatus}
     />
   );
 };

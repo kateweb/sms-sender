@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import { ActionIcon, Box, Burger, Flex, Group, ScrollArea } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import {
@@ -11,7 +9,8 @@ import {
   IconListDetails,
   IconMessages,
   IconReportAnalytics,
-  IconSend2, IconTemplate,
+  IconSend2,
+  IconTemplate,
   IconX
 } from '@tabler/icons-react';
 
@@ -20,7 +19,8 @@ import { Logo, UserProfileButton } from '@/components';
 import { LinksGroup } from '@/components/Navigation/Links/Links';
 import UserProfileData from '@/public/mocks/UserProfile.json';
 import {
-  PATH_DASHBOARD,
+  PATH_APPS,
+  PATH_DASHBOARD
 } from '@/routes';
 
 import classes from './Navigation.module.css';
@@ -44,15 +44,15 @@ const Navigation = ({
     {
       links: [
         { label: t('nav.dashboard'), icon: IconLayoutDashboard, link: PATH_DASHBOARD.default },
-        { label: "SMS", icon: IconMessages, link: "" },
-        { label: t('nav.stat_filtering'), icon: IconChartBar, link: "" },
-        { label: t('nav.stat_files'), icon: IconFileAnalytics, link: "" },
-        { label: t('nav.phonebooks'), icon: IconAddressBook, link: "" },
-        { label: t('nav.alphasenders'), icon: IconSend2, link: "" },
-        { label: t('nav.alphasenders_list'), icon: IconListDetails, link: "" },
-        { label: t('nav.templates'), icon: IconTemplate, link: "" },
-        { label: t('nav.stats'), icon: IconReportAnalytics, link: "" },
-        { label: t('nav.blacklists'), icon: IconForbid, link: "" },
+        { label: "SMS", icon: IconMessages, link: PATH_APPS.sms },
+        { label: t('nav.stat_filtering'), icon: IconChartBar, link: "#" },
+        { label: t('nav.stat_files'), icon: IconFileAnalytics, link: "#" },
+        { label: t('nav.phonebooks'), icon: IconAddressBook, link: "#" },
+        { label: t('nav.alphasenders'), icon: IconSend2, link: "#" },
+        { label: t('nav.alphasenders_list'), icon: IconListDetails, link: "#" },
+        { label: t('nav.templates'), icon: IconTemplate, link: "#" },
+        { label: t('nav.stats'), icon: IconReportAnalytics, link: "#" },
+        { label: t('nav.blacklists'), icon: IconForbid, link: "#" },
       ],
     },
   ];
@@ -87,16 +87,14 @@ const Navigation = ({
               <Burger
                 hiddenFrom="md"
                 opened={false}
-                onClick={() => {
-                  onSidebarStateChange('full');
-                }}
+                onClick={() => onSidebarStateChange('full')}
                 size="sm"
                 color="white"
               />
             )}
           </Group>
-          {tablet_match && sidebarState === 'full' &&(
-            <ActionIcon  onClick={() => {
+          {tablet_match && sidebarState === 'full' && (
+            <ActionIcon onClick={() => {
               onSidebarStateChange('mini');
               onClose();
             }} variant="transparent">

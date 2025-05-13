@@ -68,7 +68,7 @@ function Page() {
               </Group>
               <Collapse in={opened}>
                 <HistoryTable
-                  data={historyData.slice(0, 6)}
+                  data={historyData.slice(0, 5)}
                   error={historyError}
                   loading={historyLoading}
                 />
