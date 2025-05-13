@@ -46,7 +46,7 @@ const Navigation = ({
         { label: t('nav.dashboard'), icon: IconLayoutDashboard, link: PATH_DASHBOARD.default },
         { label: "SMS", icon: IconMessages, link: PATH_APPS.sms },
         { label: t('nav.stat_filtering'), icon: IconChartBar, link: PATH_APPS.report },
-        { label: t('nav.stat_files'), icon: IconFileAnalytics, link: "#" },
+        { label: t('nav.stat_files'), icon: IconFileAnalytics, link: PATH_APPS.report_files },
         { label: t('nav.phonebooks'), icon: IconAddressBook, link: "#" },
         { label: t('nav.alphasenders'), icon: IconSend2, link: "#" },
         { label: t('nav.alphasenders_list'), icon: IconListDetails, link: "#" },

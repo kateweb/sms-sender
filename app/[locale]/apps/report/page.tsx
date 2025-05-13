@@ -10,13 +10,13 @@ import {
   Text,
   TextInput, Title
 } from '@mantine/core';
-import { DatePickerInput } from '@mantine/dates';
-import { useState } from 'react';
+
+import { PATH_APPS } from '@/routes';
+
 import CountrySelect from '@/components/CountrySelect/CountrySelect';
 import { ReportsTable } from '@/components';
 import { useFetchData } from '@/hooks';
 import { useTranslations } from 'next-intl';
-import { IconCalendarWeek } from '@tabler/icons-react';
 import DateTimeRangeInput from '@/components/DateTimeRangePicker/DateTimeRangePicker';
 
 export default function ReportPage() {
@@ -71,7 +71,7 @@ export default function ReportPage() {
 
         <Group mt="md">
           <Button type="submit">{t('search')}</Button>
-          <Button variant="default">{t('report.download_report')}</Button>
+          <Button variant="default" component="a" href={PATH_APPS.report_files}>{t('report.download_report')}</Button>
         </Group>
         <Group mt="xl">
           <ReportsTable

@@ -24,6 +24,9 @@ main[data-device="mobile"][data-sidebar-state="full"] {
   main[data-device="mobile"] > * {
     padding-inline: 0 !important;
   }
+  .mantine-datatable-pagination {
+    padding-inline: 0 !important;
+  }
 }
 .mantine-Radio-icon {
   transition: opacity 100ms ease !important;
