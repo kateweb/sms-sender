@@ -18,6 +18,7 @@ export const PATH_APPS = {
   root: ROOT_APPS,
   sms: path(ROOT_APPS, '/sms'),
   report: path(ROOT_APPS, '/report'),
+  report_files: path(ROOT_APPS, '/report_files'),
   calendar: path(ROOT_APPS, '/calendar'),
   chat: path(ROOT_APPS, '/chat'),
   orders: path(ROOT_APPS, '/orders'),

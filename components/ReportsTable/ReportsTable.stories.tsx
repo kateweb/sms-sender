@@ -36,6 +36,6 @@ export const Loading: Story = {
 export const Error: Story = {
   args: {
     data: [],
-    error: 'Error loading orders',
+    error: 'Error loading reports',
   },
 };

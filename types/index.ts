@@ -39,6 +39,12 @@ export type Reports = {
   text: string;
 };
 
+export type ReportFiles = {
+  fileName: string;
+  status: OrderStatus;
+  downloadLink: string;
+};
+
 export type InvoiceStatus =
   | 'pending'
   | 'sent'

@@ -98,7 +98,13 @@
     "choose_status": "Выберите статус",
     "country": "Страна",
     "choose_country": "Выберите страну",
-    "download_report": "Загрузить отчет"
+    "download_report": "Загрузить отчет",
+    "file_name": "Имя",
+    "statuses": {
+      "failed": "Неудачно",
+      "completed": "Выполнено"
+    },
+    "unavailable": "Недоступен"
   },
   "messages": {
     "title": "Динамика рассылок"

@@ -98,7 +98,13 @@
     "choose_status": "Оберіть статус",
     "country": "Країна",
     "choose_country": "Оберіть країну",
-    "download_report": "Завантажити звіт"
+    "download_report": "Завантажити звіт",
+    "file_name": "Ім'я",
+    "statuses": {
+      "failed": "Невдало",
+      "completed": "Виконано"
+    },
+    "unavailable": "Недоступний"
   },
   "messages": {
     "title": "Динаміка розсилок"

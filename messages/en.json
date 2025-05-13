@@ -98,7 +98,13 @@
     "choose_status": "Choose status",
     "country": "Country",
     "choose_country": "Choose country",
-    "download_report": "Download report"
+    "download_report": "Download report",
+    "file_name": "File name",
+    "statuses": {
+      "failed": "Failed",
+      "completed": "Completed"
+    },
+    "unavailable": "Not available yet"
   },
   "messages": {
     "title": "Messages dynamics"

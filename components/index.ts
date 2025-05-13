@@ -18,6 +18,7 @@ import PricingCard from '@/components/PricingCard/PricingCard';
 import ProfileStatsCard from '@/components/ProfileStatsCard/ProfileStatsCard';
 import ProjectsCard from '@/components/ProjectsCard/ProjectsCard';
 import ReportsTable from '@/components/ReportsTable/ReportsTable';
+import ReportFilesTable from '@/components/ReportFilesTable/ReportFilesTable';
 import RouterTransition from '@/components/RouterTransition/RouterTransition';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import StatsGrid from '@/components/StatsGrid/StatsGrid';
@@ -53,6 +54,7 @@ export {
   KanbanBoard,
   MessagesChart,
   ReportsTable,
+  ReportFilesTable,
   InvoicesTable,
   InvoiceDetailsCard,
   UserProfileButton,
