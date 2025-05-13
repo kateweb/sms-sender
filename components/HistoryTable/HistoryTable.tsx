@@ -1,12 +1,27 @@
 import { ReactNode, useState } from 'react';
-
-import { ActionIcon, Badge, Group, MantineColor, Text, Stack, Tooltip } from '@mantine/core';
-import { DataTable, DataTableSortStatus } from 'mantine-datatable';
+import {
+  ActionIcon,
+  Badge,
+  Group,
+  MantineColor,
+  Text,
+  Stack,
+  Tooltip,
+} from '@mantine/core';
+import {
+  DataTable,
+  DataTableSortStatus,
+} from 'mantine-datatable';
+import { useTranslations } from 'next-intl';
+import {
+  IconDownload,
+  IconReload,
+  IconChevronRight,
+  IconChevronDown,
+} from '@tabler/icons-react';
+import sortBy from 'lodash/sortBy';
 
 import { ErrorAlert } from '@/components';
-import { useTranslations } from 'next-intl';
-import { IconDownload, IconReload, IconChevronRight, IconChevronDown } from '@tabler/icons-react';
-import sortBy from 'lodash/sortBy';
 
 type Status = 'In Progress' | 'Cancelled' | 'Completed' | 'Pending' | string;
 
@@ -32,7 +47,7 @@ const StatusBadge = ({ status }: { status: Status }) => {
   }
 
   return (
-    <Badge color={color} variant="filled" radius="sm" style={{minWidth: 'max-content'}}>
+    <Badge color={color} variant="filled" radius="sm" style={{ minWidth: 'max-content' }}>
       {t(status)}
     </Badge>
   );
@@ -57,6 +72,7 @@ type HistoryTableProps = {
   error: ReactNode;
   loading: boolean;
 };
+
 const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
   const t = useTranslations();
   const [expandedRow, setExpandedRow] = useState<string | null>(null);
@@ -66,17 +82,17 @@ const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
   });
 
   const handleExpansionToggle = (id: string) => {
-    setExpandedRow(expandedRow === id ? null : id);
+    setExpandedRow((prev) => (prev === id ? null : id));
   };
 
-  // Sorting the data based on the current sortStatus
-  const sortedData = data ? sortBy(data, (item) => {
-    if (sortStatus.columnAccessor === 'created_at') {
-      return new Date(item.created_at);
-    }
-    // @ts-ignore
-    return item[sortStatus.columnAccessor];
-  }) : [];
+  const sortedData = data
+    ? sortBy(data, (item) =>
+      sortStatus.columnAccessor === 'created_at'
+        ? new Date(item.created_at)
+        : // @ts-ignore
+        item[sortStatus.columnAccessor]
+    )
+    : [];
 
   if (sortStatus.direction === 'desc') {
     sortedData.reverse();
@@ -87,7 +103,7 @@ const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
   ) : (
     <DataTable<HistoryItem>
       verticalSpacing="sm"
-      highlightOnHover
+      highlightOnHover={false} // Optional: disable row hover highlight
       height="auto"
       minHeight="150px"
       records={sortedData}
@@ -110,20 +126,24 @@ const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
           ),
           width: 40,
         },
-        { accessor: 'id', title: 'ID'},
+        { accessor: 'id', title: 'ID' },
         {
           accessor: 'recipient',
           title: t('history.recipient'),
-          render: ({ recipient }) => <Badge color="teal" variant="light">{recipient}</Badge>,
+          render: ({ recipient }) => (
+            <Badge color="teal" variant="light">
+              {recipient}
+            </Badge>
+          ),
         },
-        { accessor: 'created_at', title: t('history.created_at'), sortable: true},
+        { accessor: 'created_at', title: t('history.created_at'), sortable: true },
         { accessor: 'type', title: t('history.type') },
         {
           accessor: 'status',
           title: t('history.status'),
           render: ({ status }) => <StatusBadge status={status} />,
         },
-        { accessor: 'delivered', title: t('history.statuses.delivered')},
+        { accessor: 'delivered', title: t('history.statuses.delivered') },
         { accessor: 'sum', title: t('history.sum') },
         {
           accessor: 'actions',
@@ -131,33 +151,50 @@ const HistoryTable = ({ data, error, loading }: HistoryTableProps) => {
           render: (record) => (
             <Group gap="xs" wrap="nowrap">
               <Tooltip label={t('download')}>
-                <ActionIcon variant="subtle" color="default" onClick={() => console.log('Download', record)}>
+                <ActionIcon
+                  variant="subtle"
+                  color="default"
+                  onClick={() => console.log('Download', record)}
+                >
                   <IconDownload size={18} />
                 </ActionIcon>
               </Tooltip>
               <Tooltip label={t('repeat')}>
-                <ActionIcon variant="subtle" color="default" onClick={() => console.log('Repeat', record)}>
+                <ActionIcon
+                  variant="subtle"
+                  color="default"
+                  onClick={() => console.log('Repeat', record)}
+                >
                   <IconReload size={18} />
                 </ActionIcon>
               </Tooltip>
             </Group>
           ),
         },
-
       ]}
       rowExpansion={{
+        expanded: {
+          recordIds: expandedRow ? [expandedRow] : [],
+          onRecordIdsChange: (ids: any) => {
+            setExpandedRow(ids[0] ?? null);
+          },
+        },
+        trigger: 'never',
         content: ({ record }) => (
           <Stack p="sm" gap="xs">
             <Text size="sm">
-              <strong>{t('history.template')}:</strong> {record.template || t('history.custom_text')}
+              <strong>{t('history.template')}:</strong>{' '}
+              {record.template || t('history.custom_text')}
             </Text>
             <Text size="sm">
               <strong>{t('history.text')}:</strong> {record.text || ''}
             </Text>
             <Text size="sm">
-              <strong>{t('history.delivery_status')}: </strong>
-              {record.delivery_status ? t(`history.statuses.${record.delivery_status}`) : record.delivery_status || ''}:
-              {record.delivery_amount || ''}
+              <strong>{t('history.delivery_status')}:</strong>{' '}
+              {record.delivery_status
+                ? t(`history.statuses.${record.delivery_status}`)
+                : record.delivery_status || ''}
+              : {record.delivery_amount || ''}
             </Text>
           </Stack>
         ),

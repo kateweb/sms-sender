@@ -54,7 +54,7 @@ export function LinksGroup(props: LinksGroupProps) {
           router.push(link.link);
           closeSidebar();
         }}
-        data-active={link.link.toLowerCase() === pathname || undefined}
+        //data-active={link.link.toLowerCase() === pathname || undefined}
         data-mini={isMini}
       >
         {link.label}
@@ -78,12 +78,10 @@ export function LinksGroup(props: LinksGroupProps) {
       view = (
         <>
           <Menu
-            position="right-start"
-            withArrow
-            arrowPosition="center"
-            trigger="hover"
+            trigger="click"  // Change hover to click
             openDelay={100}
             closeDelay={400}
+            withArrow={false}
           >
             <Menu.Target>
               <UnstyledButton
@@ -93,12 +91,13 @@ export function LinksGroup(props: LinksGroupProps) {
                   closeSidebar();
                 }}
                 className={classes.control}
-                data-active={opened || undefined}
+                //data-active={opened || undefined}
                 data-mini={isMini}
               >
                 <Tooltip
                   label={label}
                   position="right"
+                  withArrow={false}
                   transitionProps={{ duration: 0 }}
                 >
                   <Icon size={24} />
@@ -119,7 +118,7 @@ export function LinksGroup(props: LinksGroupProps) {
               closeSidebar();
             }}
             className={classes.control}
-            data-active={opened || undefined}
+           // data-active={opened || undefined}
             data-mini={isMini}
           >
             <Group justify="space-between" gap={0}>

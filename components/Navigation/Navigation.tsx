@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { ActionIcon, Box, Flex, Group, ScrollArea } from '@mantine/core';
+import { ActionIcon, Box, Burger, Flex, Group, ScrollArea } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import {
   IconAddressBook,
@@ -37,7 +37,7 @@ const Navigation = ({
   onSidebarStateChange,
   sidebarState,
 }: NavigationProps) => {
-  const tablet_match = useMediaQuery('(max-width: 768px)');
+  const tablet_match = useMediaQuery('(max-width: 991px)');
   const t = useTranslations();
 
   const mockdata = [
@@ -72,25 +72,34 @@ const Navigation = ({
       ))}
     </Box>
   ));
-
-  useEffect(() => {
-    if (tablet_match) {
-      onSidebarStateChange('full');
-    }
-  }, [onSidebarStateChange, tablet_match]);
-
   return (
     <div className={classes.navbar} data-sidebar-state={sidebarState}>
       <div className={classes.header}>
-        <Flex justify="space-between" align="center" gap="sm">
+        <Flex justify="space-between" align="center" gap="sm" w="100%">
           <Group
             justify={sidebarState === 'mini' ? 'center' : 'space-between'}
             style={{ flex: tablet_match ? 'auto' : 1 }}
           >
-            <Logo className={classes.logo} showText={sidebarState !== 'mini'} />
+            {!(tablet_match && sidebarState === 'mini') && (
+              <Logo className={classes.logo} showText={sidebarState !== 'mini'} />
+            )}
+            {tablet_match && sidebarState === 'mini' && (
+              <Burger
+                hiddenFrom="md"
+                opened={false}
+                onClick={() => {
+                  onSidebarStateChange('full');
+                }}
+                size="sm"
+                color="white"
+              />
+            )}
           </Group>
-          {tablet_match && (
-            <ActionIcon onClick={onClose} variant="transparent">
+          {tablet_match && sidebarState === 'full' &&(
+            <ActionIcon  onClick={() => {
+              onSidebarStateChange('mini');
+              onClose();
+            }} variant="transparent">
               <IconX color="white" />
             </ActionIcon>
           )}

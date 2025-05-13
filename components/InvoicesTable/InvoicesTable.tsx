@@ -29,7 +29,6 @@ import {
 import { useRouter } from 'next/navigation';
 
 import { ErrorAlert } from '@/components';
-import { PATH_INVOICES } from '@/routes';
 import { InvoiceStatus, Invoices } from '@/types';
 
 const PAGE_SIZES = [5, 10, 20];
@@ -188,11 +187,7 @@ const InvoicesTable = ({ data, error, loading }: InvoicesTableProps) => {
             </ActionIcon>
           </Tooltip>
           <Tooltip label="View invoice details">
-            <ActionIcon
-              onClick={() =>
-                router.push(PATH_INVOICES.invoices.invoice_details(item.id))
-              }
-            >
+            <ActionIcon>
               <IconEye size={ICON_SIZE} />
             </ActionIcon>
           </Tooltip>

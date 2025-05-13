@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { AppShell, Container, rem, useMantineTheme } from '@mantine/core';
 import { useDisclosure, useLocalStorage, useMediaQuery } from '@mantine/hooks';
@@ -9,8 +9,10 @@ import AppMain from '@/components/AppMain';
 import FooterNav from '@/components/FooterNav';
 import HeaderNav from '@/components/HeaderNav';
 import Navigation from '@/components/Navigation';
+import classes from '@/components/Navigation/Navigation.module.css';
+import Loading from '@/app/[locale]/loading';
 
-export type SidebarState = 'hidden' | 'mini' | 'full';
+export type SidebarState = 'mini' | 'full';
 
 type Props = {
   children: ReactNode;
@@ -18,21 +20,39 @@ type Props = {
 
 export function MainLayout({ children }: Props) {
   const theme = useMantineTheme();
-  const tablet_match = useMediaQuery('(max-width: 768px)');
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const tablet_match = useMediaQuery('(max-width: 991px)');
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
-  const [desktopOpened] = useDisclosure(true);
+
   const [sidebarState, setSidebarState] = useLocalStorage<SidebarState>({
     key: 'mantine-nav-state',
     defaultValue: 'full',
   });
 
+  const sidebarStateRef = useRef(sidebarState);
+
+  useEffect(() => {
+    sidebarStateRef.current = sidebarState;
+  }, [sidebarState]);
+
+  useEffect(() => {
+    if (mounted && tablet_match && sidebarState !== 'mini') {
+      setSidebarState('mini');
+    }
+  }, [tablet_match, mounted]);
+
   const toggleSidebarState = () => {
-    setSidebarState((current) => {
-      if (current === 'full') return 'mini';
-      if (current === 'mini') return 'hidden';
-      return 'full';
-    });
+    const current = sidebarStateRef.current;
+    const next = current === 'full' ? 'mini' : 'full';
+    setSidebarState(next);
   };
+
+  if (!mounted) return <Loading />;
 
   return (
     <AppShell
@@ -40,9 +60,11 @@ export function MainLayout({ children }: Props) {
       header={{ height: 60 }}
       footer={{ height: 60 }}
       navbar={{
-        width: sidebarState === 'full' ? 300 : sidebarState === 'mini' ? 60 : 0,
-        breakpoint: 'md',
-        collapsed: { mobile: !mobileOpened, desktop: !desktopOpened },
+        width: tablet_match
+          ? (sidebarState === 'full' ? '100%' : 60)
+          : (sidebarState === 'full' ? 300 : 60),
+        breakpoint: 0,
+        collapsed: { mobile: false },
       }}
       padding={0}
     >
@@ -52,15 +74,15 @@ export function MainLayout({ children }: Props) {
           boxShadow: tablet_match ? theme.shadows.md : theme.shadows.sm,
         }}
       >
-        <Container fluid py="sm" px="lg">
+        <Container fluid py="sm" px={{ base: '10px', md: 'lg' }}>
           <HeaderNav
             mobileOpened={mobileOpened}
             toggleMobile={toggleMobile}
-            sidebarState={sidebarState}
             onSidebarStateChange={toggleSidebarState}
           />
         </Container>
       </AppShell.Header>
+
       <AppShell.Navbar>
         <Navigation
           onClose={toggleMobile}
@@ -68,7 +90,11 @@ export function MainLayout({ children }: Props) {
           onSidebarStateChange={setSidebarState}
         />
       </AppShell.Navbar>
-      <AppShell.Main>
+      <AppShell.Main
+        classNames={{ main: classes.appshell_main }}
+        data-sidebar-state={sidebarState}
+        data-device={tablet_match ? 'mobile' : 'desktop'}
+      >
         <AppMain>{children}</AppMain>
       </AppShell.Main>
       <AppShell.Footer p="md">
