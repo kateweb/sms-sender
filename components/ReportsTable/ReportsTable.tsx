@@ -14,7 +14,6 @@ type StatusBadgeProps = {
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   let color: MantineColor;
   const t = useTranslations('history.statuses');
-  console.log(status);
   switch (status) {
     case 'In Progress':
       color = 'blue';

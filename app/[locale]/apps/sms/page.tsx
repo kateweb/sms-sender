@@ -145,7 +145,7 @@ export default function SendSmsPage() {
                 {recipientType === 'book' && (
                   <Select
                     label={t('sms.phonebook')}
-                    data={['Test']}
+                    data={['Test', 'First']}
                     style={{ flex: 1 }}
                     required
                     allowDeselect={false}

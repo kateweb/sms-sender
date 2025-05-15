@@ -11,6 +11,7 @@
   "search": "Search",
   "from": "From",
   "to": "To",
+  "no_results": "No results",
   "login": {
     "title": "Login",
     "welcome_back": "Welcome back",
@@ -105,6 +106,21 @@
       "completed": "Completed"
     },
     "unavailable": "Not available yet"
+  },
+  "phonebook": {
+    "create": "Add new phonebook",
+    "name": "Name",
+    "comment": "Comment",
+    "list": "List of phonebooks",
+    "search": "Search by phonebook",
+    "ready_to_send": "Ready to send",
+    "send_bulk_sms": "Send bul SMS",
+    "edit_phonebook": "Edit phonebook",
+    "delete_phonebook": "Delete phonebook",
+    "are_you_sure": "Are you sure?",
+    "will_be_deleted": "All contacts will be deleted",
+    "yes_delete": "Yes, delete it!",
+    "no": "No"
   },
   "messages": {
     "title": "Messages dynamics"

@@ -14,7 +14,6 @@ type StatusBadgeProps = {
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   let color: MantineColor;
   const t = useTranslations('report.statuses');
-  console.log(status);
   switch (status) {
     case 'failed':
       color = 'red';
