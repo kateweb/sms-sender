@@ -178,7 +178,7 @@ export default function SendSmsPage() {
                       padding="lg"
                       styles={{
                         header: { paddingBottom: 0 },
-                        title: { fontWeight: 600, fontSize: 22, color: '#1a1a1a' },
+                        title: { fontWeight: 600, fontSize: 22 },
                         body: { paddingTop: 0 },
                       }}
                       title={t('sms.file_examples')}

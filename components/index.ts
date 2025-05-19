@@ -1,12 +1,14 @@
 import BalanceCard from '@/components/BalanceCard/BalanceCard';
 import ChatItem from '@/components/ChatItem/ChatItem';
 import ChatsList from '@/components/ChatsList/ChatsList';
+import { CreatePhonebookForm } from '@/components/CreatePhonebookForm/CreatePhonebookForm';
 import ErrorAlert from '@/components/ErrorAlert';
 import Faqs from '@/components/Faqs/Faqs';
 import FilterDateMenu from '@/components/FilterDateMenu/FilterDateMenu';
 import HistoryTable from '@/components/HistoryTable/HistoryTable';
 import InvoiceDetailsCard from '@/components/InvoiceDetailsCard/InvoiceDetailsCard';
-import InvoicesTable from '@/components/InvoicesTable/InvoicesTable';
+import ContactsTable from '@/components/ContactsTable/ContactsTable';
+import { ImportPhonebookModal } from '@/components/ImportPhonebookModal/ImportPhonebookModal';
 import KanbanBoard from '@/components/KanbanBoard/KanbanBoard';
 import KanbanCard from '@/components/KanbanCard/KanbanCard';
 import KanbanColumn from '@/components/KanbanColumn/KanbanColumn';
@@ -46,6 +48,8 @@ export {
   TrafficTable,
   UserProfileCard,
   PricingCard,
+  ContactsTable,
+  CreatePhonebookForm,
   ChatsList,
   ChatItem,
   ProjectsCard,
@@ -55,8 +59,8 @@ export {
   MessagesChart,
   ReportsTable,
   ReportFilesTable,
-  InvoicesTable,
   InvoiceDetailsCard,
+  ImportPhonebookModal,
   UserProfileButton,
   ThemeDrawer,
   PageHeader,

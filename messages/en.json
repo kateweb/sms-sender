@@ -12,6 +12,10 @@
   "from": "From",
   "to": "To",
   "no_results": "No results",
+  "edit": "Edit",
+  "import": "Import",
+  "delete_choosed": "Delete choosed",
+  "delete_all": "Delete all",
   "login": {
     "title": "Login",
     "welcome_back": "Welcome back",
@@ -110,6 +114,7 @@
   "phonebook": {
     "create": "Add new phonebook",
     "name": "Name",
+    "surname": "Surname",
     "comment": "Comment",
     "list": "List of phonebooks",
     "search": "Search by phonebook",
@@ -120,7 +125,24 @@
     "are_you_sure": "Are you sure?",
     "will_be_deleted": "All contacts will be deleted",
     "yes_delete": "Yes, delete it!",
-    "no": "No"
+    "no": "No",
+    "all_phonebooks": "All phonebooks",
+    "edit_comment": "Edit comment",
+    "create_contact": "Create contact",
+    "birthday": "Birthday",
+    "dd_mm_yyyy": "dd.mm.yyyy",
+    "extra_info": "Extra info",
+    "save_and_add": "Save and add another",
+    "import_contacts": "Import Contacts",
+    "dropzone_title": "Drag files or click to upload",
+    "dropzone_info": ".csv, .txt, .xlsx, and .xls are accepted. Format: PHONE,NAME,SURNAME,dd.mm.yyyy,EXTRA_INFO,EXTRA_INFO2. PHONE in the format +380501234567 or 380501234567",
+    "file_success": "Upload file",
+    "file_error": "Unsupported file type",
+    "loaded_files": "Loaded files",
+    "choose_format": "Choose format",
+    "choose_book": "Choose book",
+    "valid": "Valid",
+    "error": "Error loading contacts"
   },
   "messages": {
     "title": "Messages dynamics"
@@ -134,7 +156,12 @@
     },
     "password": {
       "min": "Password must include at least {min} characters"
-    }
+    },
+    "required": "Field is required",
+    "date": {
+      "future": "Date cannot be in future"
+    },
+    "max": "Maximum character count"
   },
   "period": {
     "day": "Day",
@@ -153,7 +180,7 @@
     "file": "File",
     "file_not_choosed": "File not choosed",
     "phone_number": "Phone number",
-    "phone_number_decs": "Enter your phone number in the format +380501234567 or 380501234567",
+    "phone_number_desc": "Enter your phone number in the format +380501234567 or 380501234567",
     "file_desc": "The phone number must start with +380 or 380 and should situated in first column",
     "file_format": "File in .xls, .xlsx, .csv formats",
     "download_example": "Download example",

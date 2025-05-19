@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "phone": "380634461629",
+    "valid": true,
+    "name": "Kate",
+    "surname": "Kucherenko",
+    "birthday": "28.03.1995",
+    "extraInfo": "test",
+    "extraInfo2": "test2"
+  },
+  {
+    "id": "2",
+    "phone": "380936688240",
+    "valid": true,
+    "name": "Oleg",
+    "surname": "Kucherenko",
+    "birthday": "01.09.1993",
+    "extraInfo": "test text",
+    "extraInfo2": "test text2"
+  }
+]
