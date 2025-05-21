@@ -94,7 +94,7 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
         {t('phonebook.edit_phonebook')}
       </Title>
       <Breadcrumbs pb="md">
-        <Anchor href="/phonebook"> {t('phonebook.all_phonebooks')}</Anchor>
+        <Anchor href="/apps/phonebook"> {t('phonebook.all_phonebooks')}</Anchor>
         <span> {t('phonebook.edit_phonebook')}</span>
       </Breadcrumbs>
       <Grid>
