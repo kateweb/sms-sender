@@ -180,7 +180,7 @@
     "file": "File",
     "file_not_choosed": "File not choosed",
     "phone_number": "Phone number",
-    "phone_number_desc": "Enter your phone number in the format +380501234567 or 380501234567",
+    "phone_number_desc": "Enter your phone number in the format +380501234567",
     "file_desc": "The phone number must start with +380 or 380 and should situated in first column",
     "file_format": "File in .xls, .xlsx, .csv formats",
     "download_example": "Download example",

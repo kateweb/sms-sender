@@ -64,7 +64,7 @@ export function CreatePhonebookForm({ opened, onClose, onAdd }: { opened: boolea
       >
         <Stack gap="sm">
           <Input.Wrapper
-            label="Phone"
+            label={t('reg.phone')}
             required
             description={t('sms.phone_number_desc')}
             classNames={{
