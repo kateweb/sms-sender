@@ -12,8 +12,36 @@ import {
 
 import { ErrorAlert } from '@/components';
 import { useTranslations } from 'next-intl';
-import { Badge, Text } from '@mantine/core';
-import {  AlphasendersAllItem } from '@/types';
+import { Badge, MantineColor, Text } from '@mantine/core';
+import { AlphasendersAllItem, AlphasendersItem, AlphasendersStatus } from '@/types';
+
+type StatusBadgeProps = {
+  status: AlphasendersStatus;
+};
+
+const StatusBadge = ({ status }: StatusBadgeProps) => {
+  let color: MantineColor;
+  const t = useTranslations('alphasenders.statuses');
+  switch (status) {
+    case 'cancelled':
+      color = 'red';
+      break;
+    case 'approved':
+      color = 'green';
+      break;
+    case 'processing':
+      color = 'orange'
+      break;
+    default:
+      color = 'gray';
+  }
+
+  return (
+    <Badge color={color} variant="filled" radius="sm" style={{ minWidth: 'max-content' }}>
+      {t(status)}
+    </Badge>
+  );
+};
 
 const PAGE_SIZES = [5, 10, 20];
 
@@ -52,7 +80,7 @@ const AlphasendersTable = ({ data, error, loading, filter, search }: Alphasender
       accessor: 'status',
       title: t('history.status'),
       sortable: true,
-      render: ({ status }) => <Badge color="teal" variant="light">{status}</Badge>,
+      render: (item: AlphasendersAllItem) => <StatusBadge status={item.status} />,
     },
     {
       accessor: 'actions',

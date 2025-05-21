@@ -20,6 +20,7 @@ export default function AlphaNamesPage() {
   const t = useTranslations();
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
+  const [tab, setTab] = useState<string | null>('personal');
   const [alphasenders, setAlphasenders] = useState<AlphasendersItem[]>([]);
 
   const {
@@ -49,15 +50,17 @@ export default function AlphaNamesPage() {
               value={search}
               onChange={(e) => setSearch(e.currentTarget.value)}
             />
-            <Select
-              data={[
-                { label: t('all'), value: 'all' },
-                { label: 'SMS', value: 'sms' },
-                { label: 'Email', value: 'email' },
-              ]}
-              value={filter}
-              onChange={(val) => setFilter(val || t('all'))}
-            />
+            {tab === 'personal' && (
+              <Select
+                data={[
+                  { label: t('all'), value: 'all' },
+                  { label: 'SMS', value: 'sms' },
+                  { label: 'Email', value: 'email' },
+                ]}
+                value={filter}
+                onChange={(val) => setFilter(val || 'all')}
+              />
+            )}
           </Group>
           <Button>
             <Group gap={5}>
@@ -67,7 +70,7 @@ export default function AlphaNamesPage() {
           </Button>
         </Group>
 
-        <Tabs defaultValue="personal">
+        <Tabs value={tab} onChange={setTab}>
           <Tabs.List>
             <Tabs.Tab value="personal">{t('alphasenders.personal')}</Tabs.Tab>
             <Tabs.Tab value="all">{t('alphasenders.all_alphanames')}</Tabs.Tab>
