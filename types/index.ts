@@ -17,6 +17,39 @@ export type KanbanTask = {
 
 export type OrderStatus = 'shipped' | 'processing' | 'cancelled' | string;
 
+export type AlphasendersStatus = 'approved' | 'processing' | 'cancelled' | string;
+
+export type AlphasendersItem = {
+  id: number;
+  name: string;
+  country: boolean;
+  company: string;
+  userId: string;
+  type: string;
+  site: string;
+  date: string;
+  status: string;
+  enabled: boolean;
+  blocked_status: boolean
+}
+
+export type AlphasendersAllItem = {
+  id: number;
+  name: string;
+  status: string;
+}
+
+export type ContactsItem = {
+  id: string;
+  phone: string;
+  valid: boolean;
+  name: string;
+  surname: string;
+  birthday: string;
+  extraInfo: string;
+  extraInfo2: string;
+}
+
 export type Orders = {
   id: string;
   product: string;

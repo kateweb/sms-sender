@@ -20,7 +20,7 @@ export const PATH_APPS = {
   report: path(ROOT_APPS, '/report'),
   report_files: path(ROOT_APPS, '/report_files'),
   phonebook: path(ROOT_APPS, '/phonebook'),
-  calendar: path(ROOT_APPS, '/calendar'),
+  alphasenders: path(ROOT_APPS, '/alphasenders'),
   chat: path(ROOT_APPS, '/chat'),
   orders: path(ROOT_APPS, '/orders'),
   profile: path(ROOT_APPS, '/profile'),

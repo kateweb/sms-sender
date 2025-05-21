@@ -19,6 +19,7 @@ import { ContactsTable, CreatePhonebookForm, ImportPhonebookModal } from '@/comp
 import { useTranslations } from 'next-intl';
 import { useFetchData } from '@/hooks';
 import dayjs from 'dayjs';
+import { ContactsItem } from '@/types';
 
 export default function PhonebookPage({ params }: { params: { id: string } }) {
   const t = useTranslations();
@@ -28,16 +29,6 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
   const [isEditingComment, setIsEditingComment] = useState(false);
   const [comment, setComment] = useState('Comment');
 
-  interface ContactsItem {
-    id: string;
-    phone: string;
-    valid: boolean;
-    name: string;
-    surname: string;
-    birthday: string;
-    extraInfo: string;
-    extraInfo2: string;
-  }
   const {
     data: contactsData,
     error: contactsError,

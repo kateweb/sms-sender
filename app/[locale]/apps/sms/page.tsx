@@ -137,7 +137,7 @@ export default function SendSmsPage() {
                       }}
                     />
                     <Text size="xs" c="dimmed" mt="xs">
-                      {t('sms.phone_number_decs')}
+                      {t('sms.phone_number_desc')}
                     </Text>
                   </Input.Wrapper>
                 )}

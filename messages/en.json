@@ -16,6 +16,7 @@
   "import": "Import",
   "delete_choosed": "Delete choosed",
   "delete_all": "Delete all",
+  "all": "All",
   "login": {
     "title": "Login",
     "welcome_back": "Welcome back",
@@ -200,5 +201,23 @@
     "cost": "Average cost of one part of the message text",
     "parts_number": "Number of message text parts",
     "total_cost": "Total mailing cost"
+  },
+  "alphasenders": {
+    "error": "Error loading alphasenders",
+    "search": "Search by Alphasender",
+    "new": "New Sender",
+    "personal": "User Alphasenders",
+    "all_alphanames": "General Alphasenders",
+    "company": "Company",
+    "site": "Site",
+    "date": "Date",
+    "state": "Status",
+    "blocked_status" : "Blocked status",
+    "uin": "UIN",
+    "statuses": {
+      "approved": "Approved",
+      "processing": "In process",
+      "cancelled": "Cancelled"
+    }
   }
 }
