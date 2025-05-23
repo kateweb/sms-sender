@@ -20,6 +20,7 @@ import { useTranslations } from 'next-intl';
 import { useFetchData } from '@/hooks';
 import dayjs from 'dayjs';
 import { ContactsItem } from '@/types';
+import { PATH_APPS } from '@/routes';
 
 export default function PhonebookPage({ params }: { params: { id: string } }) {
   const t = useTranslations();
@@ -85,7 +86,7 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
         {t('phonebook.edit_phonebook')}
       </Title>
       <Breadcrumbs pb="md">
-        <Anchor href="/apps/phonebook"> {t('phonebook.all_phonebooks')}</Anchor>
+        <Anchor href={PATH_APPS.phonebook}> {t('phonebook.all_phonebooks')}</Anchor>
         <span> {t('phonebook.edit_phonebook')}</span>
       </Breadcrumbs>
       <Grid>

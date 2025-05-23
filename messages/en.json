@@ -162,7 +162,14 @@
     "date": {
       "future": "Date cannot be in future"
     },
-    "max": "Maximum character count"
+    "max_length": "Maximum number of characters {max}",
+    "min_length": "Minimum number of characters {min}",
+    "invalid_format": "Invalid format",
+    "only_digits": "Only digits",
+    "ipn": {
+      "invalid": "Invalid IPN"
+    },
+    "invalid_url": "Invalid URL"
   },
   "period": {
     "day": "Day",
@@ -218,6 +225,20 @@
       "approved": "Approved",
       "processing": "In process",
       "cancelled": "Cancelled"
-    }
+    },
+    "message_type": "Message type",
+    "alphaname": "Registration name",
+    "alphaname_info": "Alpha-name can contain only Latin letters, numbers, space, period, hyphen \"-\", underscore \"_\". Maximum length is 11 characters for SMS",
+    "company_name": "Company name",
+    "company_name_info": "Name of the legal entity, for example, the name of LLC, sole proprietorship, other legal forms, or full name of an individual.",
+    "inn": "EDRPOU/IPN",
+    "inn_info": "EDRPOU (legal entity) - 8 digits  IPN (FOP) - 10 digits",
+    "inn_desc": "EDRPOU - 8 digits, IPN - 10 digits",
+    "website": "Website",
+    "website_info": "Website URL (required if you have an online store). Having a website includes the ability to register alpha names",
+    "website_desc": "Website for your business. Must be a valid link with a specified protocol. Limited 255 symbols",
+    "description": "Description scope of activities",
+    "description_info": "For example, informing regular customers of the institution about events, promotions / registration on the site / order delivery status / other (specify what exactly). The maximum number of characters is 1000",
+    "description_desc": "The description that will be displayed in the Viber app for users. 10-1000 characters"
   }
 }

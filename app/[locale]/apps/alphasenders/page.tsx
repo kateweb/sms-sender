@@ -15,6 +15,7 @@ import { AlphasendersTable, AlphasendersTableAll } from '@/components';
 import { IconUserPlus } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
 import {  AlphasendersItem, AlphasendersAllItem } from '@/types';
+import { PATH_APPS } from '@/routes';
 
 export default function AlphaNamesPage() {
   const t = useTranslations();
@@ -62,7 +63,7 @@ export default function AlphaNamesPage() {
               />
             )}
           </Group>
-          <Button>
+          <Button component="a" href={`${PATH_APPS.alphasenders}/add`}>
             <Group gap={5}>
               <IconUserPlus size={15} />
               <span>{t('alphasenders.new')}</span>

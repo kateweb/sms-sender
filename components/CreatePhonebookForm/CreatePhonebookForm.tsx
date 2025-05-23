@@ -96,7 +96,7 @@ export function CreatePhonebookForm({ opened, onClose, onAdd }: { opened: boolea
           </Input.Wrapper>
           <TextInput
             label={t('phonebook.name')}
-            description={`${t('errors.max')} - 30`}
+            description={t('errors.max_length', { max: 30 })}
             maxLength={30}
             required
             {...form.getInputProps('name')}
@@ -104,7 +104,7 @@ export function CreatePhonebookForm({ opened, onClose, onAdd }: { opened: boolea
           <TextInput
             label={t('phonebook.surname')}
             required
-            description={`${t('errors.max')} - 30`}
+            description={t('errors.max_length', { max: 30 })}
             maxLength={30}
             {...form.getInputProps('surname')}
           />
@@ -120,14 +120,14 @@ export function CreatePhonebookForm({ opened, onClose, onAdd }: { opened: boolea
 
           <TextInput
             label={t('phonebook.extra_info')}
-            description={`${t('errors.max')} - 30`}
+            description={t('errors.max_length', { max: 30 })}
             maxLength={30}
             {...form.getInputProps('extra1')}
           />
 
           <TextInput
             label={`${t('phonebook.extra_info')} 2`}
-            description={`${t('errors.max')} - 30`}
+            description={t('errors.max_length', { max: 30 })}
             maxLength={30}
             {...form.getInputProps('extra2')}
           />
