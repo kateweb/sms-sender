@@ -48,7 +48,7 @@ const Navigation = ({
         { label: t('nav.stat_filtering'), icon: IconChartBar, link: PATH_APPS.report },
         { label: t('nav.stat_files'), icon: IconFileAnalytics, link: PATH_APPS.report_files },
         { label: t('nav.phonebooks'), icon: IconAddressBook, link: PATH_APPS.phonebook },
-        { label: t('nav.alphasenders'), icon: IconSend2, link: "#" },
+        { label: t('nav.alphasenders'), icon: IconSend2, link: PATH_APPS.alphasenders },
         { label: t('nav.alphasenders_list'), icon: IconListDetails, link: "#" },
         { label: t('nav.templates'), icon: IconTemplate, link: "#" },
         { label: t('nav.stats'), icon: IconReportAnalytics, link: "#" },

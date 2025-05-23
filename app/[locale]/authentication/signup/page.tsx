@@ -11,11 +11,10 @@ import { en, ru, uk  } from "intl-tel-input/i18n";
 import IntlTelInput from "intl-tel-input/reactWithUtils";
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-
 import "intl-tel-input/styles";
 
 import { useLocale } from '@/contexts/LocaleContext';
-import { PATH_AUTH, PATH_DASHBOARD } from '@/routes';
+import { PATH_AUTH } from '@/routes';
 
 import classes from '../auth.module.css';
 import AuthLayout from '@/components/AuthLayout/AuthLayout';

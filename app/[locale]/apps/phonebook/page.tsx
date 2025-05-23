@@ -18,9 +18,11 @@ import { useTranslations } from 'next-intl';
 import { useForm } from '@mantine/form';
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { PATH_APPS } from '@/routes';
+import { useRouter } from 'next/navigation';
 
 export default function PhoneBooksPage() {
   const t = useTranslations();
+  const router = useRouter();
   const PAPER_PROPS: PaperProps = {
     p: 'md',
     shadow: 'md',
@@ -45,7 +47,7 @@ export default function PhoneBooksPage() {
     close();
   };
 
-  const columns: DataTableColumn<{ name: string; status: string }>[] = [
+  const columns: DataTableColumn<{id: number; name: string; status: string }>[] = [
     {
       accessor: 'name',
       title: t('phonebook.name'),
@@ -61,7 +63,7 @@ export default function PhoneBooksPage() {
       accessor: 'actions',
       title: t('history.actions'),
       textAlign: 'left',
-      render: () => (
+      render: ({id}) => (
         <Group gap="xs">
           <Tooltip label={t('phonebook.send_bulk_sms')}>
             <ActionIcon variant="subtle" color="gray" component="a" href={PATH_APPS.sms}>
@@ -69,7 +71,7 @@ export default function PhoneBooksPage() {
             </ActionIcon>
           </Tooltip>
           <Tooltip label={t('phonebook.edit_phonebook')}>
-            <ActionIcon variant="subtle" color="gray">
+            <ActionIcon variant="subtle" color="gray"  onClick={() => router.push(`phonebook/${id}`)}>
               <IconEdit size={16} />
             </ActionIcon>
           </Tooltip>
