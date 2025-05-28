@@ -14,6 +14,8 @@ import { ImportPhonebookModal } from '@/components/ImportPhonebookModal/ImportPh
 import KanbanBoard from '@/components/KanbanBoard/KanbanBoard';
 import KanbanCard from '@/components/KanbanCard/KanbanCard';
 import KanbanColumn from '@/components/KanbanColumn/KanbanColumn';
+import LabelWithTooltip from '@/components/InputWithTooltip/LabelWithTooltip';
+import InputWithTooltip from '@/components/InputWithTooltip/InputWithTooltip';
 import LanguagePicker from '@/components/LanguagePicker/LanguagePicker';
 import LanguageTable from '@/components/LanguageTable/LanguageTable';
 import MessagesChart from '@/components/MessagesChart/MessagesChart';
@@ -48,6 +50,8 @@ export {
   StatsGrid,
   HistoryTable,
   StatsCard,
+  LabelWithTooltip,
+  InputWithTooltip,
   LanguageTable,
   TrafficTable,
   UserProfileCard,

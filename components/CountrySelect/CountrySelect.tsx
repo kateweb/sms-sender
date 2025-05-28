@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Select } from '@mantine/core';
+import { Select, SelectProps } from '@mantine/core';
 import { useLocale } from '@/contexts/LocaleContext';
 import countries from 'i18n-iso-countries';
 import uk from 'i18n-iso-countries/langs/uk.json';
@@ -21,7 +21,13 @@ const getCountryOptions = (lang: 'uk' | 'en' | 'ru' = 'uk') => {
   }));
 };
 
-export default function CountrySelect() {
+type CountrySelectProps = {
+  labelProps?: SelectProps['labelProps'];
+  withAsterisk?: boolean;
+  required?: boolean;
+};
+
+export default function CountrySelect({ labelProps, withAsterisk = false, required = false }: CountrySelectProps) {
   const [options, setOptions] = useState<{ value: string; label: string }[]>([]);
   const { locale } = useLocale();
   const t = useTranslations();
@@ -38,6 +44,9 @@ export default function CountrySelect() {
       searchable
       data={options}
       maxDropdownHeight={300}
+      labelProps={labelProps}
+      withAsterisk={withAsterisk}
+      required={required}
     />
   );
 }
