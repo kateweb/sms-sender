@@ -1,5 +1,6 @@
 import AlphasendersTable from '@/components/AlphasendersTable/AlphasendersTable';
 import AlphasendersTableAll from '@/components/AlphasendersTable/AlphasendersTableAll';
+import AlphasendersApplicationsTable from '@/components/AlphasendersTable/AlphasendersApplicationsTable';
 import BalanceCard from '@/components/BalanceCard/BalanceCard';
 import ChatItem from '@/components/ChatItem/ChatItem';
 import ChatsList from '@/components/ChatsList/ChatsList';
@@ -42,6 +43,7 @@ import ToggleTheme from './ToggleTheme/ToggleTheme';
 export {
   AlphasendersTable,
   AlphasendersTableAll,
+  AlphasendersApplicationsTable,
   BalanceCard,
   Logo,
   ToggleTheme,
