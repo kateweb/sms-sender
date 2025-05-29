@@ -33,6 +33,15 @@ export type AlphasendersItem = {
   blocked_status: boolean
 }
 
+export type AlphasendersApplicationsItem = {
+  id: number;
+  name: string;
+  company: string;
+  createdAt: string;
+  site: string;
+  status: string;
+}
+
 export type AlphasendersAllItem = {
   id: number;
   name: string;

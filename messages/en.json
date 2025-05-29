@@ -239,6 +239,7 @@
     "website_desc": "Website for your business. Must be a valid link with a specified protocol. Limited 255 symbols",
     "description": "Description scope of activities",
     "description_info": "For example, informing regular customers of the institution about events, promotions / registration on the site / order delivery status / other (specify what exactly). The maximum number of characters is 1000",
-    "description_desc": "The description that will be displayed in the Viber app for users. 10-1000 characters"
+    "description_desc": "The description that will be displayed in the Viber app for users. 10-1000 characters",
+    "applications_for_sms": "SMS applications"
   }
 }
