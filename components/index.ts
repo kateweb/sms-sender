@@ -11,6 +11,7 @@ import FilterDateMenu from '@/components/FilterDateMenu/FilterDateMenu';
 import HistoryTable from '@/components/HistoryTable/HistoryTable';
 import InvoiceDetailsCard from '@/components/InvoiceDetailsCard/InvoiceDetailsCard';
 import ContactsTable from '@/components/ContactsTable/ContactsTable';
+import GeneralTemplatesTable from '@/components/TemplatesTable/GeneralTemplatesTable';
 import { ImportPhonebookModal } from '@/components/ImportPhonebookModal/ImportPhonebookModal';
 import KanbanBoard from '@/components/KanbanBoard/KanbanBoard';
 import KanbanCard from '@/components/KanbanCard/KanbanCard';
@@ -36,6 +37,7 @@ import TrafficTable from '@/components/TrafficTable/TrafficTable';
 import UserButton from '@/components/UserButton';
 import UserProfileButton from '@/components/UserButton/UserButton';
 import UserProfileCard from '@/components/UserProfileCard/UserProfileCard';
+import UserTemplatesTable from '@/components/TemplatesTable/UserTemplatesTable';
 
 import Logo from './Logo/Logo';
 import ToggleTheme from './ToggleTheme/ToggleTheme';
@@ -81,4 +83,6 @@ export {
   TextEditor,
   UserButton,
   ErrorAlert,
+  UserTemplatesTable,
+  GeneralTemplatesTable
 };

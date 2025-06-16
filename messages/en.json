@@ -241,5 +241,18 @@
     "description_info": "For example, informing regular customers of the institution about events, promotions / registration on the site / order delivery status / other (specify what exactly). The maximum number of characters is 1000",
     "description_desc": "The description that will be displayed in the Viber app for users. 10-1000 characters",
     "applications_for_sms": "SMS applications"
+  },
+  "templates": {
+    "filter_status": "Status filter",
+    "statuses": {
+      "ready": "Ready to send",
+      "new": "Just created",
+      "processing": "Processing",
+      "rejected": "Rejected"
+    },
+    "search": "Search by templates",
+    "new": "New template",
+    "user_templates": "User templates",
+    "general_templates": "General templates"
   }
 }
