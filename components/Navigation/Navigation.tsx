@@ -51,7 +51,7 @@ const Navigation = ({
         { label: t('nav.alphasenders'), icon: IconSend2, link: PATH_APPS.alphasenders },
         { label: t('nav.alphasenders_list'), icon: IconListDetails, link: `${PATH_APPS.alphasenders}/applications`},
         { label: t('nav.templates'), icon: IconTemplate, link: PATH_APPS.templates },
-        { label: t('nav.stats'), icon: IconReportAnalytics, link: "#" },
+        { label: t('nav.stats'), icon: IconReportAnalytics, link: PATH_APPS.statistics },
         { label: t('nav.blacklists'), icon: IconForbid, link: "#" },
       ],
     },
