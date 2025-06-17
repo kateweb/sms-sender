@@ -80,7 +80,7 @@ const UserTemplatesTable = ({ data, error, loading, onSelectedChange, onDataChan
       title: t('phonebook.name'),
       sortable: true,
       render: (item: UserTemplatesItem) => (
-        <Text fw={700} c="green" onClick={() => router.push(`templates/update/${item.id}`)}>
+        <Text fw={700} c="green" style={{ cursor: 'pointer' }} onClick={() => router.push(`templates/update/${item.id}`)}>
           {item.name}
         </Text>
       ),
