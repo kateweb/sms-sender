@@ -31,6 +31,7 @@ import RouterTransition from '@/components/RouterTransition/RouterTransition';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import StatsGrid from '@/components/StatsGrid/StatsGrid';
 import Surface from '@/components/Surface';
+import { TemplateForm } from '@/components/TemplateForm/TemplateForm';
 import TextEditor from '@/components/TextEditor';
 import ThemeDrawer from '@/components/ThemeDrawer/ThemeDrawer';
 import TrafficTable from '@/components/TrafficTable/TrafficTable';
@@ -81,6 +82,7 @@ export {
   Faqs,
   Surface,
   TextEditor,
+  TemplateForm,
   UserButton,
   ErrorAlert,
   UserTemplatesTable,

@@ -67,12 +67,14 @@ export type UserTemplatesItem = {
   status: TemplatesStatus;
   type: string;
   date: string;
+  text: string;
 }
 
 export type GeneralTemplatesItem = {
   id: number;
   name: string;
   status: TemplatesStatus;
+  text: string;
 }
 
 export type Orders = {

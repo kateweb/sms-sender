@@ -14,6 +14,7 @@ import { ErrorAlert } from '@/components';
 import { useTranslations } from 'next-intl';
 import { Badge, MantineColor, Text } from '@mantine/core';
 import { TemplatesStatus, GeneralTemplatesItem } from '@/types';
+import { useRouter } from 'next/navigation';
 
 type StatusBadgeProps = {
   status: TemplatesStatus;
@@ -31,9 +32,6 @@ const StatusBadge = ({ status }: StatusBadgeProps) => {
       break;
     case 'processing':
       color = 'orange'
-      break;
-    case 'new':
-      color = 'blue'
       break;
     default:
       color = 'gray';
@@ -60,6 +58,7 @@ type GeneralTemplatesTableProps = {
 
 const UserTemplatesTable = ({ data, error, loading, onSelectedChange, onDataChange, filter, search }: GeneralTemplatesTableProps) => {
   const t = useTranslations();
+  const router = useRouter();
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
   const [records, setRecords] = useState<GeneralTemplatesItem[]>(data.slice(0, pageSize));
@@ -74,7 +73,7 @@ const UserTemplatesTable = ({ data, error, loading, onSelectedChange, onDataChan
       title: t('phonebook.name'),
       sortable: true,
       render: (item: GeneralTemplatesItem) => (
-        <Text fw={700} c="green">
+        <Text fw={700} c="green" onClick={() => router.push(`templates/update/${item.id}`)}>
           {item.name}
         </Text>
       ),

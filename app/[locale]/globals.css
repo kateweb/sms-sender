@@ -31,3 +31,6 @@ main[data-device="mobile"][data-sidebar-state="full"] {
 .mantine-Radio-icon {
   transition: opacity 100ms ease !important;
 }
+.mantine-Breadcrumbs-root > * {
+  line-height: normal !important;
+}
