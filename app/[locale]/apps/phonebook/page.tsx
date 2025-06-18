@@ -19,6 +19,7 @@ import { useForm } from '@mantine/form';
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { PATH_APPS } from '@/routes';
 import { useRouter } from 'next/navigation';
+import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
 
 export default function PhoneBooksPage() {
   const t = useTranslations();
@@ -32,6 +33,7 @@ export default function PhoneBooksPage() {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [search, setSearch] = useState('');
+
   const [books] = useState([
     { id: 1, name: 'Test', status: t('phonebook.ready_to_send') },
     { id: 2, name: 'First', status: t('phonebook.ready_to_send') },
@@ -43,6 +45,7 @@ export default function PhoneBooksPage() {
     book.name.toLowerCase().includes(search.toLowerCase())
   );
   const [openedConfirmModal, { open, close }] = useDisclosure(false);
+
   const handleDelete = () => {
     close();
   };
@@ -80,47 +83,12 @@ export default function PhoneBooksPage() {
               <IconTrash size={16} />
             </ActionIcon>
           </Tooltip>
-          <Modal
+          <ConfirmDeleteModal
             opened={openedConfirmModal}
             onClose={close}
-            centered
-            withCloseButton={false}
-            radius="md"
-            padding="lg"
-            size="sm"
-            overlayProps={{
-              backgroundOpacity: 0.3,
-            }}
-          >
-            <Center mb="md">
-              <IconAlertCircle size="48px" color="#84b94e" stroke={1.5} />
-            </Center>
-
-            <Text ta="center" fw={600} fz="lg" mb="xs">
-              {t('phonebook.are_you_sure')}
-            </Text>
-            <Text ta="center" c="dimmed" mb="lg">
-              {t('phonebook.will_be_deleted')}
-            </Text>
-
-            <Stack gap="xs">
-              <Button
-                fullWidth
-                radius="md"
-                onClick={handleDelete}
-              >
-                {t('phonebook.yes_delete')}
-              </Button>
-              <Button
-                variant="default"
-                fullWidth
-                radius="md"
-                onClick={close}
-              >
-                {t('phonebook.no')}
-              </Button>
-            </Stack>
-          </Modal>
+            onConfirm={handleDelete}
+            message={t('phonebook.confirm_delete')}
+          />
         </Group>
       ),
     },

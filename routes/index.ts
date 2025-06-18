@@ -21,7 +21,7 @@ export const PATH_APPS = {
   report_files: path(ROOT_APPS, '/report_files'),
   phonebook: path(ROOT_APPS, '/phonebook'),
   alphasenders: path(ROOT_APPS, '/alphasenders'),
-  chat: path(ROOT_APPS, '/chat'),
+  templates: path(ROOT_APPS, '/templates'),
   orders: path(ROOT_APPS, '/orders'),
   profile: path(ROOT_APPS, '/profile'),
   projects: path(ROOT_APPS, '/projects'),

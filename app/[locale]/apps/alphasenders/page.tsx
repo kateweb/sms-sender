@@ -7,7 +7,7 @@ import {
   Stack,
   Tabs,
   TextInput,
-  Card,
+  Card, Title, Container
 } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { useFetchData } from '@/hooks';
@@ -42,7 +42,11 @@ export default function AlphaNamesPage() {
     }
   }, [alphasendersData]);
   return (
-    <Card p="lg" radius="md" withBorder>
+    <Container fluid py="md">
+      <Title order={2} mb="md">
+        {t('nav.alphasenders')}
+      </Title>
+      <Card p="lg" radius="md" withBorder>
       <Stack>
         <Group justify="space-between">
           <Group>
@@ -99,5 +103,6 @@ export default function AlphaNamesPage() {
         </Tabs>
       </Stack>
     </Card>
+    </Container>
   );
 }

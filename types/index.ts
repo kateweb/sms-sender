@@ -59,6 +59,24 @@ export type ContactsItem = {
   extraInfo2: string;
 }
 
+export type TemplatesStatus = 'ready' |  'new' | 'processing' | 'rejected' | string;
+
+export type UserTemplatesItem = {
+  id: number;
+  name: string;
+  status: TemplatesStatus;
+  type: string;
+  date: string;
+  text: string;
+}
+
+export type GeneralTemplatesItem = {
+  id: number;
+  name: string;
+  status: TemplatesStatus;
+  text: string;
+}
+
 export type Orders = {
   id: string;
   product: string;

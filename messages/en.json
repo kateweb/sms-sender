@@ -7,6 +7,7 @@
   "close": "Close",
   "send": "Send",
   "save": "Save",
+  "update": "Update",
   "per_page": "Records per page",
   "search": "Search",
   "from": "From",
@@ -17,6 +18,11 @@
   "delete_choosed": "Delete choosed",
   "delete_all": "Delete all",
   "all": "All",
+  "are_you_sure": "Are you sure?",
+  "yes_delete": "Yes, delete it!",
+  "no": "No",
+  "copy": "Copy",
+  "copied": "Copied",
   "login": {
     "title": "Login",
     "welcome_back": "Welcome back",
@@ -123,10 +129,7 @@
     "send_bulk_sms": "Send bul SMS",
     "edit_phonebook": "Edit phonebook",
     "delete_phonebook": "Delete phonebook",
-    "are_you_sure": "Are you sure?",
-    "will_be_deleted": "All contacts will be deleted",
-    "yes_delete": "Yes, delete it!",
-    "no": "No",
+    "confirm_delete": "All contacts will be deleted",
     "all_phonebooks": "All phonebooks",
     "edit_comment": "Edit comment",
     "create_contact": "Create contact",
@@ -241,5 +244,31 @@
     "description_info": "For example, informing regular customers of the institution about events, promotions / registration on the site / order delivery status / other (specify what exactly). The maximum number of characters is 1000",
     "description_desc": "The description that will be displayed in the Viber app for users. 10-1000 characters",
     "applications_for_sms": "SMS applications"
+  },
+  "templates": {
+    "filter_status": "Status filter",
+    "statuses": {
+      "ready": "Ready to send",
+      "new": "Just created",
+      "processing": "Processing",
+      "rejected": "Rejected"
+    },
+    "search": "Search by templates",
+    "new": "New template",
+    "user_templates": "User templates",
+    "general_templates": "General templates",
+    "confirm_delete": "Template {name} will be deleted",
+    "edit_template": "Edit template",
+    "delete_template": "Delete template",
+    "create": "Create template",
+    "all_templates": "All message templates",
+    "draft": "Draft",
+    "submit_for_moderation": " and send for moderation",
+    "length_info": "SMS length: {length}; Maximum number of parts: {parts}/{max}",
+    "variables_note": "You can use variables in the template to replace the name and surname of a contact from the phonebook.",
+    "var_name": "Variable replaces with the name from phonebook",
+    "var_surname": "Variable replaces with surname from phonebook",
+    "var_info": "The variable is replaced with additional information from phonebook",
+    "var_percent": "The variable is replaced by the value of the column number in the downloaded file"
   }
 }

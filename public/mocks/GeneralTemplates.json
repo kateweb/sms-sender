@@ -1,0 +1,20 @@
+[
+  {
+    "id": 11,
+    "name": "general_template_1",
+    "status": "ready",
+    "text": "General test text 1"
+  },
+  {
+    "id": 12,
+    "name": "general_template_2",
+    "status": "new",
+    "text": "General test text 2"
+  },
+  {
+    "id": 13,
+    "name": "general_template_3",
+    "status": "rejected",
+    "text": "General test text 3"
+  }
+]

@@ -11,6 +11,7 @@ import FilterDateMenu from '@/components/FilterDateMenu/FilterDateMenu';
 import HistoryTable from '@/components/HistoryTable/HistoryTable';
 import InvoiceDetailsCard from '@/components/InvoiceDetailsCard/InvoiceDetailsCard';
 import ContactsTable from '@/components/ContactsTable/ContactsTable';
+import GeneralTemplatesTable from '@/components/TemplatesTable/GeneralTemplatesTable';
 import { ImportPhonebookModal } from '@/components/ImportPhonebookModal/ImportPhonebookModal';
 import KanbanBoard from '@/components/KanbanBoard/KanbanBoard';
 import KanbanCard from '@/components/KanbanCard/KanbanCard';
@@ -30,12 +31,14 @@ import RouterTransition from '@/components/RouterTransition/RouterTransition';
 import StatsCard from '@/components/StatsCard/StatsCard';
 import StatsGrid from '@/components/StatsGrid/StatsGrid';
 import Surface from '@/components/Surface';
+import { TemplateForm } from '@/components/TemplateForm/TemplateForm';
 import TextEditor from '@/components/TextEditor';
 import ThemeDrawer from '@/components/ThemeDrawer/ThemeDrawer';
 import TrafficTable from '@/components/TrafficTable/TrafficTable';
 import UserButton from '@/components/UserButton';
 import UserProfileButton from '@/components/UserButton/UserButton';
 import UserProfileCard from '@/components/UserProfileCard/UserProfileCard';
+import UserTemplatesTable from '@/components/TemplatesTable/UserTemplatesTable';
 
 import Logo from './Logo/Logo';
 import ToggleTheme from './ToggleTheme/ToggleTheme';
@@ -79,6 +82,9 @@ export {
   Faqs,
   Surface,
   TextEditor,
+  TemplateForm,
   UserButton,
   ErrorAlert,
+  UserTemplatesTable,
+  GeneralTemplatesTable
 };

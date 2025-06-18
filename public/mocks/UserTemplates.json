@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "template1",
+    "status": "ready",
+    "type": "sms",
+    "text": "Test text 1",
+    "date": "26.06.2024, 17:45:47"
+  },
+  {
+    "id": 2,
+    "name": "template2",
+    "status": "new",
+    "type": "sms",
+    "text": "Test text 2",
+    "date": "26.06.2024, 17:48:01"
+  },
+  {
+    "id": 3,
+    "name": "template3",
+    "status": "processing",
+    "type": "sms",
+    "text": "Test text 3",
+    "date": "26.06.2024, 17:45:47"
+  },
+  {
+    "id": 4,
+    "name": "template4",
+    "status": "rejected",
+    "type": "sms",
+    "text": "Test text 4",
+    "date": "26.06.2024, 17:48:01"
+  },
+  {
+    "id": 5,
+    "name": "template5",
+    "status": "ready",
+    "type": "sms",
+    "text": "Test text 5",
+    "date": "26.06.2024, 17:45:47"
+  },
+  {
+    "id": 6,
+    "name": "template6",
+    "status": "new",
+    "type": "sms",
+    "text": "Test text 6",
+    "date": "26.06.2024, 17:48:01"
+  }
+]
