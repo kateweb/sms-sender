@@ -58,6 +58,39 @@ export type ContactsItem = {
   extraInfo: string;
   extraInfo2: string;
 }
+export type HistoryStatus = 'In Progress' | 'Cancelled' | 'Completed' | 'Pending' | string;
+
+export type HistoryItem = {
+  id: string;
+  recipient: string;
+  created_at: string;
+  type: string;
+  status: HistoryStatus;
+  delivered: string;
+  sum: string;
+  template?: string;
+  text?: string;
+  delivery_status?: string;
+  delivery_amount?: string;
+};
+
+export type BlacklistsStatus = 'active' | 'disabled' | string;
+
+export type BlacklistsItem = {
+  id: string;
+  name: string;
+  desc: string;
+  amount: number;
+  created_at: string;
+  status: BlacklistsStatus;
+  active: boolean;
+
+  sum: string;
+  template?: string;
+  text?: string;
+  delivery_status?: string;
+  delivery_amount?: string;
+};
 
 export type TemplatesStatus = 'ready' |  'new' | 'processing' | 'rejected' | string;
 

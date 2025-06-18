@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "test1",
+    "desc": "Test blacklist",
+    "amount": 0,
+    "created_at": "2025-06-18",
+    "status": "disabled",
+    "active": false
+  },
+  {
+    "id": "2",
+    "name": "test2",
+    "desc": "Test text blacklist",
+    "amount": 1,
+    "created_at": "2025-06-17",
+    "status": "active",
+    "active": true
+  }
+]

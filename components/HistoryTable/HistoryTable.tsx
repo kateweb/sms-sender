@@ -22,10 +22,9 @@ import {
 import sortBy from 'lodash/sortBy';
 
 import { ErrorAlert } from '@/components';
+import { HistoryItem, HistoryStatus } from '@/types';
 
-type Status = 'In Progress' | 'Cancelled' | 'Completed' | 'Pending' | string;
-
-const StatusBadge = ({ status }: { status: Status }) => {
+const StatusBadge = ({ status }: { status: HistoryStatus }) => {
   const t = useTranslations('history.statuses');
   let color: MantineColor = '';
 
@@ -51,20 +50,6 @@ const StatusBadge = ({ status }: { status: Status }) => {
       {t(status)}
     </Badge>
   );
-};
-
-type HistoryItem = {
-  id: string;
-  recipient: string;
-  created_at: string;
-  type: string;
-  status: Status;
-  delivered: string;
-  sum: string;
-  template?: string;
-  text?: string;
-  delivery_status?: string;
-  delivery_amount?: string;
 };
 
 type HistoryTableProps = {

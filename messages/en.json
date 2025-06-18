@@ -272,5 +272,19 @@
     "var_surname": "Variable replaces with surname from phonebook",
     "var_info": "The variable is replaced with additional information from phonebook",
     "var_percent": "The variable is replaced by the value of the column number in the downloaded file"
+  },
+  "blacklists": {
+    "create": "Add new blacklist",
+    "enter_name": "Enter blacklist name",
+    "desc": "Description",
+    "list": "List of blacklists",
+    "statuses": {
+      "active": "Active",
+      "disabled": "Disabled"
+    },
+    "error": "Error loading blacklists",
+    "numbers_amount": "Number of phones",
+    "edit_blacklist": "Edit blacklist",
+    "delete_blacklist": "Delete blacklist"
   }
 }

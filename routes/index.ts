@@ -23,8 +23,8 @@ export const PATH_APPS = {
   alphasenders: path(ROOT_APPS, '/alphasenders'),
   templates: path(ROOT_APPS, '/templates'),
   statistics: path(ROOT_APPS, '/statistics'),
+  blacklists: path(ROOT_APPS, '/blacklists'),
   profile: path(ROOT_APPS, '/profile'),
-  projects: path(ROOT_APPS, '/projects'),
   settings: path(ROOT_APPS, '/settings'),
   tasks: path(ROOT_APPS, '/tasks'),
 
