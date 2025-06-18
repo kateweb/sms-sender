@@ -6,7 +6,7 @@ import {
   Stack,
   TextInput,
   Title,
-  Collapse, Container, PaperProps, Grid, Paper
+  Collapse, Container, PaperProps, Grid, Paper, Textarea
 } from '@mantine/core';
 import {  IconChevronUp, IconChevronDown } from '@tabler/icons-react';
 import { useState } from 'react';
@@ -42,7 +42,7 @@ export default function BlacklistsPage() {
         {t('nav.blacklists')}
       </Title>
       <Grid gutter={{ base: 'md', md: 'xl', xl: 50 }}>
-        <Grid.Col span={{ base: 12, lg: 7 }}>
+        <Grid.Col span={{ base: 12, lg: 6 }}>
           <Paper {...PAPER_PROPS}>
             <Group justify="space-between" mb="md">
               <Title order={4}>{t('blacklists.create')}</Title>
@@ -66,10 +66,12 @@ export default function BlacklistsPage() {
                     required
                     onChange={(e) => setName(e.currentTarget.value)}
                   />
-                  <TextInput
+                  <Textarea
+                    autosize
+                    minRows={7}
+                    required
                     placeholder={t('blacklists.desc')}
                     value={comment}
-                    required
                     onChange={(e) => setComment(e.currentTarget.value)}
                   />
                   <Button fullWidth type="submit">
