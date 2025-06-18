@@ -286,6 +286,7 @@
     "error": "Помилка завантаження чорних списків",
     "numbers_amount": "Кількість номерів",
     "edit_blacklist": "Редагувати чорний список",
-    "delete_blacklist": "Видалити чорний список"
+    "delete_blacklist": "Видалити чорний список",
+    "dropzone_info": ".csv, .txt, .xlsx, та .xls приймаються. Формат: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE у форматі +380501234567 або 380501234567"
   }
 }

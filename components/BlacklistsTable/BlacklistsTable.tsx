@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useMemo, useState } from 'react';
 import {
   ActionIcon,
-  Badge, Button, Flex,
+  Badge, Flex,
   Group,
   MantineColor, Menu, Switch, Text,
   Tooltip
@@ -13,14 +13,13 @@ import {
 import { useTranslations } from 'next-intl';
 import {
   IconChevronDown,
-  IconDownload, IconEdit, IconFileTypeCsv, IconFileTypeTxt, IconFileTypeXls,
-  IconReload, IconTrash
+  IconDownload, IconEdit, IconFileTypeCsv, IconFileTypeTxt, IconFileTypeXls, IconTrash
 } from '@tabler/icons-react';
 import sortBy from 'lodash/sortBy';
 
 import { ErrorAlert } from '@/components';
 import { BlacklistsItem, BlacklistsStatus } from '@/types';
-import { router } from 'next/client';
+import { useRouter } from 'next/navigation';
 import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
 import { useDisclosure } from '@mantine/hooks';
 
@@ -55,6 +54,7 @@ const PAGE_SIZES = [5, 10, 20];
 
 const BlackListsTable = ({ data, error, loading }: BlacklistsTableProps) => {
   const t = useTranslations();
+  const router  = useRouter();
   const [sortStatus, setSortStatus] = useState<DataTableSortStatus<BlacklistsItem>>({
     columnAccessor: 'created_at',
     direction: 'asc',
@@ -114,7 +114,7 @@ const BlackListsTable = ({ data, error, loading }: BlacklistsTableProps) => {
           title: t('phonebook.name'),
           sortable: true,
           render: (item: BlacklistsItem) => (
-            <Text fw={700} c="green" style={{ cursor: 'pointer' }} onClick={() => router.push(`templates/edit/${item.id}`)}>
+            <Text fw={700} c="green" style={{ cursor: 'pointer' }} onClick={() => router.push(`blacklists/update/${item.id}`)}>
               {item.name}
             </Text>
           ),
@@ -213,7 +213,7 @@ const BlackListsTable = ({ data, error, loading }: BlacklistsTableProps) => {
                   </Menu.Dropdown>
                 </Menu>
               <Tooltip label={t('blacklists.edit_blacklist')}>
-                <ActionIcon variant="subtle" color="gray"  onClick={() => router.push(`phonebook/${item.id}`)}>
+                <ActionIcon variant="subtle" color="gray"  onClick={() => router.push(`blacklists/update/${item.id}`)}>
                   <IconEdit size={16} />
                 </ActionIcon>
               </Tooltip>

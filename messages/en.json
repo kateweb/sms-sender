@@ -285,6 +285,7 @@
     "error": "Error loading blacklists",
     "numbers_amount": "Number of phones",
     "edit_blacklist": "Edit blacklist",
-    "delete_blacklist": "Delete blacklist"
+    "delete_blacklist": "Delete blacklist",
+    "dropzone_info": ".csv, .txt, .xlsx, and .xls are accepted. Format: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE in the format +380501234567 or 380501234567"
   }
 }

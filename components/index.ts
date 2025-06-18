@@ -2,8 +2,10 @@ import AlphasendersTable from '@/components/AlphasendersTable/AlphasendersTable'
 import AlphasendersTableAll from '@/components/AlphasendersTable/AlphasendersTableAll';
 import AlphasendersApplicationsTable from '@/components/AlphasendersTable/AlphasendersApplicationsTable';
 import BalanceCard from '@/components/BalanceCard/BalanceCard';
+import BlacklistContactsTable from '@/components/BlacklistContactsTable/BlacklistContactsTable';
 import ChatItem from '@/components/ChatItem/ChatItem';
 import ChatsList from '@/components/ChatsList/ChatsList';
+import { CreateBlacklistForm } from '@/components/CreateBlacklistForm/CreateBlacklistForm';
 import { CreatePhonebookForm } from '@/components/CreatePhonebookForm/CreatePhonebookForm';
 import ErrorAlert from '@/components/ErrorAlert';
 import Faqs from '@/components/Faqs/Faqs';
@@ -13,6 +15,7 @@ import InvoiceDetailsCard from '@/components/InvoiceDetailsCard/InvoiceDetailsCa
 import ContactsTable from '@/components/ContactsTable/ContactsTable';
 import GeneralTemplatesTable from '@/components/TemplatesTable/GeneralTemplatesTable';
 import { ImportPhonebookModal } from '@/components/ImportPhonebookModal/ImportPhonebookModal';
+import { ImportBlacklistModal } from '@/components/ImportBlacklistModal/ImportBlacklistModal';
 import KanbanBoard from '@/components/KanbanBoard/KanbanBoard';
 import KanbanCard from '@/components/KanbanCard/KanbanCard';
 import KanbanColumn from '@/components/KanbanColumn/KanbanColumn';
@@ -48,6 +51,7 @@ export {
   AlphasendersTableAll,
   AlphasendersApplicationsTable,
   BalanceCard,
+  BlacklistContactsTable,
   Logo,
   ToggleTheme,
   LanguagePicker,
@@ -63,6 +67,7 @@ export {
   PricingCard,
   ContactsTable,
   CreatePhonebookForm,
+  CreateBlacklistForm,
   ChatsList,
   ChatItem,
   ProjectsCard,
@@ -74,6 +79,7 @@ export {
   ReportFilesTable,
   InvoiceDetailsCard,
   ImportPhonebookModal,
+  ImportBlacklistModal,
   UserProfileButton,
   ThemeDrawer,
   PageHeader,

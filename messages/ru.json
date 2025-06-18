@@ -141,7 +141,7 @@
     "save_and_add": "Сохранить и добавить еще",
     "import_contacts": "Импорт контактов",
     "dropzone_title": "Перетащите файлы или нажмите для загрузки",
-    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,NAME,SURNAME,dd.mm.yyyy,EXTRA_INFO,EXTRA_INFO2. PHONE в формате +380501234567 или 3805712",
+    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,NAME,SURNAME,dd.mm.yyyy,EXTRA_INFO,EXTRA_INFO2. PHONE в формате +380501234567 или 380501234567",
     "file_success": "Загрузить файл",
     "file_error": "Неподдерживаемый тип файла",
     "loaded_files": "Загруженные файлы",
@@ -285,6 +285,8 @@
     "error": "Ошибка загрузки черных списков",
     "numbers_amount": "Количество номеров",
     "edit_blacklist": "Редактировать черный список",
-    "delete_blacklist": "Удалить черный список"
+    "delete_blacklist": "Удалить черный список",
+    "all_blacklists": "Все чёрные списки",
+    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE в формате +380501234567 или 380501234567"
   }
 }

@@ -58,6 +58,14 @@ export type ContactsItem = {
   extraInfo: string;
   extraInfo2: string;
 }
+
+export type BlacklistContactsItem = {
+  id: string;
+  phone: string;
+  name: string;
+  surname: string;
+  extraInfo: string;
+}
 export type HistoryStatus = 'In Progress' | 'Cancelled' | 'Completed' | 'Pending' | string;
 
 export type HistoryItem = {
