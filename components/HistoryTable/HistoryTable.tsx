@@ -114,7 +114,8 @@ const HistoryTable = ({ data, error, loading, withPagination = false }: HistoryT
       verticalSpacing="sm"
       highlightOnHover={false}
       height="auto"
-      minHeight="150px"
+      minHeight="200px"
+      noRecordsText={t('no_results')}
       records={paginatedData}
       fetching={loading}
       totalRecords={withPagination ? sortedData.length : undefined}
@@ -172,7 +173,9 @@ const HistoryTable = ({ data, error, loading, withPagination = false }: HistoryT
                 <ActionIcon
                   variant="subtle"
                   color="default"
-                  onClick={() => console.log('Download', record)}
+                  component="a"
+                  href="/files/stats-example.xlsx"
+                  download
                 >
                   <IconDownload size={18} />
                 </ActionIcon>

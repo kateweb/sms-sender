@@ -22,12 +22,11 @@ export const PATH_APPS = {
   phonebook: path(ROOT_APPS, '/phonebook'),
   alphasenders: path(ROOT_APPS, '/alphasenders'),
   templates: path(ROOT_APPS, '/templates'),
-  orders: path(ROOT_APPS, '/orders'),
+  statistics: path(ROOT_APPS, '/statistics'),
   profile: path(ROOT_APPS, '/profile'),
   projects: path(ROOT_APPS, '/projects'),
   settings: path(ROOT_APPS, '/settings'),
   tasks: path(ROOT_APPS, '/tasks'),
-
 
 };
 

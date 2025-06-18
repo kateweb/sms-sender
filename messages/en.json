@@ -91,7 +91,9 @@
     "template": "Template",
     "text": "Text",
     "delivery_status": "Delivery status",
-    "custom_text": "Custom text"
+    "custom_text": "Custom text",
+    "planned": "Planned",
+    "completed": "Completed"
   },
   "report": {
     "error": "Error loading report",
