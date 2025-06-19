@@ -69,7 +69,8 @@
     "alphasenders_list": "Alphasenders applications list",
     "templates": "Templates",
     "stats": "Statistics",
-    "blacklists": "Blacklists"
+    "blacklists": "Blacklists",
+    "profile": "Profile"
   },
   "history": {
     "title": "History",
@@ -289,5 +290,18 @@
     "dropzone_info": ".csv, .txt, .xlsx, and .xls are accepted. Format: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE in the format +380501234567 or 380501234567",
     "confirm_delete_contact": "Contact {name} {surname} will be deleted",
     "confirm_delete_contacts": "Contacts {list} will be deleted"
+  },
+  "profile": {
+    "personal_info": "Personal info",
+    "account": "Account",
+    "agreements": "Agreements",
+    "change_password": "Change password",
+    "balance": "Balance",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "confidentiality_phone_info": "We'll never share your phone number with anyone else.",
+    "confidentiality_email_info": "We'll never share your email with anyone else.",
+    "phone_verified": "Phone verified",
+    "email_verified": "Email verified"
   }
 }

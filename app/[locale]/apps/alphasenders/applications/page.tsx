@@ -30,7 +30,7 @@ export default function AlphaNamesPage() {
       <Title order={2} mb="md">
         {t('nav.alphasenders_list')}
       </Title>
-      <Card p="lg" radius="md" withBorder>
+      <Card p="lg" radius="md">
         <Stack>
           <Group justify="space-between">
             <Tabs value={tab} onChange={setTab}>

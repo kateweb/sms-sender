@@ -4,9 +4,7 @@ function path(root: string, sublink: string) {
 
 const ROOTS_DASHBOARD = '/dashboard';
 const ROOT_APPS = '/apps';
-const ROOTS_PAGES = '/pages';
 const ROOTS_AUTH = '/authentication';
-const ROOTS_ABOUT = '/pages/about';
 
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
@@ -25,15 +23,7 @@ export const PATH_APPS = {
   statistics: path(ROOT_APPS, '/statistics'),
   blacklists: path(ROOT_APPS, '/blacklists'),
   profile: path(ROOT_APPS, '/profile'),
-  settings: path(ROOT_APPS, '/settings'),
-  tasks: path(ROOT_APPS, '/tasks'),
 
-};
-
-export const PATH_PAGES = {
-  root: ROOTS_PAGES,
-  pricing: path(ROOTS_PAGES, '/pricing'),
-  blank: path(ROOTS_PAGES, '/blank'),
 };
 
 export const PATH_AUTH = {
@@ -41,8 +31,4 @@ export const PATH_AUTH = {
   signin: path(ROOTS_AUTH, '/signin'),
   signup: path(ROOTS_AUTH, '/signup'),
   passwordReset: path(ROOTS_AUTH, '/password-reset'),
-};
-
-export const PATH_ABOUT = {
-  root: ROOTS_ABOUT,
 };

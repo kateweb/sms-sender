@@ -1,3 +1,5 @@
+'use client';
+
 import { Modal, Button, TextInput, Input, Group, Stack } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { en, ru, uk  } from "intl-tel-input/i18n";

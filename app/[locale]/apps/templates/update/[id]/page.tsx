@@ -1,6 +1,6 @@
 'use client';
 
-import { TemplateForm } from '@/components';
+import { TemplateForm } from '@/components/TemplateForm/TemplateForm';
 import { Anchor, Breadcrumbs, Container, Title } from '@mantine/core';
 import { useTranslations } from 'next-intl';
 import { PATH_APPS } from '@/routes';

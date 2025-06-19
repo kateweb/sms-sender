@@ -70,7 +70,8 @@
     "alphasenders_list": "Список заявок на Альфа-імена",
     "templates": "Шаблони",
     "stats": "Статистика",
-    "blacklists": "Чорні списки"
+    "blacklists": "Чорні списки",
+    "profile": "Профіль"
   },
   "history": {
     "title": "Історія",
@@ -290,5 +291,18 @@
     "dropzone_info": ".csv, .txt, .xlsx, та .xls приймаються. Формат: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE у форматі +380501234567 або 380501234567",
     "confirm_delete_contact": "Контакт {name} {surname} буде видалено",
     "confirm_delete_contacts": "Контакти {list} будуть видалені"
+  },
+  "profile": {
+    "personal_info": "Особиста інформація",
+    "account": "Обліковий запис",
+    "agreements": "Договори",
+    "change_password": "Змінити пароль",
+    "balance": "Баланс",
+    "notifications": "Сповіщення",
+    "settings": "Налаштування",
+    "confidentiality_phone_info": "Ми ніколи нікому не передамо Ваш номер телефону.",
+    "confidentiality_email_info": "Ми ніколи не поділимося Вашою електронною поштою.",
+    "phone_verified": "Телефон підтверждено",
+    "email_verified": "Email підтверждено"
   }
 }

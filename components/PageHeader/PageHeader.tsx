@@ -3,7 +3,6 @@
 import {
   Breadcrumbs,
   BreadcrumbsProps,
-  Button,
   Divider,
   Flex,
   Paper,
@@ -15,7 +14,6 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
-import { IconPlus } from '@tabler/icons-react';
 
 import { Surface } from '@/components';
 import { useTranslations } from 'next-intl';
@@ -24,11 +22,10 @@ type PageHeaderProps = {
   title: string;
   withActions?: boolean;
   breadcrumbItems?: any;
-  invoiceAction?: boolean;
 } & PaperProps;
 
 const PageHeader = (props: PageHeaderProps) => {
-  const { withActions, breadcrumbItems, title, invoiceAction, ...others } =
+  const { withActions, breadcrumbItems, title, ...others } =
     props;
   const theme = useMantineTheme();
   const colorScheme = useColorScheme();
@@ -71,21 +68,6 @@ const PageHeader = (props: PageHeaderProps) => {
               <Title order={3}>{title}</Title>
               <Text>{t('login.welcome_back')}, Kate!</Text>
             </Stack>
-          </Flex>
-        ) : invoiceAction ? (
-          <Flex
-            align="center"
-            justify="space-between"
-            direction={{ base: 'row', sm: 'row' }}
-            gap={{ base: 'sm', sm: 4 }}
-          >
-            <Stack>
-              <Title order={3}>{title}</Title>
-              <Breadcrumbs {...BREADCRUMBS_PROPS}>
-                {breadcrumbItems}
-              </Breadcrumbs>
-            </Stack>
-            <Button leftSection={<IconPlus size={18} />}>New Invoice</Button>
           </Flex>
         ) : (
           <Stack gap="sm">

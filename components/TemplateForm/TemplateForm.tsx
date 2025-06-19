@@ -102,7 +102,7 @@ export const TemplateForm = ({
           })}
         </Text>
 
-        <Paper withBorder radius="md" p="md">
+        <Paper radius="md" p="md">
           <Stack gap="xs">
             <Text  size="sm" color="dimmed">{t('templates.variables_note')}</Text>
             {nameVars.map((v) => (

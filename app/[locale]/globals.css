@@ -34,3 +34,6 @@ main[data-device="mobile"][data-sidebar-state="full"] {
 .mantine-Breadcrumbs-root > * {
   line-height: normal !important;
 }
+.mantine-Tabs-root button {
+  padding: var(--mantine-spacing-xs);
+}
