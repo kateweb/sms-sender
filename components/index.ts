@@ -7,6 +7,7 @@ import ChatItem from '@/components/ChatItem/ChatItem';
 import ChatsList from '@/components/ChatsList/ChatsList';
 import { CreateBlacklistForm } from '@/components/CreateBlacklistForm/CreateBlacklistForm';
 import { CreatePhonebookForm } from '@/components/CreatePhonebookForm/CreatePhonebookForm';
+import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
 import ErrorAlert from '@/components/ErrorAlert';
 import Faqs from '@/components/Faqs/Faqs';
 import FilterDateMenu from '@/components/FilterDateMenu/FilterDateMenu';
@@ -52,6 +53,7 @@ export {
   AlphasendersApplicationsTable,
   BalanceCard,
   BlacklistContactsTable,
+  ConfirmDeleteModal,
   Logo,
   ToggleTheme,
   LanguagePicker,

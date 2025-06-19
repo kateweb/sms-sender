@@ -287,6 +287,8 @@
     "edit_blacklist": "Редактировать черный список",
     "delete_blacklist": "Удалить черный список",
     "all_blacklists": "Все чёрные списки",
-    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE в формате +380501234567 или 380501234567"
+    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE в формате +380501234567 или 380501234567",
+    "confirm_delete_contact": "Контакт {name} {surname} будет удален",
+    "confirm_delete_contacts": "Контакты {list} будут удалены"
   }
 }

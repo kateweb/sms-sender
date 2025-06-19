@@ -5,5 +5,12 @@
     "name": "Kate",
     "surname": "Kucherenko",
     "extraInfo": "test"
+  },
+  {
+    "id": "2",
+    "phone": "380634461630",
+    "name": "Kate",
+    "surname": "Burlachenko",
+    "extraInfo": "test 2"
   }
 ]

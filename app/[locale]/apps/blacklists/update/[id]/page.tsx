@@ -15,12 +15,12 @@ import {
 } from '@mantine/core';
 import { IconEdit } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
-import { BlacklistContactsTable, CreateBlacklistForm, ImportBlacklistModal } from '@/components';
+import { BlacklistContactsTable, ConfirmDeleteModal, CreateBlacklistForm, ImportBlacklistModal } from '@/components';
 import { useTranslations } from 'next-intl';
 import { useFetchData } from '@/hooks';
-import dayjs from 'dayjs';
 import { BlacklistContactsItem } from '@/types';
 import { PATH_APPS } from '@/routes';
+import { useDisclosure } from '@mantine/hooks';
 
 
 export default function UpdateBlacklistPage({ params }: { params: { id: string } }) {
@@ -41,6 +41,10 @@ export default function UpdateBlacklistPage({ params }: { params: { id: string }
   const [createOpened, setCreateOpened] = useState(false);
   const [contacts, setContacts] = useState<BlacklistContactsItem[]>(blacklistsContactsData);
   const [selected, setSelected] = useState<BlacklistContactsItem[]>([]);
+
+  const [confirmDeleteOpened, { open: openConfirm, close: closeConfirm }] = useDisclosure(false);
+  const [deleteMode, setDeleteMode] = useState<'selected' | 'all' | null>(null);
+  const [contactsToDelete, setContactsToDelete] = useState<BlacklistContactsItem[]>([]);
 
   useEffect(() => {
     if (blacklistsContactsData) {
@@ -69,16 +73,29 @@ export default function UpdateBlacklistPage({ params }: { params: { id: string }
     }
   };
 
-  const handleDeleteSelected = () => {
-    const idsToDelete = new Set(selected.map((item) => item.id));
-    const updated = contacts.filter((item) => !idsToDelete.has(item.id));
-    setContacts(updated);
-    setSelected([]);
+  const handleDeleteSelectedClick = () => {
+    setContactsToDelete(selected);
+    setDeleteMode('selected');
+    openConfirm();
   };
 
-  const handleDeleteAll = () => {
-    setContacts([]);
-    setSelected([]);
+  const handleDeleteAllClick = () => {
+    setDeleteMode('all');
+    openConfirm();
+  };
+
+  const handleConfirmDelete = () => {
+    if (deleteMode === 'selected') {
+      const idsToDelete = new Set(selected.map((item) => item.id));
+      const updated = contacts.filter((item) => !idsToDelete.has(item.id));
+      setContacts(updated);
+      setSelected([]);
+    } else if (deleteMode === 'all') {
+      setContacts([]);
+      setSelected([]);
+    }
+    closeConfirm();
+    setDeleteMode(null);
   };
 
   return (
@@ -156,9 +173,32 @@ export default function UpdateBlacklistPage({ params }: { params: { id: string }
                 <Group mt="md">
                   <Button onClick={() => setImportOpened(true)}>{t('import')}</Button>
                   <Button variant="outline" onClick={() => setCreateOpened(true)}>{t('create')}</Button>
-                  <Button color="red" variant="outline" onClick={handleDeleteSelected}>{t('delete_choosed')}</Button>
-                  <Button color="red" onClick={handleDeleteAll}>{t('delete_all')}</Button>
+                  <Button color="red" variant="outline" onClick={handleDeleteSelectedClick}>{t('delete_choosed')}</Button>
+                  <Button color="red" onClick={handleDeleteAllClick}>{t('delete_all')}</Button>
                 </Group>
+                <ConfirmDeleteModal
+                  opened={confirmDeleteOpened}
+                  onClose={() => {
+                    setDeleteMode(null);
+                    setContactsToDelete([]);
+                    closeConfirm();
+                  }}
+                  onConfirm={handleConfirmDelete}
+                  message={
+                    deleteMode === 'selected'
+                      ? contactsToDelete.length === 1
+                        ? t('blacklists.confirm_delete_contact', {
+                          name: contactsToDelete[0].name,
+                          surname: contactsToDelete[0].surname,
+                        })
+                        : t('blacklists.confirm_delete_contacts', {
+                          list: contactsToDelete.map(c => `${c.name} ${c.surname}`).join(', ')
+                        })
+                      : deleteMode === 'all'
+                      ? t('phonebook.confirm_delete')
+                      : ''
+                  }
+                />
               </div>
             </Flex>
             <BlacklistContactsTable

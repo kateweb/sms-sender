@@ -20,7 +20,7 @@ import sortBy from 'lodash/sortBy';
 import { ErrorAlert } from '@/components';
 import { BlacklistsItem, BlacklistsStatus } from '@/types';
 import { useRouter } from 'next/navigation';
-import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
+import { ConfirmDeleteModal } from '@/components';
 import { useDisclosure } from '@mantine/hooks';
 
 const StatusBadge = ({ status }: { status: BlacklistsStatus }) => {
