@@ -5,7 +5,7 @@ import {
   Button,
   Text,
   Container,
-  Flex, Input, Fieldset, Tooltip
+  Input, Fieldset, Tooltip
 } from '@mantine/core';
 import { IconAt, IconCheck } from '@tabler/icons-react';
 import { useState } from 'react';

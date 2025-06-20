@@ -1,5 +1,7 @@
-import { ActionIcon, Box, Burger, Flex, Group, ScrollArea } from '@mantine/core';
+'use client';
+
 import { useMediaQuery } from '@mantine/hooks';
+import { ActionIcon, Box, Burger, Flex, Group, ScrollArea } from '@mantine/core';
 import {
   IconAddressBook,
   IconChartBar,

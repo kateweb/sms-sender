@@ -21,7 +21,7 @@ type TemplateFormProps = {
     text: string;
   };
   loading?: boolean;
-  onSubmit: (values: { name: string; text: string }) => void;
+  onSubmit(values: { name: string; text: string }): void;
 };
 
 export const TemplateForm = ({
@@ -104,7 +104,7 @@ export const TemplateForm = ({
 
         <Paper radius="md" p="md">
           <Stack gap="xs">
-            <Text  size="sm" color="dimmed">{t('templates.variables_note')}</Text>
+            <Text  size="sm" c="dimmed">{t('templates.variables_note')}</Text>
             {nameVars.map((v) => (
               <Group key={v.label} gap="xs">
                 <CopyButton value={v.label} timeout={1500}>
@@ -126,7 +126,7 @@ export const TemplateForm = ({
                   )}
                 </CopyButton>
 
-                <Text size="sm" color="dimmed">
+                <Text size="sm" c="dimmed">
                   – {t(v.descriptionKey)}
                 </Text>
               </Group>
@@ -149,7 +149,7 @@ export const TemplateForm = ({
                   )}
                 </CopyButton>
               ))}
-              <Text size="sm" color="dimmed">
+              <Text size="sm" c="dimmed">
                 – {t('templates.var_percent')}
               </Text>
             </Group>

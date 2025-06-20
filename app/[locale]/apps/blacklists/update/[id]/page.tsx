@@ -15,12 +15,13 @@ import {
 } from '@mantine/core';
 import { IconEdit } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
-import { BlacklistContactsTable, ConfirmDeleteModal, CreateBlacklistForm, ImportBlacklistModal } from '@/components';
+import { BlacklistContactsTable, ConfirmDeleteModal, ImportBlacklistModal } from '@/components';
 import { useTranslations } from 'next-intl';
 import { useFetchData } from '@/hooks';
 import { BlacklistContactsItem } from '@/types';
 import { PATH_APPS } from '@/routes';
 import { useDisclosure } from '@mantine/hooks';
+import { CreateBlacklistForm } from '@/components/CreateBlacklistForm/CreateBlacklistForm';
 
 
 export default function UpdateBlacklistPage({ params }: { params: { id: string } }) {

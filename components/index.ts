@@ -3,8 +3,6 @@ import AlphasendersTableAll from '@/components/AlphasendersTable/AlphasendersTab
 import AlphasendersApplicationsTable from '@/components/AlphasendersTable/AlphasendersApplicationsTable';
 import BalanceCard from '@/components/BalanceCard/BalanceCard';
 import BlacklistContactsTable from '@/components/BlacklistContactsTable/BlacklistContactsTable';
-import { CreateBlacklistForm } from '@/components/CreateBlacklistForm/CreateBlacklistForm';
-import { CreatePhonebookForm } from '@/components/CreatePhonebookForm/CreatePhonebookForm';
 import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
 import ErrorAlert from '@/components/ErrorAlert';
 import HistoryTable from '@/components/HistoryTable/HistoryTable';
@@ -44,8 +42,6 @@ export {
   InputWithTooltip,
   UserProfileCard,
   ContactsTable,
-  CreatePhonebookForm,
-  CreateBlacklistForm,
   ProjectsCard,
   MessagesChart,
   ReportsTable,

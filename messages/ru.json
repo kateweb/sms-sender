@@ -302,7 +302,13 @@
     "settings": "Настройки",
     "confidentiality_phone_info": "Мы никогда не передадим Ваш номер телефона кому-либо ещё.",
     "confidentiality_email_info": "Мы никогда не передадим Ваш адрес электронной почты кому-либо ещё.",
-    "phone_verified": "Телефон підтверджений",
-    "email_verified": "Email підтверджений"
+    "phone_verified": "Телефон подтвержден",
+    "email_verified": "Email подтвержден",
+    "language": {
+      "title": "Язык",
+      "ru": "Русский",
+      "uk": "Украинский",
+      "en": "Английский"
+    }
   }
 }

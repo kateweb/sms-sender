@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 import { useLocale } from '@/contexts/LocaleContext';
 import { useRef } from 'react';
 
-export function CreateBlacklistForm({ opened, onClose, onAdd }: { opened: boolean; onClose: () => void; onAdd: (item: any) => void }) {
+export function CreateBlacklistForm({ opened, onClose, onAdd }: { opened: boolean; onClose(): void; onAdd(item: any): void }) {
   const t = useTranslations();
   const phoneInputRef = useRef<IntlTelInputRef>(null);
   const { locale } = useLocale();

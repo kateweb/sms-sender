@@ -15,13 +15,14 @@ import {
 } from '@mantine/core';
 import { IconEdit } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
-import { ConfirmDeleteModal, ContactsTable, CreatePhonebookForm, ImportPhonebookModal } from '@/components';
+import { ConfirmDeleteModal, ContactsTable, ImportPhonebookModal } from '@/components';
 import { useTranslations } from 'next-intl';
 import { useFetchData } from '@/hooks';
 import dayjs from 'dayjs';
 import { BlacklistContactsItem, ContactsItem } from '@/types';
 import { PATH_APPS } from '@/routes';
 import { useDisclosure } from '@mantine/hooks';
+import { CreatePhonebookForm } from '@/components/CreatePhonebookForm/CreatePhonebookForm';
 
 export default function PhonebookPage({ params }: { params: { id: string } }) {
   const t = useTranslations();

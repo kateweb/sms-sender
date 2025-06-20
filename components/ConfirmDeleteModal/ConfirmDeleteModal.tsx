@@ -6,8 +6,8 @@ import { useTranslations } from 'next-intl';
 
 type ConfirmDeleteModalProps = {
   opened: boolean;
-  onClose: () => void;
-  onConfirm: () => void;
+  onClose(): void;
+  onConfirm(): void;
   message: string;
 };
 

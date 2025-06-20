@@ -24,7 +24,6 @@ export default function InputWithTooltip({ label, tooltip, withAsteriskSymbol = 
 
   const sharedProps = {
     label: labelNode,
-    withAsteriskSymbol,
     ...props,
   };
 

@@ -302,6 +302,12 @@
     "confidentiality_phone_info": "We'll never share your phone number with anyone else.",
     "confidentiality_email_info": "We'll never share your email with anyone else.",
     "phone_verified": "Phone verified",
-    "email_verified": "Email verified"
+    "email_verified": "Email verified",
+    "language": {
+      "title": "Language",
+      "ru": "Russian",
+      "uk": "Ukrainian",
+      "en": "English"
+    }
   }
 }

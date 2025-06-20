@@ -7,7 +7,7 @@ import {
   Stack, Tabs, Title
 } from '@mantine/core';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   IconBell,
   IconFileText, IconMoneybag, IconSettings,
@@ -16,10 +16,25 @@ import {
   IconUser,
 } from '@tabler/icons-react';
 import PersonalInfoForm from '@/components/Profile/PersonalInfoForm';
+import AccountForm from '@/components/Profile/AccountForm';
 
 function Profile() {
   const t = useTranslations();
   const [tab, setTab] = useState<string | null>('personal');
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setTab(hash);
+    }
+  }, []);
+
+  const handleTabChange = (newTab: string | null) => {
+    if (newTab) {
+      setTab(newTab);
+      window.history.replaceState(null, '', `#${newTab}`);
+    }
+  };
 
   return (
     <Container fluid py="md">
@@ -29,7 +44,7 @@ function Profile() {
       <Card p="md" radius="md">
         <Stack>
           <Group justify="space-between">
-            <Tabs value={tab} onChange={setTab}>
+            <Tabs value={tab} onChange={handleTabChange}>
               <Tabs.List>
                 <Tabs.Tab value="personal">
                   <Group gap={6} align="center">
@@ -85,6 +100,9 @@ function Profile() {
           <Tabs value={tab} onChange={setTab}>
             <Tabs.Panel value="personal">
               <PersonalInfoForm/>
+            </Tabs.Panel>
+            <Tabs.Panel value="account">
+              <AccountForm/>
             </Tabs.Panel>
           </Tabs>
         </Stack>

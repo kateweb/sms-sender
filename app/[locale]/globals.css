@@ -34,7 +34,7 @@ main[data-device="mobile"][data-sidebar-state="full"] {
 .mantine-Breadcrumbs-root > * {
   line-height: normal !important;
 }
-.mantine-Tabs-root button {
+.mantine-Tabs-root .mantine-Tabs-list > button {
   padding: var(--mantine-spacing-xs);
   @media (max-width: $mantine-breakpoint-xs) {
     width: 100%;
