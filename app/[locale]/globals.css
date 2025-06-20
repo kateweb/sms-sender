@@ -36,4 +36,18 @@ main[data-device="mobile"][data-sidebar-state="full"] {
 }
 .mantine-Tabs-root button {
   padding: var(--mantine-spacing-xs);
+  @media (max-width: $mantine-breakpoint-xs) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+.mantine-Fieldset-root {
+  @mixin dark {
+    background: transparent;
+  }
+}
+legend.mantine-Fieldset-legend {
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: var(--mantine-font-size-md);
+  }
 }

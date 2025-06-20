@@ -9,22 +9,17 @@ import {
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import {
-  IconApi,
   IconBell,
-  IconBusinessplan,
   IconFileText, IconMoneybag, IconSettings,
   IconShieldLock, IconSitemap,
   IconStack,
-  IconStackFilled,
   IconUser,
-  IconUserFilled
 } from '@tabler/icons-react';
 import PersonalInfoForm from '@/components/Profile/PersonalInfoForm';
 
 function Profile() {
   const t = useTranslations();
   const [tab, setTab] = useState<string | null>('personal');
-  //Personal
 
   return (
     <Container fluid py="md">
@@ -86,9 +81,7 @@ function Profile() {
                 </Tabs.Tab>
               </Tabs.List>
             </Tabs>
-
           </Group>
-
           <Tabs value={tab} onChange={setTab}>
             <Tabs.Panel value="personal">
               <PersonalInfoForm/>
