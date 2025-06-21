@@ -16,7 +16,6 @@ variables:
   script:
 #    - build-env -f .env.example -e $CI_ENVIRONMENT_NAME > .env ; cp .env .helm/.env
     - werf converge
-      --namespace $KUBE_NAMESPACE
       --set gitlab.build=$CI_JOB_ID
       --set gitlab.app=$CI_PROJECT_PATH_SLUG
       --set gitlab.env=$CI_ENVIRONMENT_SLUG
@@ -30,7 +29,7 @@ variables:
   extends: .werf_dismiss
   script:
     - touch .env
-    - werf dismiss --namespace $KUBE_NAMESPACE
+    - werf dismiss
 
 deploy:stage:
   extends: .base_deploy
