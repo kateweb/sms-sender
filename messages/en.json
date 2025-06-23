@@ -308,6 +308,10 @@
       "ru": "Russian",
       "uk": "Ukrainian",
       "en": "English"
-    }
+    },
+    "agreements_title": "Agreements on the provision of services",
+    "contact_type": "Name of contract",
+    "valid_date": "Valid until",
+    "general": "General"
   }
 }

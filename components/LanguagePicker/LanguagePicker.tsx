@@ -29,7 +29,11 @@ const LanguagePicker = ({ type, locale }: LanguagePickerProps) => {
   const t = useTranslations();
 
   const queryString = searchParams.toString();
-  const fullPath = queryString ? `${pathname}?${queryString}` : pathname;
+  let hash = '';
+  if (typeof window !== 'undefined') {
+    hash = window.location.hash || '';
+  }
+  const fullPath = queryString ? `${pathname}?${queryString}${hash}` : `${pathname}${hash}`;
 
   const selected = data.find((lang) => lang.label.toLowerCase() === locale.toLowerCase()) || data[0];
 

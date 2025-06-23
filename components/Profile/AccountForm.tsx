@@ -8,7 +8,7 @@ import {
 } from '@mantine/core';
 
 import { useState } from 'react';
-import classes from './PersonalInfoForm.module.css';
+import classes from './Profile.module.css';
 import { useTranslations } from 'next-intl';
 import "intl-tel-input/styles";
 import { useLocale } from '@/contexts/LocaleContext';
