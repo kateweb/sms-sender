@@ -10,7 +10,7 @@ import {
 import { IconAt, IconCheck } from '@tabler/icons-react';
 import { useState } from 'react';
 
-import classes from './PersonalInfoForm.module.css';
+import classes from './Profile.module.css';
 
 import { en, ru, uk  } from "intl-tel-input/i18n";
 import IntlTelInput from "intl-tel-input/reactWithUtils";

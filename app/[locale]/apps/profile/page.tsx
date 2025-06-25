@@ -17,6 +17,7 @@ import {
 } from '@tabler/icons-react';
 import PersonalInfoForm from '@/components/Profile/PersonalInfoForm';
 import AccountForm from '@/components/Profile/AccountForm';
+import AgreementsForm from '@/components/Profile/AgreementsForm';
 
 function Profile() {
   const t = useTranslations();
@@ -103,6 +104,9 @@ function Profile() {
             </Tabs.Panel>
             <Tabs.Panel value="account">
               <AccountForm/>
+            </Tabs.Panel>
+            <Tabs.Panel value="agreements">
+              <AgreementsForm/>
             </Tabs.Panel>
           </Tabs>
         </Stack>
