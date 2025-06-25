@@ -53,7 +53,7 @@ export default function TemplatesPage() {
       <Title order={2} mb="md">
         {t('nav.templates')}
       </Title>
-      <Card p="lg" radius="md" withBorder>
+      <Card p="lg" radius="md" >
         <Stack>
           <Group justify="space-between" wrap="wrap">
             <Menu shadow="md" width={200}>

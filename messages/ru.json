@@ -69,7 +69,8 @@
     "alphasenders_list": "Список заявок на Альфа-имена",
     "templates": "Шаблоны",
     "stats": "Статистика",
-    "blacklists": "Черные списки"
+    "blacklists": "Черные списки",
+    "profile": "Профиль"
   },
   "history": {
     "title": "История",
@@ -141,7 +142,7 @@
     "save_and_add": "Сохранить и добавить еще",
     "import_contacts": "Импорт контактов",
     "dropzone_title": "Перетащите файлы или нажмите для загрузки",
-    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,NAME,SURNAME,dd.mm.yyyy,EXTRA_INFO,EXTRA_INFO2. PHONE в формате +380501234567 или 3805712",
+    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,NAME,SURNAME,dd.mm.yyyy,EXTRA_INFO,EXTRA_INFO2. PHONE в формате +380501234567 или 380501234567",
     "file_success": "Загрузить файл",
     "file_error": "Неподдерживаемый тип файла",
     "loaded_files": "Загруженные файлы",
@@ -272,5 +273,42 @@
     "var_surname": "Переменная заменяется фамилией из телефонной книги",
     "var_info": "Переменная заменяется дополнительной информацией из телефонной книги",
     "var_percent": "Переменная заменяется значением номера столбца в загруженном файле"
+  },
+  "blacklists": {
+    "create": "Создать черный список",
+    "enter_name": "Введите имя черного списка",
+    "desc": "Описание",
+    "list": "Перечень черных списков",
+    "statuses": {
+      "active": "Активный",
+      "disabled": "Отключено"
+    },
+    "error": "Ошибка загрузки черных списков",
+    "numbers_amount": "Количество номеров",
+    "edit_blacklist": "Редактировать черный список",
+    "delete_blacklist": "Удалить черный список",
+    "all_blacklists": "Все чёрные списки",
+    "dropzone_info": ".csv, .txt, .xlsx и .xls принимаются. Формат: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE в формате +380501234567 или 380501234567",
+    "confirm_delete_contact": "Контакт {name} {surname} будет удален",
+    "confirm_delete_contacts": "Контакты {list} будут удалены"
+  },
+  "profile": {
+    "personal_info": "Личная информация",
+    "account": "Учётная запись",
+    "agreements": "Договоры",
+    "change_password": "Изменить пароль",
+    "balance": "Баланс",
+    "notifications": "Уведомления",
+    "settings": "Настройки",
+    "confidentiality_phone_info": "Мы никогда не передадим Ваш номер телефона кому-либо ещё.",
+    "confidentiality_email_info": "Мы никогда не передадим Ваш адрес электронной почты кому-либо ещё.",
+    "phone_verified": "Телефон подтвержден",
+    "email_verified": "Email подтвержден",
+    "language": {
+      "title": "Язык",
+      "ru": "Русский",
+      "uk": "Украинский",
+      "en": "Английский"
+    }
   }
 }

@@ -16,7 +16,7 @@ import { ActionIcon, Badge, Group, MantineColor, Text, Tooltip } from '@mantine/
 import { TemplatesStatus, UserTemplatesItem } from '@/types';
 import { IconEdit, IconTrash } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
-import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
+import { ConfirmDeleteModal } from '@/components';
 
 type StatusBadgeProps = {
   status: TemplatesStatus;

@@ -1,5 +1,7 @@
-import { ActionIcon, Box, Burger, Flex, Group, ScrollArea } from '@mantine/core';
+'use client';
+
 import { useMediaQuery } from '@mantine/hooks';
+import { ActionIcon, Box, Burger, Flex, Group, ScrollArea } from '@mantine/core';
 import {
   IconAddressBook,
   IconChartBar,
@@ -52,7 +54,7 @@ const Navigation = ({
         { label: t('nav.alphasenders_list'), icon: IconListDetails, link: `${PATH_APPS.alphasenders}/applications`},
         { label: t('nav.templates'), icon: IconTemplate, link: PATH_APPS.templates },
         { label: t('nav.stats'), icon: IconReportAnalytics, link: PATH_APPS.statistics },
-        { label: t('nav.blacklists'), icon: IconForbid, link: "#" },
+        { label: t('nav.blacklists'), icon: IconForbid, link: PATH_APPS.blacklists},
       ],
     },
   ];

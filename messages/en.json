@@ -69,7 +69,8 @@
     "alphasenders_list": "Alphasenders applications list",
     "templates": "Templates",
     "stats": "Statistics",
-    "blacklists": "Blacklists"
+    "blacklists": "Blacklists",
+    "profile": "Profile"
   },
   "history": {
     "title": "History",
@@ -272,5 +273,41 @@
     "var_surname": "Variable replaces with surname from phonebook",
     "var_info": "The variable is replaced with additional information from phonebook",
     "var_percent": "The variable is replaced by the value of the column number in the downloaded file"
+  },
+  "blacklists": {
+    "create": "Add new blacklist",
+    "enter_name": "Enter blacklist name",
+    "desc": "Description",
+    "list": "List of blacklists",
+    "statuses": {
+      "active": "Active",
+      "disabled": "Disabled"
+    },
+    "error": "Error loading blacklists",
+    "numbers_amount": "Number of phones",
+    "edit_blacklist": "Edit blacklist",
+    "delete_blacklist": "Delete blacklist",
+    "dropzone_info": ".csv, .txt, .xlsx, and .xls are accepted. Format: PHONE,FIRST_NAME,LAST_NAME,EXTRA_INFO. PHONE in the format +380501234567 or 380501234567",
+    "confirm_delete_contact": "Contact {name} {surname} will be deleted",
+    "confirm_delete_contacts": "Contacts {list} will be deleted"
+  },
+  "profile": {
+    "personal_info": "Personal info",
+    "account": "Account",
+    "agreements": "Agreements",
+    "change_password": "Change password",
+    "balance": "Balance",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "confidentiality_phone_info": "We'll never share your phone number with anyone else.",
+    "confidentiality_email_info": "We'll never share your email with anyone else.",
+    "phone_verified": "Phone verified",
+    "email_verified": "Email verified",
+    "language": {
+      "title": "Language",
+      "ru": "Russian",
+      "uk": "Ukrainian",
+      "en": "English"
+    }
   }
 }

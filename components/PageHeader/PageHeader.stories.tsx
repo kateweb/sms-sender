@@ -30,7 +30,6 @@ export const Default: Story = {
 export const InvoiceActions: Story = {
   args: {
     title: 'Dashboard',
-    invoiceAction: true,
     style: { width: 800 },
   },
 };

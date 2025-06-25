@@ -19,7 +19,7 @@ import { useForm } from '@mantine/form';
 import { DataTable, type DataTableColumn } from 'mantine-datatable';
 import { PATH_APPS } from '@/routes';
 import { useRouter } from 'next/navigation';
-import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
+import { ConfirmDeleteModal } from '@/components';
 
 export default function PhoneBooksPage() {
   const t = useTranslations();

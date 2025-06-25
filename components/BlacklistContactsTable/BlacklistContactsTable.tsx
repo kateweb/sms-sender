@@ -13,47 +13,36 @@ import {
 import { ErrorAlert } from '@/components';
 import { IconCheck, IconX } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
-import { ContactsItem } from '@/types';
+import { BlacklistContactsItem } from '@/types';
 
 const PAGE_SIZES = [5, 10, 20];
 
-type ContactsTableProps = {
-  data: ContactsItem[];
+type BlacklistContactsTableProps = {
+  data: BlacklistContactsItem[];
   error?: ReactNode;
   loading?: boolean;
-  onSelectedChange?: (selected: ContactsItem[]) => void;
-  onDataChange?: (updated: ContactsItem[]) => void;
+  onSelectedChange?: (selected: BlacklistContactsItem[]) => void;
+  onDataChange?: (updated: BlacklistContactsItem[]) => void;
 };
 
-const ContactsTable = ({ data, error, loading, onSelectedChange, onDataChange }: ContactsTableProps) => {
+const BlacklistContactsTable = ({ data, error, loading, onSelectedChange, onDataChange }: BlacklistContactsTableProps) => {
   const t = useTranslations();
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
-  const [selectedRecords, setSelectedRecords] = useState<ContactsItem[]>([]);
-  const [records, setRecords] = useState<ContactsItem[]>(data.slice(0, pageSize));
-  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<ContactsItem>>({
+  const [selectedRecords, setSelectedRecords] = useState<BlacklistContactsItem[]>([]);
+  const [records, setRecords] = useState<BlacklistContactsItem[]>(data.slice(0, pageSize));
+  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<BlacklistContactsItem>>({
     columnAccessor: 'name',
     direction: 'asc',
   });
   const [query, setQuery] = useState('');
   const [debouncedQuery] = useDebouncedValue(query, 200);
 
-  const columns: DataTableProps<ContactsItem>['columns'] = [
+  const columns: DataTableProps<BlacklistContactsItem>['columns'] = [
     {
       accessor: 'phone',
       title: t('reg.phone'),
       sortable: true,
-    },
-    {
-      accessor: 'valid',
-      title: t('phonebook.valid'),
-      sortable: true,
-      render: ({ valid }) =>
-        valid ? (
-          <IconCheck color="green" size={18} />
-        ) : (
-          <IconX color="red" size={18} />
-        ),
     },
     {
       accessor: 'name',
@@ -66,18 +55,8 @@ const ContactsTable = ({ data, error, loading, onSelectedChange, onDataChange }:
       sortable: true,
     },
     {
-      accessor: 'birthday',
-      title: t('phonebook.birthday'),
-      sortable: true,
-    },
-    {
       accessor: 'extraInfo',
       title: t('phonebook.extra_info'),
-      sortable: true,
-    },
-    {
-      accessor: 'extraInfo2',
-      title: `${t('phonebook.extra_info')} 2`,
       sortable: true,
     },
   ];
@@ -89,9 +68,9 @@ const ContactsTable = ({ data, error, loading, onSelectedChange, onDataChange }:
   useEffect(() => {
     const from = (page - 1) * pageSize;
     const to = from + pageSize;
-    const d = sortBy(data, sortStatus.columnAccessor) as ContactsItem[];
+    const d = sortBy(data, sortStatus.columnAccessor) as BlacklistContactsItem[];
     const dd = sortStatus.direction === 'desc' ? d.reverse() : d;
-    let filtered = dd.slice(from, to) as ContactsItem[];
+    let filtered = dd.slice(from, to) as BlacklistContactsItem[];
 
     if (debouncedQuery) {
       filtered = data
@@ -113,9 +92,9 @@ const ContactsTable = ({ data, error, loading, onSelectedChange, onDataChange }:
   }, [sortStatus, data, page, pageSize, debouncedQuery]);
 
   return error ? (
-    <ErrorAlert title={t('phonebook.error')} message={error.toString()} />
+    <ErrorAlert title={t('blacklists.error')} message={error.toString()} />
   ) : (
-    <DataTable<ContactsItem>
+    <DataTable<BlacklistContactsItem>
       mt="md"
       minHeight="200px"
       verticalSpacing="xs"
@@ -149,4 +128,4 @@ const ContactsTable = ({ data, error, loading, onSelectedChange, onDataChange }:
   );
 };
 
-export default ContactsTable;
+export default BlacklistContactsTable;

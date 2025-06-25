@@ -15,43 +15,43 @@ import {
 } from '@mantine/core';
 import { IconEdit } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
-import { ConfirmDeleteModal, ContactsTable, ImportPhonebookModal } from '@/components';
+import { BlacklistContactsTable, ConfirmDeleteModal, ImportBlacklistModal } from '@/components';
 import { useTranslations } from 'next-intl';
 import { useFetchData } from '@/hooks';
-import dayjs from 'dayjs';
-import { BlacklistContactsItem, ContactsItem } from '@/types';
+import { BlacklistContactsItem } from '@/types';
 import { PATH_APPS } from '@/routes';
 import { useDisclosure } from '@mantine/hooks';
-import { CreatePhonebookForm } from '@/components/CreatePhonebookForm/CreatePhonebookForm';
+import { CreateBlacklistForm } from '@/components/CreateBlacklistForm/CreateBlacklistForm';
 
-export default function PhonebookPage({ params }: { params: { id: string } }) {
+
+export default function UpdateBlacklistPage({ params }: { params: { id: string } }) {
   const t = useTranslations();
   const [isEditingTitle, setIsEditingTitle] = useState(false);
-  const [title, setTitle] = useState('First');
+  const [title, setTitle] = useState('Test');
 
   const [isEditingComment, setIsEditingComment] = useState(false);
-  const [comment, setComment] = useState('Comment');
+  const [comment, setComment] = useState('Test text comment');
 
   const {
-    data: contactsData,
-    error: contactsError,
-    loading: contactsLoading,
-  } = useFetchData('/mocks/Contacts.json');
+    data: blacklistsContactsData,
+    error: blacklistsContactsError,
+    loading: blacklistsContactsLoading,
+  } = useFetchData('/mocks/BlacklistsContacts.json');
 
   const [importOpened, setImportOpened] = useState(false);
   const [createOpened, setCreateOpened] = useState(false);
-  const [contacts, setContacts] = useState<ContactsItem[]>(contactsData);
-  const [selected, setSelected] = useState<ContactsItem[]>([]);
+  const [contacts, setContacts] = useState<BlacklistContactsItem[]>(blacklistsContactsData);
+  const [selected, setSelected] = useState<BlacklistContactsItem[]>([]);
 
   const [confirmDeleteOpened, { open: openConfirm, close: closeConfirm }] = useDisclosure(false);
   const [deleteMode, setDeleteMode] = useState<'selected' | 'all' | null>(null);
   const [contactsToDelete, setContactsToDelete] = useState<BlacklistContactsItem[]>([]);
 
   useEffect(() => {
-    if (contactsData) {
-      setContacts(contactsData);
+    if (blacklistsContactsData) {
+      setContacts(blacklistsContactsData);
     }
-  }, [contactsData]);
+  }, [blacklistsContactsData]);
 
   const PAPER_PROPS: PaperProps = {
     p: 'md',
@@ -102,11 +102,11 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
   return (
     <Container fluid py="md">
       <Title order={2} mb="md">
-        {t('phonebook.edit_phonebook')}
+        {t('blacklists.edit_blacklist')}
       </Title>
       <Breadcrumbs pb="md">
-        <Anchor href={PATH_APPS.phonebook}> {t('phonebook.all_phonebooks')}</Anchor>
-        <span> {t('phonebook.edit_phonebook')}</span>
+        <Anchor href={PATH_APPS.phonebook}> {t('blacklists.all_blacklists')}</Anchor>
+        <span> {t('blacklists.edit_blacklist')}</span>
       </Breadcrumbs>
       <Grid>
         <Grid.Col span={{ base: 12}}>
@@ -153,7 +153,7 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
                 </div>
               </div>
               <div>
-                <CreatePhonebookForm
+                <CreateBlacklistForm
                   opened={createOpened}
                   onClose={() => setCreateOpened(false)}
                   onAdd={(item) =>
@@ -162,15 +162,12 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
                       {
                         ...item,
                         id: crypto.randomUUID(),
-                        valid: true,
-                        birthday: dayjs(item.birthday).format('DD.MM.YYYY'),
                         extraInfo: item.extra1,
-                        extraInfo2: item.extra2,
                       }
                     ])
                   }
                 />
-                <ImportPhonebookModal
+                <ImportBlacklistModal
                   opened={importOpened}
                   onClose={() => setImportOpened(false)}
                 />
@@ -199,16 +196,16 @@ export default function PhonebookPage({ params }: { params: { id: string } }) {
                           list: contactsToDelete.map(c => `${c.name} ${c.surname}`).join(', ')
                         })
                       : deleteMode === 'all'
-                        ? t('phonebook.confirm_delete')
-                        : ''
+                      ? t('phonebook.confirm_delete')
+                      : ''
                   }
                 />
               </div>
             </Flex>
-            <ContactsTable
+            <BlacklistContactsTable
               data={contacts}
-              error={contactsError}
-              loading={contactsLoading}
+              error={blacklistsContactsError}
+              loading={blacklistsContactsLoading}
               onSelectedChange={setSelected}
               onDataChange={setContacts}
             />
