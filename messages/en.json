@@ -162,7 +162,8 @@
       "invalid": "Invalid email"
     },
     "password": {
-      "min": "Password must include at least {min} characters"
+      "min": "Password must include at least {min} characters",
+      "confirm_password": "Passwords don't match"
     },
     "required": "Field is required",
     "date": {
@@ -312,6 +313,10 @@
     "agreements_title": "Agreements on the provision of services",
     "contact_type": "Name of contract",
     "valid_date": "Valid until",
-    "general": "General"
+    "general": "General",
+    "password_title": "Change Or Recover Your Password",
+    "send_code": "Send code",
+    "new_password": "New password",
+    "confirm_password": "Verify password"
   }
 }

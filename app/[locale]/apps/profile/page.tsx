@@ -18,6 +18,7 @@ import {
 import PersonalInfoForm from '@/components/Profile/PersonalInfoForm';
 import AccountForm from '@/components/Profile/AccountForm';
 import AgreementsForm from '@/components/Profile/AgreementsForm';
+import ChangePasswordForm from '@/components/Profile/ChangePasswordForm';
 
 function Profile() {
   const t = useTranslations();
@@ -107,6 +108,9 @@ function Profile() {
             </Tabs.Panel>
             <Tabs.Panel value="agreements">
               <AgreementsForm/>
+            </Tabs.Panel>
+            <Tabs.Panel value="password">
+              <ChangePasswordForm/>
             </Tabs.Panel>
           </Tabs>
         </Stack>
