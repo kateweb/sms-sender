@@ -77,7 +77,6 @@ export type BlacklistsItem = {
   created_at: string;
   status: BlacklistsStatus;
   active: boolean;
-
   sum: string;
   template?: string;
   text?: string;
@@ -101,6 +100,26 @@ export type GeneralTemplatesItem = {
   name: string;
   status: TemplatesStatus;
   text: string;
+}
+
+export type BalanceStatus = 'confirm' | 'cancelled' | 'pending' | string;
+
+export type BalanceHistoryItem = {
+  id: number;
+  date: string;
+  isRefunded: boolean;
+  payment_system: string;
+  amount: number;
+  fee: number;
+  currency: string;
+  status: BalanceStatus;
+}
+
+export type BillsItem = {
+  id: number;
+  amount: number;
+  date: string;
+  status: BalanceStatus;
 }
 
 export type Reports = {

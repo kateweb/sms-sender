@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "date": "05.05.2025, 09:14:00",
+    "isRefunded": false,
+    "payment_system": "Offline payment",
+    "amount": 63415.31,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "pending"
+  },
+  {
+    "id": "2",
+    "date": "05.05.2025, 09:14:00",
+    "isRefunded": false,
+    "payment_system": "Offline payment",
+    "amount": 41390.81,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "confirm"
+  },
+  {
+    "id": "3",
+    "date": "05.05.2025, 09:14:01",
+    "isRefunded": false,
+    "payment_system": "Offline payment",
+    "amount": 38943.36,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "confirm"
+  },
+  {
+    "id": "4",
+    "date": "05.05.2025, 09:14:01",
+    "isRefunded": false,
+    "payment_system": "Offline payment",
+    "amount": 1993,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "confirm"
+  },
+  {
+    "id": "5",
+    "date": "05.05.2025, 09:14:02",
+    "isRefunded": true,
+    "payment_system": "Offline payment",
+    "amount": 11615.26,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "cancelled"
+  },
+  {
+    "id": "6",
+    "date": "05.05.2025, 09:14:02",
+    "isRefunded": false,
+    "payment_system": "Offline payment",
+    "amount": 43009.13,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "confirm"
+  },
+  {
+    "id": "7",
+    "date": "05.05.2025, 09:14:02",
+    "isRefunded": false,
+    "payment_system": "Offline payment",
+    "amount": 94373,
+    "fee": 0,
+    "currency": "UAH",
+    "status": "confirm"
+  }
+]

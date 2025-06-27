@@ -19,10 +19,13 @@ import PersonalInfoForm from '@/components/Profile/PersonalInfoForm';
 import AccountForm from '@/components/Profile/AccountForm';
 import AgreementsForm from '@/components/Profile/AgreementsForm';
 import ChangePasswordForm from '@/components/Profile/ChangePasswordForm';
+import { BalanceHistoryTable, BillsTable, GeneralTemplatesTable, UserTemplatesTable } from '@/components';
+import { useFetchData } from '@/hooks';
 
 function Profile() {
   const t = useTranslations();
   const [tab, setTab] = useState<string | null>('personal');
+  const [balanceTab, setBalanceTab] = useState<string | null>('balanceHistory');
 
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
@@ -37,6 +40,18 @@ function Profile() {
       window.history.replaceState(null, '', `#${newTab}`);
     }
   };
+
+  const {
+    data: balanceHistoryData,
+    error: balanceHistoryError,
+    loading: balanceHistoryLoading,
+  } = useFetchData('/mocks/BalanceHistory.json');
+
+  const {
+    data: billsData,
+    error: billsError,
+    loading: billsLoading,
+  } = useFetchData('/mocks/Bills.json');
 
   return (
     <Container fluid py="md">
@@ -111,6 +126,29 @@ function Profile() {
             </Tabs.Panel>
             <Tabs.Panel value="password">
               <ChangePasswordForm/>
+            </Tabs.Panel>
+            <Tabs.Panel value="balance">
+              <Tabs value={balanceTab} onChange={setBalanceTab}>
+                <Tabs.List>
+                  <Tabs.Tab value="balanceHistory">{t('profile.balance_history')}</Tabs.Tab>
+                  <Tabs.Tab value="bills">{t('profile.bills')}</Tabs.Tab>
+                </Tabs.List>
+
+                <Tabs.Panel value="balanceHistory" >
+                  <BalanceHistoryTable
+                    data={balanceHistoryData}
+                    error={balanceHistoryError}
+                    loading={balanceHistoryLoading}
+                  />
+                </Tabs.Panel>
+                <Tabs.Panel value="bills">
+                  <BillsTable
+                    data={billsData}
+                    error={billsError}
+                    loading={billsLoading}
+                  />
+                </Tabs.Panel>
+              </Tabs>
             </Tabs.Panel>
           </Tabs>
         </Stack>

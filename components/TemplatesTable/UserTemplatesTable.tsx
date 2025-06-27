@@ -173,7 +173,7 @@ const UserTemplatesTable = ({ data, error, loading, onSelectedChange, onDataChan
   }, [sortStatus, data, page, pageSize, debouncedQuery, filter]);
 
   return error ? (
-    <ErrorAlert title={t('alphasenders.error')} message={error.toString()} />
+    <ErrorAlert title={t('templates.error')} message={error.toString()} />
   ) : (
     <DataTable<UserTemplatesItem>
       mt="md"
