@@ -19,8 +19,9 @@ import PersonalInfoForm from '@/components/Profile/PersonalInfoForm';
 import AccountForm from '@/components/Profile/AccountForm';
 import AgreementsForm from '@/components/Profile/AgreementsForm';
 import ChangePasswordForm from '@/components/Profile/ChangePasswordForm';
-import { BalanceHistoryTable, BillsTable, GeneralTemplatesTable, UserTemplatesTable } from '@/components';
 import { useFetchData } from '@/hooks';
+import NotificationsForm from '@/components/Profile/NotificationsForm';
+import { BalanceHistoryTable, BillsTable } from '@/components';
 
 function Profile() {
   const t = useTranslations();
@@ -149,6 +150,9 @@ function Profile() {
                   />
                 </Tabs.Panel>
               </Tabs>
+            </Tabs.Panel>
+            <Tabs.Panel value="notifications">
+              <NotificationsForm/>
             </Tabs.Panel>
           </Tabs>
         </Stack>
