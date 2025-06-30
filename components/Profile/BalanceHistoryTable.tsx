@@ -1,8 +1,6 @@
 'use client';
 
 import { ReactNode, useEffect, useState } from 'react';
-
-import { useDebouncedValue } from '@mantine/hooks';
 import sortBy from 'lodash/sortBy';
 import {
   DataTable,
@@ -12,24 +10,23 @@ import {
 import { ErrorAlert } from '@/components';
 import { useTranslations } from 'next-intl';
 import { Badge, MantineColor, Text } from '@mantine/core';
-import { TemplatesStatus, GeneralTemplatesItem } from '@/types';
-import { useRouter } from 'next/navigation';
+import { BalanceStatus, BalanceHistoryItem } from '@/types';
 
 type StatusBadgeProps = {
-  status: TemplatesStatus;
+  status: BalanceStatus;
 };
 
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   let color: MantineColor;
-  const t = useTranslations('templates.statuses');
+  const t = useTranslations('profile.statuses');
   switch (status) {
-    case 'rejected':
+    case 'cancelled':
       color = 'red';
       break;
-    case 'ready':
+    case 'confirm':
       color = 'green';
       break;
-    case 'processing':
+    case 'pending':
       color = 'orange'
       break;
     default:
@@ -45,41 +42,58 @@ const StatusBadge = ({ status }: StatusBadgeProps) => {
 
 const PAGE_SIZES = [5, 10, 20];
 
-type GeneralTemplatesTableProps = {
-  data: GeneralTemplatesItem[];
+type BalanceHistoryTableProps = {
+  data: BalanceHistoryItem[];
   error?: ReactNode;
   loading?: boolean;
-  search?: string;
-  filter?: string[];
 };
 
-const GeneralTemplatesTable = ({ data, error, loading, filter, search }: GeneralTemplatesTableProps) => {
+const BalanceHistoryTable = ({ data, error, loading }: BalanceHistoryTableProps) => {
   const t = useTranslations();
-  const router = useRouter();
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
-  const [records, setRecords] = useState<GeneralTemplatesItem[]>(data.slice(0, pageSize));
-  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<GeneralTemplatesItem>>({
+  const [records, setRecords] = useState<BalanceHistoryItem[]>(data.slice(0, pageSize));
+  const [sortStatus, setSortStatus] = useState<DataTableSortStatus<BalanceHistoryItem>>({
     columnAccessor: 'name',
     direction: 'asc',
   });
-  const [debouncedQuery] = useDebouncedValue(search, 200);
+
   const columns = [
     {
-      accessor: 'name',
-      title: t('phonebook.name'),
+      accessor: 'date',
+      title: t('alphasenders.date'),
       sortable: true,
-      render: (item: GeneralTemplatesItem) => (
-        <Text fw={700} c="green" style={{ cursor: 'pointer' }} onClick={() => router.push(`templates/update/${item.id}`)}>
-          {item.name}
-        </Text>
-      ),
+    },
+    {
+      accessor: 'isRefunded',
+      title: t('profile.is_refunded'),
+      sortable: true,
+      render: (item: BalanceHistoryItem) => String(item.isRefunded),
+    },
+    {
+      accessor: 'payment_system',
+      title: t('profile.payment_system'),
+      sortable: true,
+    },
+    {
+      accessor: 'amount',
+      title: t('history.sum'),
+      sortable: true,
+    },
+    {
+      accessor: 'fee',
+      title: t('profile.fee'),
+    },
+    {
+      accessor: 'currency',
+      title: t('profile.currency'),
+      sortable: true,
     },
     {
       accessor: 'status',
       title: t('history.status'),
       sortable: true,
-      render: (item: GeneralTemplatesItem) => <StatusBadge status={item.status} />,
+      render: (item: BalanceHistoryItem) => <StatusBadge status={item.status} />,
     },
   ];
 
@@ -93,26 +107,16 @@ const GeneralTemplatesTable = ({ data, error, loading, filter, search }: General
 
     let filtered = [...data];
 
-    if (debouncedQuery) {
-      filtered = filtered.filter(({ name }) =>
-        name.toLowerCase().includes(debouncedQuery.trim().toLowerCase())
-      );
-    }
-
-    if (Array.isArray(filter) && filter.length > 0) {
-      filtered = filtered.filter(({ status }) => filter.includes(status));
-    }
-
     const sorted = sortBy(filtered, sortStatus.columnAccessor);
     const sortedData = sortStatus.direction === 'desc' ? sorted.reverse() : sorted;
 
     setRecords(sortedData.slice(from, to));
-  }, [sortStatus, data, page, pageSize, debouncedQuery, filter]);
+  }, [sortStatus, data, page, pageSize]);
 
   return error ? (
-    <ErrorAlert title={t('templates.error')} message={error.toString()} />
+    <ErrorAlert title={t('profile.balance_error')} message={error.toString()} />
   ) : (
-    <DataTable<GeneralTemplatesItem>
+    <DataTable<BalanceHistoryItem>
       mt="md"
       minHeight="200px"
       verticalSpacing="xs"
@@ -136,4 +140,4 @@ const GeneralTemplatesTable = ({ data, error, loading, filter, search }: General
   );
 };
 
-export default GeneralTemplatesTable;
+export default BalanceHistoryTable;

@@ -1,7 +1,9 @@
 import AlphasendersTable from '@/components/AlphasendersTable/AlphasendersTable';
 import AlphasendersTableAll from '@/components/AlphasendersTable/AlphasendersTableAll';
 import AlphasendersApplicationsTable from '@/components/AlphasendersTable/AlphasendersApplicationsTable';
+import BalanceHistoryTable from '@/components/Profile/BalanceHistoryTable';
 import BalanceCard from '@/components/BalanceCard/BalanceCard';
+import BillsTable from '@/components/Profile/BillsTable';
 import BlacklistContactsTable from '@/components/BlacklistContactsTable/BlacklistContactsTable';
 import { ConfirmDeleteModal } from '@/components/ConfirmDeleteModal/ConfirmDeleteModal';
 import ErrorAlert from '@/components/ErrorAlert';
@@ -31,7 +33,9 @@ export {
   AlphasendersTable,
   AlphasendersTableAll,
   AlphasendersApplicationsTable,
+  BalanceHistoryTable,
   BalanceCard,
+  BillsTable,
   BlacklistContactsTable,
   ConfirmDeleteModal,
   Logo,
