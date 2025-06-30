@@ -339,7 +339,10 @@
     "balance_alert_limit": "Balance alert limit",
     "set_limit": "Set your limit",
     "alerts": "Alerts",
-    "select_alerts": "Select alerts"
+    "select_alerts": "Select alerts",
+    "security_settings": "Security settings",
+    "two_factor_auth": "Enable two-factor authentication via SMS",
+    "activate_start_tour": "Activate start tour"
 
   }
 }

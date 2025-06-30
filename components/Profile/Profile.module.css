@@ -59,3 +59,9 @@
 .labelWrapper {
   width: 100%;
 }
+.switchText {
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: var(--mantine-font-size-sm);
+    width: 100%;
+  }
+}

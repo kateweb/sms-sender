@@ -22,6 +22,7 @@ import ChangePasswordForm from '@/components/Profile/ChangePasswordForm';
 import { useFetchData } from '@/hooks';
 import NotificationsForm from '@/components/Profile/NotificationsForm';
 import { BalanceHistoryTable, BillsTable } from '@/components';
+import SettingsForm from '@/components/Profile/SettingsForm';
 
 function Profile() {
   const t = useTranslations();
@@ -153,6 +154,9 @@ function Profile() {
             </Tabs.Panel>
             <Tabs.Panel value="notifications">
               <NotificationsForm/>
+            </Tabs.Panel>
+            <Tabs.Panel value="settings">
+              <SettingsForm/>
             </Tabs.Panel>
           </Tabs>
         </Stack>
