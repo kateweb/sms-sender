@@ -331,6 +331,15 @@
     "is_refunded": "Is refunded",
     "payment_system": "Payment system",
     "fee": "Fee",
-    "currency": "Currency"
+    "currency": "Currency",
+    "telegram_username_info": "Username in Telegram without @",
+    "start_chat": "You need to start a chat with",
+    "chat_id": "Your chat id",
+    "get_id": "You cqn get your ID at",
+    "balance_alert_limit": "Balance alert limit",
+    "set_limit": "Set your limit",
+    "alerts": "Alerts",
+    "select_alerts": "Select alerts"
+
   }
 }
