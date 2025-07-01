@@ -342,7 +342,18 @@
     "select_alerts": "Select alerts",
     "security_settings": "Security settings",
     "two_factor_auth": "Enable two-factor authentication via SMS",
-    "activate_start_tour": "Activate start tour"
-
+    "activate_start_tour": "Activate start tour",
+    "api_settings": "API settings",
+    "enable_token_api": "Enable Token access to API",
+    "link_to_api": "Link to API",
+    "reissue": "Reissue",
+    "documentation": {
+      "title": "Documentation",
+      "text_1": "To authenticate the API using a token, the user must pass their token in the Authorisation header using the format.",
+      "text_2": "For example, to make an authenticated request using cURL, you must include the header.",
+      "text_3": "In this example, the cURL contains the -H flag to add the Authorization header with the token key.",
+      "text_4": "Note that the Token keyword in the header is case sensitive. In addition, the generated token should be kept confidential and not shared with others.",
+      "text_5": "Important: the token becomes invalid if access to the API is disabled or if a new token is generated."
+    }
   }
 }
