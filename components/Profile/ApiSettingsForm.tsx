@@ -22,7 +22,7 @@ import classes from '@/components/Profile/Profile.module.css';
 import { useTranslations } from 'next-intl';
 
 function generateToken() {
-  return 'Token ' + Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
+  return Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
 }
 
 export default function ApiSettingsForm() {
@@ -82,6 +82,7 @@ export default function ApiSettingsForm() {
             <Group align="end" wrap="wrap" gap="sm" mt="sm">
               <TextInput
                 readOnly
+                label="Token"
                 variant="filled"
                 value={token}
                 className={classes.tokenInput}
@@ -116,7 +117,7 @@ export default function ApiSettingsForm() {
               <Text size="sm">{t('profile.documentation.text_2')}:</Text>
 
               <Code classNames={{root: classes.code}} color="var(--mantine-color-green-light)" >
-                curl -H 'Authorization: {form.values.apiEnabled ? token : '{token}'}' https://my.smsfinance.com.ua/api/client/templates/
+                curl -H 'Authorization: Token {form.values.apiEnabled ? token : '{token}'}' https://my.smsfinance.com.ua/api/client/templates/
               </Code>
 
               <Text size="sm">
