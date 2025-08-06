@@ -23,6 +23,7 @@ import { useFetchData } from '@/hooks';
 import NotificationsForm from '@/components/Profile/NotificationsForm';
 import { BalanceHistoryTable, BillsTable } from '@/components';
 import SettingsForm from '@/components/Profile/SettingsForm';
+import ApiSettingsForm from '@/components/Profile/ApiSettingsForm';
 
 function Profile() {
   const t = useTranslations();
@@ -157,6 +158,9 @@ function Profile() {
             </Tabs.Panel>
             <Tabs.Panel value="settings">
               <SettingsForm/>
+            </Tabs.Panel>
+            <Tabs.Panel value="api">
+              <ApiSettingsForm/>
             </Tabs.Panel>
           </Tabs>
         </Stack>
