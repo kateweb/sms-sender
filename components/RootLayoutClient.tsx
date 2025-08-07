@@ -39,7 +39,7 @@ export default function RootLayoutClient({
     <NextIntlClientProvider timeZone={timeZone} messages={messages} locale={locale}>
       <LocaleProvider locale={locale}>
         <MantineProvider theme={myTheme} defaultColorScheme="light">
-          <Notifications position="bottom-right" zIndex={1000} />
+          <Notifications position="top-right" zIndex={1000} />
           <ModalsProvider>{children}</ModalsProvider>
         </MantineProvider>
       </LocaleProvider>
