@@ -22,7 +22,8 @@
 }
 .wrapper {
   display: flex;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 }
 .leftSection {
   width: calc(100% - 600px);
@@ -37,6 +38,7 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  padding-top: 4rem;
 }
 @media (max-width: $mantine-breakpoint-md) {
   .rightSection {
@@ -51,6 +53,6 @@
 }
 .menu {
   position: absolute;
-  right: 40px;
-  top: 40px;
+  right: 35px;
+  top: 20px;
 }

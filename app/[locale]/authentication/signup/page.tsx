@@ -132,7 +132,7 @@ export default function Page() {
                 as={TextInput}
                 name="login"
                 label={t('reg.username')}
-                placeholder="Username"
+                placeholder={t('reg.enter_username')}
                 required
                 classNames={{ label: classes.label }}
               />
