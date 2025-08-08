@@ -51,6 +51,13 @@
     "confirmation": "A confirmation email has been sent to your email. Follow the link in the email to activate your account.",
     "registration_success": "User is registered"
   },
+  "activate": {
+    "errors": {
+      "user_not_found": "User is not found",
+      "no_token_provided": "No token provided",
+      "activation_failed": "Activation failed"
+    }
+  },
   "password": {
     "forgot": "Forgot Password?",
     "reset_text": "Enter your email to reset your password",

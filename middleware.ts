@@ -19,13 +19,13 @@ const authMiddleware = withAuth(
       authorized: ({ token }) => token != null,
     },
     pages: {
-      signIn: "/auth/login",
+      signIn: "/authentication/signin",
     },
   }
 );
 
 export default function middleware(req: NextRequest) {
-  const excludePattern = `^(/(${locales.join("|")}))?/user/?.*$`;
+  const excludePattern = `^(/(${locales.join("|")}))?/(dashboard|apps)/?.*$`;
   const publicPathnameRegex = RegExp(excludePattern, "i");
   const isPublicPage = !publicPathnameRegex.test(req.nextUrl.pathname);
 
@@ -39,7 +39,7 @@ export default function middleware(req: NextRequest) {
   } else {
     const token = req.cookies.get("next-auth.session-token") || req.cookies.get("__Secure-next-auth.session-token"); // Adjust this to your token
     if (!token) {
-      const loginUrl = `/${locale}/login/`;
+      const loginUrl = `/${locale}/authentication/signin/`;
       return NextResponse.redirect(new URL(loginUrl, req.url));
     }
     return (authMiddleware as any)(req);

@@ -14,7 +14,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import { useColorScheme } from '@mantine/hooks';
-
+import { useSession } from "next-auth/react";
 import { Surface } from '@/components';
 import { useTranslations } from 'next-intl';
 
@@ -30,6 +30,8 @@ const PageHeader = (props: PageHeaderProps) => {
   const theme = useMantineTheme();
   const colorScheme = useColorScheme();
   const t = useTranslations();
+  const { data: session, status } = useSession();
+  const isAuthorized = status === "authenticated";
 
   const BREADCRUMBS_PROPS: Omit<BreadcrumbsProps, 'children'> = {
     style: {
@@ -66,7 +68,11 @@ const PageHeader = (props: PageHeaderProps) => {
           >
             <Stack gap={4}>
               <Title order={3}>{title}</Title>
-              <Text>{t('login.welcome_back')}, Kate!</Text>
+              <Text>
+                {t('login.welcome_back')},{' '}
+                {isAuthorized && session?.user?.username ? session.user.username : ''}
+                !
+              </Text>
             </Stack>
           </Flex>
         ) : (

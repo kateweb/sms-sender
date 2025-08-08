@@ -11,6 +11,8 @@ import {
   IconPower,
 } from '@tabler/icons-react';
 import { useTranslations } from 'next-intl';
+import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 import { LanguagePicker } from '@/components';
 import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
@@ -27,7 +29,14 @@ type HeaderNavProps = {
 const HeaderNav = (props: HeaderNavProps) => {
   const { toggleMobile, mobileOpened, onSidebarStateChange } = props;
   const { locale } = useLocale();
+  const router = useRouter();
   const t = useTranslations();
+  const handleLogout = async () => {
+    await signOut({
+      redirect: false,
+    });
+    router.push(`/${locale}/authentication/signin`); // Redirect to login page
+  };
   return (
     <Group justify="space-between" wrap="nowrap">
       <Group gap={0} visibleFrom="md">
@@ -52,7 +61,7 @@ const HeaderNav = (props: HeaderNavProps) => {
         <LanguagePicker type="collapsed" locale={locale} />
         <ThemeSwitcher />
         <Tooltip label={t('menu.logout')}>
-          <ActionIcon>
+          <ActionIcon onClick={handleLogout}>
             <IconPower size={ICON_SIZE} />
           </ActionIcon>
         </Tooltip>
