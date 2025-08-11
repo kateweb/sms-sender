@@ -51,6 +51,7 @@ function Page() {
         redirect: false,
         username: values.username,
         password: values.password,
+        locale
       });
       if (res?.error) {
         notifications.show({
