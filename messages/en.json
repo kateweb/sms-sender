@@ -39,10 +39,24 @@
     "title": "Sign up",
     "reg_text": "Enter your details to create your account",
     "username": "Username",
+    "enter_username": "Enter username",
+    "name": "Name",
+    "your_name": "Your name",
+    "surname": "Surname",
+    "your_surname": "Your surname",
     "phone": "Phone",
     "confirm_password": "Confirm Password",
     "submit": "Submit",
-    "have_account": "I have an account"
+    "have_account": "I have an account",
+    "confirmation": "A confirmation email has been sent to your email. Follow the link in the email to activate your account.",
+    "registration_success": "User is registered"
+  },
+  "activate": {
+    "errors": {
+      "user_not_found": "User is not found",
+      "no_token_provided": "No token provided",
+      "activation_failed": "Activation failed"
+    }
   },
   "password": {
     "forgot": "Forgot Password?",
@@ -163,7 +177,12 @@
     },
     "password": {
       "min": "Password must include at least {min} characters",
-      "confirm_password": "Passwords don't match"
+      "confirm_password": "Passwords don't match",
+      "number": "Password must contain at least 1 number",
+      "uppercase": "Password must contain at least 1 uppercase letter"
+    },
+    "phone": {
+      "invalid": "Invalid phone number"
     },
     "required": "Field is required",
     "date": {
@@ -176,7 +195,10 @@
     "ipn": {
       "invalid": "Invalid IPN"
     },
-    "invalid_url": "Invalid URL"
+    "invalid_url": "Invalid URL",
+    "server_error": "An error occurred",
+    "password_full": "Password should contains at least one uppercase letter and one digit",
+    "user_exist": "User already exists in the system"
   },
   "period": {
     "day": "Day",

@@ -11,7 +11,7 @@ function AuthWrapper({ children }: AuthProps) {
   return (
     <Center
       style={{
-        height: '100vh',
+        height: 'auto',
         width: '100vw',
       }}
     >

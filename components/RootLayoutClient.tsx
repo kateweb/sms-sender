@@ -19,6 +19,7 @@ import '@mantine/notifications/styles.css';
 import 'mantine-datatable/styles.layer.css';
 import '@mantine/dropzone/styles.css';
 import '@mantine/charts/styles.css';
+import { Providers } from '@/providers/session';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -36,13 +37,15 @@ export default function RootLayoutClient({
 }) {
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   return (
-    <NextIntlClientProvider timeZone={timeZone} messages={messages} locale={locale}>
-      <LocaleProvider locale={locale}>
-        <MantineProvider theme={myTheme} defaultColorScheme="light">
-          <Notifications position="bottom-right" zIndex={1000} />
-          <ModalsProvider>{children}</ModalsProvider>
-        </MantineProvider>
-      </LocaleProvider>
-    </NextIntlClientProvider>
+    <Providers>
+      <NextIntlClientProvider timeZone={timeZone} messages={messages} locale={locale}>
+        <LocaleProvider locale={locale}>
+          <MantineProvider theme={myTheme} defaultColorScheme="light">
+            <Notifications position="top-right" zIndex={1000} />
+            <ModalsProvider>{children}</ModalsProvider>
+          </MantineProvider>
+        </LocaleProvider>
+      </NextIntlClientProvider>
+    </Providers>
   );
 }

@@ -8,7 +8,7 @@ import ThemeSwitcher from '@/components/ThemeSwitcher/ThemeSwitcher';
 import { useLocale } from '@/contexts/LocaleContext';
 
 interface AuthLayoutProps {
-  heading: string;
+  heading?: string;
   subheading?: string;
   children: ReactNode;
 }
