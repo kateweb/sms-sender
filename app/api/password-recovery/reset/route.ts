@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const {login} = await request.json();
+  const {login, token, password} = await request.json();
   try {
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}api/password-recovery/request`;
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}api/password-recovery/reset`;
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ login })
+      body: JSON.stringify({ login, token, password })
     });
     const data = await response.json();
 
@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json(data);
   } catch (error: any) {
-    console.error('Password recovery request error:', error);
+    console.error('Password recovery reset error:', error);
     return NextResponse.json(
       {
         error: true,

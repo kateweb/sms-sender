@@ -62,7 +62,11 @@
     "forgot": "Forgot Password?",
     "reset_text": "Enter your email to reset your password",
     "back_to_login": "Back to the login page",
-    "reset": "Reset password"
+    "reset": "Reset password",
+    "enter_new_password": "Enter new password",
+    "forgot_password_confirmation_text": "A confirmation email has been sent to your email. Follow the link in the email to reset your password.",
+    "set_password_confirmation_text": "Password changed successfully!"
+
   },
   "menu": {
     "switch_language": "Switch language",

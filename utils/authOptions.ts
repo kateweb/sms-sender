@@ -8,6 +8,7 @@ export const authOptions : NextAuthOptions = {
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith", value: "administrator" },
         password: { label: "Password", type: "password", value: "admin" },
+        locale: { label: "Locale", type: "text" },
       },
       // @ts-ignore
       async authorize(credentials, req) {
@@ -16,6 +17,7 @@ export const authOptions : NextAuthOptions = {
           console.error("Credentials are missing");
           return null;
         }
+        const currentLocale = credentials?.locale || 'uk';
         // Include hidden values here
         const data = {
           username: credentials.username,
@@ -26,6 +28,7 @@ export const authOptions : NextAuthOptions = {
           body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json",
+            "locale": currentLocale
           }
         });
         const resData = await res.json();
@@ -46,16 +49,12 @@ export const authOptions : NextAuthOptions = {
     async jwt({ token, user }) {
       if (token?.token) {
         const decoded = jwtDecode<any>(token.token);
-        console.log(token)
-        console.log(decoded);
         token.username = decoded?.username ?? null;
         token.userId = decoded?.id ?? null;
       }
       return { ...token, ...user };
     },
     async session ({ session, token }) {
-      console.log(token);
-      console.log(session);
       session.user = {
         ...session.user,
         jwt: token.token,
