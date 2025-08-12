@@ -46,11 +46,18 @@ function Page() {
 
   const loginFormSubmitted = async (values:any) => {
     setPending(true);
+    const response = await fetch('/api/auth/getip');
+    if (!response.ok) {
+      throw new Error(`Get IP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    const ip = data.ip;
     try {
       const res = await signIn('credentials', {
         redirect: false,
         username: values.username,
         password: values.password,
+        ip: ip,
         locale
       });
       if (res?.error) {

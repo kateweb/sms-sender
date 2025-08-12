@@ -9,6 +9,7 @@ export const authOptions : NextAuthOptions = {
         username: { label: "Username", type: "text", placeholder: "jsmith", value: "administrator" },
         password: { label: "Password", type: "password", value: "admin" },
         locale: { label: "Locale", type: "text" },
+        ip: {label: "IP", type: "text"}
       },
       // @ts-ignore
       async authorize(credentials, req) {
@@ -22,6 +23,7 @@ export const authOptions : NextAuthOptions = {
         const data = {
           username: credentials.username,
           password: credentials.password,
+          ip: credentials.ip
         };
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/login_check`, {
           method: 'POST',
@@ -50,7 +52,6 @@ export const authOptions : NextAuthOptions = {
       if (token?.token) {
         const decoded = jwtDecode<any>(token.token);
         token.username = decoded?.username ?? null;
-        token.userId = decoded?.id ?? null;
       }
       return { ...token, ...user };
     },
@@ -59,7 +60,6 @@ export const authOptions : NextAuthOptions = {
         ...session.user,
         jwt: token.token,
         username: token.username ?? "",
-        userId: token.userId,
       };
       return session;
     }
