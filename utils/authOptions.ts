@@ -67,8 +67,8 @@ export const authOptions: NextAuthOptions = {
         const decoded = jwtDecode<{ username?: string; id?: string }>(
           token.token as string
         );
-        token.username = decoded?.username ?? null;
-        token.userId = decoded?.id ?? null;
+        token.username = decoded?.username ?? undefined;
+        token.userId = decoded?.id ?? undefined;
       }
       return { ...token, ...user };
     },

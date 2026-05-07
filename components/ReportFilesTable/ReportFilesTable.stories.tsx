@@ -2,6 +2,7 @@ import MOCKS from '@/public/mocks/Report_files.json';
 
 import ReportFilesTable from './ReportFilesTable';
 
+import type { ReportFiles } from '@/types';
 import type { StoryObj } from '@storybook/react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -22,7 +23,7 @@ type Story = StoryObj<typeof ReportFilesTable>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    data: MOCKS,
+    data: MOCKS as ReportFiles[],
   },
 };
 

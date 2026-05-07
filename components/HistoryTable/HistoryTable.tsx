@@ -35,7 +35,7 @@ const StatusBadge = ({ status }: { status: HistoryStatus }) => {
     case 'Cancelled':
       color = 'red';
       break;
-    case 'Finished':
+    case 'Completed':
       color = 'green';
       break;
     case 'Pending':

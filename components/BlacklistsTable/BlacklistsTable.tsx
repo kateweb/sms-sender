@@ -144,7 +144,7 @@ const BlackListsTable = ({ data, error, loading }: BlacklistsTableProps) => {
                   record.id === item.id
                     ? {
                       ...record,
-                      status: record.status === 'active' ? 'disabled' : 'active',
+                      status: (record.status === 'active' ? 'disabled' : 'active') as BlacklistsStatus,
                     }
                     : record
                 );

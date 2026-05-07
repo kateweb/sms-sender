@@ -2,6 +2,10 @@ export type Id = string | number;
 
 export type OrderStatus = 'shipped' | 'processing' | 'cancelled';
 
+export type ReportFileStatus = 'failed' | 'completed';
+
+export type ReportsStatus = 'In Progress' | 'Cancelled' | 'delivered' | 'Pending';
+
 export type AlphasendersStatus = 'approved' | 'processing' | 'cancelled';
 
 export type AlphasendersItem = {
@@ -131,12 +135,12 @@ export type Reports = {
   sendDate: string;
   scheduledDate: string;
   deliveryDate: string;
-  status: OrderStatus;
+  status: ReportsStatus;
   text: string;
 };
 
 export type ReportFiles = {
   fileName: string;
-  status: OrderStatus;
+  status: ReportFileStatus;
   downloadLink: string;
 };

@@ -4,11 +4,11 @@ import { ReactNode, useEffect, useState } from 'react';
 import { Badge, MantineColor } from '@mantine/core';
 import { DataTable, DataTableProps } from 'mantine-datatable';
 import { ErrorAlert } from '@/components';
-import { OrderStatus, Reports } from '@/types';
+import { ReportsStatus, Reports } from '@/types';
 import { useTranslations } from 'next-intl';
 
 type StatusBadgeProps = {
-  status: OrderStatus;
+  status: ReportsStatus;
 };
 
 const StatusBadge = ({ status }: StatusBadgeProps) => {

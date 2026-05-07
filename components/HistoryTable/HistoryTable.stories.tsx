@@ -1,5 +1,7 @@
 import MOCKS from '@/public/mocks/History.json';
 
+import type { HistoryItem } from '@/types';
+
 import HistoryTable from './HistoryTable';
 
 import type { StoryObj } from '@storybook/react';
@@ -22,7 +24,7 @@ type Story = StoryObj<typeof HistoryTable>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
   args: {
-    data: MOCKS.slice(0, 10),
+    data: MOCKS.slice(0, 10) as HistoryItem[],
   },
 };
 

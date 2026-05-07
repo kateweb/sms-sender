@@ -8,7 +8,7 @@ const MOCKS = {
   title: 'Gembucket',
   description:
     'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.',
-  status: 'active',
+  status: 'active' as const,
   image: null,
   completion: 86,
 };
