@@ -13,7 +13,7 @@ export type AlphasendersItem = {
   type: string;
   site: string;
   date: string;
-  status: string;
+  status: AlphasendersStatus;
   enabled: boolean;
   blocked_status: boolean
 }
@@ -30,7 +30,7 @@ export type AlphasendersApplicationsItem = {
 export type AlphasendersAllItem = {
   id: number;
   name: string;
-  status: string;
+  status: AlphasendersStatus;
 }
 
 export type ContactsItem = {
