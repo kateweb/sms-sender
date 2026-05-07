@@ -78,8 +78,20 @@ function Page() {
 
   return (
     <AuthLayout heading={`${t('login.welcome_back')}!`} subheading={t('login.login_title')}>
+      <div
+        style={{
+          background: 'var(--mantine-color-green-light)',
+          border: '1px solid var(--mantine-color-green-4)',
+          borderRadius: 8,
+          padding: '10px 14px',
+          marginBottom: 16,
+          fontSize: 13,
+        }}
+      >
+        <strong>Demo access:</strong> username <code>demo</code> / password <code>Demo1234!</code>
+      </div>
       <Formik
-        initialValues={{username: '', password: '', rememberMe: false}}
+        initialValues={{username: 'demo', password: 'Demo1234!', rememberMe: false}}
         validationSchema={validationSchema}
         onSubmit={loginFormSubmitted}>
         {({isSubmitting}) => (

@@ -7,13 +7,14 @@ import {
   Grid,
   Group, Input, Modal,
   Paper,
+  type PaperProps,
   Radio,
   Select,
   Stack,
   Text,
   Textarea,
   Divider,
-  Title, UnstyledButton, Collapse, PaperProps
+  Title, UnstyledButton, Collapse,
 } from '@mantine/core';
 import { useState } from 'react';
 import { useForm } from '@mantine/form';
@@ -35,6 +36,13 @@ import { DateTimePicker } from '@mantine/dates';
 import { HistoryTable } from '@/components';
 import { useFetchData } from '@/hooks';
 
+const PAPER_PROPS: PaperProps = {
+  p: 'md',
+  shadow: 'md',
+  radius: 'md',
+  style: { height: '100%' },
+};
+
 export default function SendSmsPage() {
   const [recipientType, setRecipientType] = useState('one');
   const [message, setMessage] = useState('');
@@ -45,13 +53,6 @@ export default function SendSmsPage() {
   const { locale } = useLocale();
   const phoneI18n = { uk, ru, en };
   const form = useForm();
-
-  const PAPER_PROPS: PaperProps = {
-    p: 'md',
-    shadow: 'md',
-    radius: 'md',
-    style: { height: '100%' },
-  };
   const {
     data: historyData,
     error: historyError,
@@ -70,7 +71,7 @@ export default function SendSmsPage() {
     const val = value ?? 'none';
     setSelectedTemplate(val);
     if (val === 'test') {
-      setMessage('Даруємо 555 FS з БЕЗДЕПОМ!\nПРОМОКОД- VCR31Y\nhttps://bit.ly/3RC0i0I');
+      setMessage('Hello! Your verification code is 123456. Valid for 10 minutes.');
     } else {
       setMessage('');
     }

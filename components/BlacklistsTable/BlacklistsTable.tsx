@@ -74,10 +74,8 @@ const BlackListsTable = ({ data, error, loading }: BlacklistsTableProps) => {
     const sorted = sortBy(data, (item) =>
       sortStatus.columnAccessor === 'created_at'
         ? new Date(item.created_at)
-        : // @ts-ignore
-        item[sortStatus.columnAccessor]
+        : item[sortStatus.columnAccessor as keyof BlacklistsItem]
     );
-
     return sortStatus.direction === 'desc' ? sorted.reverse() : sorted;
   }, [data, sortStatus]);
 
@@ -90,7 +88,6 @@ const BlackListsTable = ({ data, error, loading }: BlacklistsTableProps) => {
   return error ? (
     <ErrorAlert title={t('blacklists.error')} message={error.toString()} />
   ) : (
-    // @ts-ignore
     <DataTable<BlacklistsItem>
       verticalSpacing="sm"
       highlightOnHover={false}

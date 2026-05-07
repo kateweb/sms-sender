@@ -74,8 +74,8 @@ export default function ApiSettingsForm() {
           </Group>
           <Group justify="space-between" gap="xs">
             <Text className={classes.switchText}>{t('profile.link_to_api')}:</Text>
-            <Text component="a" href="https://sms-sender-stage.sd-app.net/userapi/" target="_blank" c="green" fz="sm">
-              https://sms-sender-stage.sd-app.net/userapi/
+            <Text component="a" href={`${process.env.NEXT_PUBLIC_BASE_URL}userapi/`} target="_blank" c="green" fz="sm">
+              {typeof window !== 'undefined' ? `${window.location.origin}/userapi/` : '/userapi/'}
             </Text>
           </Group>
           {form.values.apiEnabled && (

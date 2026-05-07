@@ -1,8 +1,8 @@
 export type Id = string | number;
 
-export type OrderStatus = 'shipped' | 'processing' | 'cancelled' | string;
+export type OrderStatus = 'shipped' | 'processing' | 'cancelled';
 
-export type AlphasendersStatus = 'approved' | 'processing' | 'cancelled' | string;
+export type AlphasendersStatus = 'approved' | 'processing' | 'cancelled';
 
 export type AlphasendersItem = {
   id: number;
@@ -51,7 +51,7 @@ export type BlacklistContactsItem = {
   surname: string;
   extraInfo: string;
 }
-export type HistoryStatus = 'In Progress' | 'Cancelled' | 'Completed' | 'Pending' | string;
+export type HistoryStatus = 'In Progress' | 'Cancelled' | 'Completed' | 'Pending';
 
 export type HistoryItem = {
   id: string;
@@ -67,7 +67,7 @@ export type HistoryItem = {
   delivery_amount?: string;
 };
 
-export type BlacklistsStatus = 'active' | 'disabled' | string;
+export type BlacklistsStatus = 'active' | 'disabled';
 
 export type BlacklistsItem = {
   id: string;
@@ -84,7 +84,7 @@ export type BlacklistsItem = {
   delivery_amount?: string;
 };
 
-export type TemplatesStatus = 'ready' |  'new' | 'processing' | 'rejected' | string;
+export type TemplatesStatus = 'ready' | 'new' | 'processing' | 'rejected';
 
 export type UserTemplatesItem = {
   id: number;
@@ -102,7 +102,7 @@ export type GeneralTemplatesItem = {
   text: string;
 }
 
-export type BalanceStatus = 'confirm' | 'cancelled' | 'pending' | string;
+export type BalanceStatus = 'confirm' | 'cancelled' | 'pending';
 
 export type BalanceHistoryItem = {
   id: number;

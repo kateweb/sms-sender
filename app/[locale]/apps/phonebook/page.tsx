@@ -9,7 +9,7 @@ import {
   Title,
   Tooltip,
   ActionIcon,
-  Collapse, Container, PaperProps, Grid, Paper, Modal, Center
+  Collapse, Container, type PaperProps, Grid, Paper,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconEdit, IconTrash, IconSend, IconChevronUp, IconChevronDown, IconAlertCircle } from '@tabler/icons-react';
@@ -21,14 +21,15 @@ import { PATH_APPS } from '@/routes';
 import { useRouter } from 'next/navigation';
 import { ConfirmDeleteModal } from '@/components';
 
+const PAPER_PROPS: PaperProps = {
+  p: 'md',
+  shadow: 'md',
+  radius: 'md',
+};
+
 export default function PhoneBooksPage() {
   const t = useTranslations();
   const router = useRouter();
-  const PAPER_PROPS: PaperProps = {
-    p: 'md',
-    shadow: 'md',
-    radius: 'md',
-  };
   const form = useForm();
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
