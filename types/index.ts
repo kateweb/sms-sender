@@ -24,7 +24,7 @@ export type AlphasendersApplicationsItem = {
   company: string;
   createdAt: string;
   site: string;
-  status: string;
+  status: AlphasendersStatus;
 }
 
 export type AlphasendersAllItem = {
