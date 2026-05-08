@@ -102,7 +102,7 @@
     "statuses": {
       "In Progress": "In Progress",
       "Cancelled": "Cancelled",
-      "Finished": "Finished",
+      "Completed": "Completed",
       "Pending": "Pending",
       "sent": "Sent",
       "delivered": "Delivered"

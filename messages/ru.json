@@ -101,7 +101,7 @@
     "statuses": {
       "In Progress": "В процессе",
       "Cancelled": "Отменено",
-      "Finished": "Завершено",
+      "Completed": "Завершено",
       "Pending": "В ожидании",
       "sent": "Отправлено",
       "delivered": "Доставлено"
